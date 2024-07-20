@@ -35,6 +35,7 @@
   "name":"BoxBattle",
   "resources":[
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"obj_wall_connecting_pattern","path":"objects/obj_wall_connecting_pattern/obj_wall_connecting_pattern.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},

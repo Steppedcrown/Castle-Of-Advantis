@@ -17,6 +17,7 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_wall_connecting_pattern","order":2,"path":"objects/obj_wall_connecting_pattern/obj_wall_connecting_pattern.yy",},
     {"name":"obj_wall","order":1,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"spr_wall_connecting_pattern","order":2,"path":"sprites/spr_wall_connecting_pattern/spr_wall_connecting_pattern.yy",},
     {"name":"spr_wall","order":1,"path":"sprites/spr_wall/spr_wall.yy",},

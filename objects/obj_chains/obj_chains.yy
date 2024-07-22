@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Chains",
-    "path":"sprites/spr_Chains/spr_Chains.yy",
+    "name":"spr_chains",
+    "path":"sprites/spr_chains/spr_chains.yy",
   },
   "spriteMaskId":null,
   "visible":true,

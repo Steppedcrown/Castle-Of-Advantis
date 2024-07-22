@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"spr_wall_left",
+  "%Name":"obj_wall_left",
   "eventList":[],
   "managed":true,
-  "name":"spr_wall_left",
+  "name":"obj_wall_left",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Wall_Left",
-    "path":"sprites/spr_Wall_Left/spr_Wall_Left.yy",
+    "name":"spr_wall_left",
+    "path":"sprites/spr_wall_left/spr_wall_left.yy",
   },
   "spriteMaskId":null,
   "visible":true,

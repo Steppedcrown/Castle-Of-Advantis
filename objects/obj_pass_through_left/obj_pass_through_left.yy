@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Pass_Through_Left",
-    "path":"sprites/spr_Pass_Through_Left/spr_Pass_Through_Left.yy",
+    "name":"spr_pass_through_left",
+    "path":"sprites/spr_pass_through_left/spr_pass_through_left.yy",
   },
   "spriteMaskId":null,
   "visible":true,

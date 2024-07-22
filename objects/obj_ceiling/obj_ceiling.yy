@@ -6,8 +6,8 @@
   "name":"obj_ceiling",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Environment Objects",
+    "path":"folders/Objects/Environment Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -6,8 +6,8 @@
   "name":"obj_pass_through_right",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Environment Objects",
+    "path":"folders/Objects/Environment Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Pass_through_right",
-    "path":"sprites/spr_Pass_through_right/spr_Pass_through_right.yy",
+    "name":"spr_pass_through_right",
+    "path":"sprites/spr_pass_through_right/spr_pass_through_right.yy",
   },
   "spriteMaskId":null,
   "visible":true,

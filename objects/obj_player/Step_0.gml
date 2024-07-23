@@ -1,12 +1,10 @@
 // Get movement input
-rightKey = keyboard_check(ord("D")) || keyboard_check(vk_right);
-LeftKey = keyboard_check(ord("A")) || keyboard_check(vk_left);
-jumpKeyPressed = keyboard_check_pressed(vk_space);
+getControls();
 
 /* X Movement */
 
 // Update direction and speed
-moveDir = rightKey - LeftKey;
+moveDir = rightKey - leftKey;
 xspd = moveDir * moveSpd;
 
 // X collision
@@ -31,7 +29,11 @@ yspd += grav;
 if yspd > termVel {yspd = termVel;};
 
 // Jump
-if jumpKeyPressed && place_meeting(x, y+1, obj_wall) {
+if jumpKeyBuffered && place_meeting(x, y+1, obj_wall) {
+	// Reset the buffer
+	jumpKeyBuffered = 0;
+	jumpKeyBufferTimer = 0;
+	
 	yspd = jspd;
 }
 

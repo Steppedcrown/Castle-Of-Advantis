@@ -1,3 +1,6 @@
+// Controls setup
+controlsSetup();
+
 // Movement
 moveDir = 0;
 moveSpd = 2;

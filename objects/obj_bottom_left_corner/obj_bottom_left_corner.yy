@@ -6,8 +6,8 @@
   "name":"obj_bottom_left_corner",
   "overriddenProperties":[],
   "parent":{
-    "name":"Environment Objects",
-    "path":"folders/Objects/Environment Objects.yy",
+    "name":"Corners",
+    "path":"folders/Objects/Environment Objects/Corners.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",

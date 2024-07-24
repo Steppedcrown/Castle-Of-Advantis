@@ -6,8 +6,8 @@
   "name":"obj_wall_left",
   "overriddenProperties":[],
   "parent":{
-    "name":"Environment Objects",
-    "path":"folders/Objects/Environment Objects.yy",
+    "name":"Edges",
+    "path":"folders/Objects/Environment Objects/Edges.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",

@@ -6,8 +6,8 @@
   "name":"obj_pass_through_left",
   "overriddenProperties":[],
   "parent":{
-    "name":"Environment Objects",
-    "path":"folders/Objects/Environment Objects.yy",
+    "name":"Pass Throughs",
+    "path":"folders/Objects/Environment Objects/Pass Throughs.yy",
   },
   "parentObjectId":null,
   "persistent":false,

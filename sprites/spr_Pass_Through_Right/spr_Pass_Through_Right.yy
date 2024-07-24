@@ -44,8 +44,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Environment Sprites",
-    "path":"folders/Sprites/Environment Sprites.yy",
+    "name":"Pass Throughs",
+    "path":"folders/Sprites/Environment Sprites/Pass Throughs.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

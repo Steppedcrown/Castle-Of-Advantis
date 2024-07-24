@@ -44,8 +44,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Environment Sprites",
-    "path":"folders/Sprites/Environment Sprites.yy",
+    "name":"Blocks",
+    "path":"folders/Sprites/Environment Sprites/Blocks.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

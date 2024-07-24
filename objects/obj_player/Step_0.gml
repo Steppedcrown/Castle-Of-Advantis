@@ -24,12 +24,28 @@ x += xspd;
 
 /*---------------------------------- Y Movement ----------------------------------*/
 
-// Gravity
-yspd += grav;
+// Gravity + coyote time
+if coyoteHangTimer > 0 {
+	// Count timer down
+	coyoteHangTimer--;
+}
+else {
+	// Apply gravity
+	yspd += grav;
+	// No longer on the ground
+	setOnGround(false);
+}
 
 // Set/Reset jump variables
-if onGround {jumpCount = 0; jumpHoldTimer = 0;}
-else if jumpCount == 0 {jumpCount = 1;}
+if onGround {
+	jumpCount = 0; 
+	jumpHoldTimer = 0;
+	coyoteJumpTimer = coyoteJumpFrames;
+}
+else {
+	coyoteJumpTimer--;
+	if jumpCount == 0  && coyoteJumpTimer <= 0 {jumpCount = 1;}
+}
 
 // Initialize jump
 if jumpKeyBuffered && jumpCount < jumpMax {
@@ -42,6 +58,10 @@ if jumpKeyBuffered && jumpCount < jumpMax {
 	
 	// Set frames
 	jumpHoldTimer = jumpHoldFrames[jumpCount-1];
+	
+	// Player jumped and is no longer on the ground
+	setOnGround(false);
+	coyoteJumpTimer = 0;
 }
 
 // Jump based on timer
@@ -73,8 +93,9 @@ if place_meeting(x, y+yspd, obj_wall) {
 }
 
 // Set onGround
-if yspd >= 0 && place_meeting(x, y+1, obj_wall) {onGround = true;}
-else {onGround = false;}
+if yspd >= 0 && place_meeting(x, y+1, obj_wall) {
+	setOnGround(true);
+}
 
 // Move Y
 y += yspd;

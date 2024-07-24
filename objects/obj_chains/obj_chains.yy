@@ -6,8 +6,8 @@
   "name":"obj_chains",
   "overriddenProperties":[],
   "parent":{
-    "name":"Environment Objects",
-    "path":"folders/Objects/Environment Objects.yy",
+    "name":"Misc",
+    "path":"folders/Objects/Environment Objects/Misc.yy",
   },
   "parentObjectId":null,
   "persistent":false,

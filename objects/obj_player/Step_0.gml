@@ -3,9 +3,18 @@ getControls();
 
 /*---------------------------------- X Movement ----------------------------------*/
 
-// Update direction and speed
+// Get direction
 moveDir = rightKey - leftKey;
-xspd = moveDir * moveSpd;
+
+// Get face
+if moveDir < 0 {face = -1;}
+else if moveDir > 0 {face = 1;}
+
+// Get runType
+runType = runKey;
+
+// Get xspd
+xspd = moveDir * moveSpd[runType];
 
 // X collision
 var _subPixel = 0.5;
@@ -99,3 +108,15 @@ if yspd >= 0 && place_meeting(x, y+1, obj_wall) {
 
 // Move Y
 y += yspd;
+
+/*---------------------------------- Sprites ----------------------------------*/
+// Idle
+if xspd == 0 {sprite_index = idleSpr;}
+// Walking
+if abs(xspd) > 0 {sprite_index = walkSpr;}
+// Running
+if abs(xspd) >= moveSpd[1] {sprite_index = runSpr;}
+// Jumping/In air
+if !onGround {sprite_index = jumpSpr;}
+// Collision mask
+mask_index = maskSpr;

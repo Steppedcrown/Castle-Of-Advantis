@@ -19,13 +19,20 @@ xspd = moveDir * moveSpd[runType];
 // X collision
 var _subPixel = 0.5;
 if place_meeting(x+xspd, y, obj_wall) {
-	
-	// Move right up to wall
-	var _pixelCheck = _subPixel * sign(xspd);
-	while !place_meeting(x+_pixelCheck, y, obj_wall) {
-		x += _pixelCheck;
+	// Check for slope
+	if !place_meeting(x+xspd, y - abs(xspd)-1, obj_wall) {
+		// Move to top of pixel
+		while place_meeting(x+xspd, y, obj_wall) {y -= _subPixel;}
 	}
-	xspd = 0;
+	// If there is no slope, just do regular collision
+	else {
+		// Move right up to wall
+		var _pixelCheck = _subPixel * sign(xspd);
+		while !place_meeting(x+_pixelCheck, y, obj_wall) {
+			x += _pixelCheck;
+		}
+		xspd = 0;
+	}
 }
 
 // Move X

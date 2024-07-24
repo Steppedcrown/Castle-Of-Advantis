@@ -11,6 +11,7 @@
   "ResourceOrderSettings":[
     {"name":"obj_bottom_left_corner","order":13,"path":"objects/obj_bottom_left_corner/obj_bottom_left_corner.yy",},
     {"name":"obj_bottom_right_corner","order":14,"path":"objects/obj_bottom_right_corner/obj_bottom_right_corner.yy",},
+    {"name":"obj_camera","order":13,"path":"objects/obj_camera/obj_camera.yy",},
     {"name":"obj_chains","order":1,"path":"objects/obj_chains/obj_chains.yy",},
     {"name":"obj_floor","order":2,"path":"objects/obj_floor/obj_floor.yy",},
     {"name":"obj_hanging_fire","order":10,"path":"objects/obj_hanging_fire/obj_hanging_fire.yy",},
@@ -24,6 +25,7 @@
     {"name":"obj_wall_left","order":8,"path":"objects/obj_wall_left/obj_wall_left.yy",},
     {"name":"obj_wall_right","order":9,"path":"objects/obj_wall_right/obj_wall_right.yy",},
     {"name":"obj_wall","order":1,"path":"objects/obj_wall/obj_wall.yy",},
+    {"name":"rm_init","order":1,"path":"rooms/rm_init/rm_init.yy",},
     {"name":"spr_bottom_left_corner","order":12,"path":"sprites/spr_bottom_left_corner/spr_bottom_left_corner.yy",},
     {"name":"spr_bottom_right_corner","order":13,"path":"sprites/spr_bottom_right_corner/spr_bottom_right_corner.yy",},
     {"name":"spr_chains","order":1,"path":"sprites/spr_chains/spr_chains.yy",},

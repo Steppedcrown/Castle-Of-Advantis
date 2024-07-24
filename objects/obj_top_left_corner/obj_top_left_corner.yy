@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_ledge_block",
+  "%Name":"obj_top_left_corner",
   "eventList":[],
   "managed":true,
-  "name":"obj_ledge_block",
+  "name":"obj_top_left_corner",
   "overriddenProperties":[],
   "parent":{
     "name":"Environment Objects",
     "path":"folders/Objects/Environment Objects.yy",
   },
-  "parentObjectId":{
-    "name":"obj_wall",
-    "path":"objects/obj_wall/obj_wall.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ledge_block",
-    "path":"sprites/spr_ledge_block/spr_ledge_block.yy",
+    "name":"spr_top_left_corner",
+    "path":"sprites/spr_top_left_corner/spr_top_left_corner.yy",
   },
   "spriteMaskId":null,
   "visible":true,

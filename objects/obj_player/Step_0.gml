@@ -19,20 +19,30 @@ xspd = moveDir * moveSpd[runType];
 // X collision
 var _subPixel = 0.5;
 if place_meeting(x+xspd, y, obj_wall) {
-	// Check for slope
+	// Check for slope (optional: multiply xspd by 2 for slopes > 45 degrees)
 	if !place_meeting(x+xspd, y - abs(xspd)-1, obj_wall) {
 		// Move to top of pixel
 		while place_meeting(x+xspd, y, obj_wall) {y -= _subPixel;}
 	}
-	// If there is no slope, just do regular collision
+	// Then check for ceiling slope, otherwise just do regular collision
 	else {
-		// Move right up to wall
-		var _pixelCheck = _subPixel * sign(xspd);
-		while !place_meeting(x+_pixelCheck, y, obj_wall) {
-			x += _pixelCheck;
+		// Ceiling slope 
+		if !place_meeting(x+xspd, y + abs(xspd)+1, obj_wall) {
+			while place_meeting(x+xspd, y, obj_wall) {y += _subPixel;}
 		}
-		xspd = 0;
+		// Normal collision
+		else {
+			// Move right up to wall
+			var _pixelCheck = _subPixel * sign(xspd);
+			while !place_meeting(x+_pixelCheck, y, obj_wall) {x += _pixelCheck;}
+			xspd = 0;
+		}
 	}
+}
+
+// Go down slopes
+if yspd >= 0 && !place_meeting(x+xspd, y+1, obj_wall) && place_meeting(x+xspd, y + abs(xspd)+1, obj_wall) {
+		while !place_meeting(x+xspd, y+_subPixel, obj_wall) {y += _subPixel;}
 }
 
 // Move X
@@ -94,23 +104,51 @@ if !jumpKey {jumpHoldTimer = 0;}
 // Cap falling speed
 if yspd > termVel {yspd = termVel;};
 
-// Y collision
-_subPixel = 0.5;
-if place_meeting(x, y+yspd, obj_wall) {
+// Upwards Y collision (with ceiling slopes)
+if yspd < 0 && place_meeting(x, y+yspd, obj_wall) {
+	// Jump into sloped ceilings
+	var _slopeSlide = false;
+	// Slide up left slope
+	if moveDir == 0 && !place_meeting(x - abs(yspd)-1, y+yspd, obj_wall) {
+		while place_meeting(x, y+yspd, obj_wall) {x -= 1;}
+		_slopeSlide = true;
+	}
+	// Slide up right slope
+	if moveDir == 0 && !place_meeting(x + abs(yspd)+1, y+yspd, obj_wall) {
+		while place_meeting(x, y+yspd, obj_wall) {x += 1}
+		_slopeSlide = true;
+	}
 	
-	// Move right up to wall
-	var _pixelCheck = _subPixel * sign(yspd);
-	while !place_meeting(x, y+_pixelCheck, obj_wall) {y += _pixelCheck;}
+	// Normal Y collision
+	if !_slopeSlide {
+		
+		// Move right up to wall
+		var _pixelCheck = _subPixel * sign(yspd);
+		while !place_meeting(x, y+_pixelCheck, obj_wall) {y += _pixelCheck;}
 	
-	// Bonk code (optional)
-	if yspd < 0 {jumpHoldTimer = 0;}
+		// Bonk code (optional)
+		if yspd < 0 {jumpHoldTimer = 0;}
 	
-	yspd = 0;
+		yspd = 0;
+	}
+	
 }
 
-// Set onGround
-if yspd >= 0 && place_meeting(x, y+1, obj_wall) {
-	setOnGround(true);
+// Downwards Y collision
+_subPixel = 0.5;
+if yspd >= 0 {
+	if place_meeting(x, y+yspd, obj_wall) {
+	
+		// Move right up to wall
+		var _pixelCheck = _subPixel * sign(yspd);
+		while !place_meeting(x, y+_pixelCheck, obj_wall) {y += _pixelCheck;}
+		yspd = 0;
+	}
+
+	// Set onGround
+	if place_meeting(x, y+1, obj_wall) {
+		setOnGround(true);
+	}
 }
 
 // Move Y

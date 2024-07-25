@@ -40,8 +40,8 @@ jumpMax = 2;
 jumpCount = 0;
 jumpHoldTimer = 0;
 // Values for successive jumps
-jumpHoldFrames[0] = 10;
-jumpHoldFrames[1] = 6;
+jumpHoldFrames[0] = 15;
+jumpHoldFrames[1] = 10;
 jspd[0] = -3.25;
 jspd[1] = -2.9;
 

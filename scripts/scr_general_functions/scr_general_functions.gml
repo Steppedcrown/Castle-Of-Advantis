@@ -1,3 +1,9 @@
+function centerOnX (obj) {
+	with (obj) {
+		x = camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])/2 - sprite_width/2;
+	}
+}
+
 function controlsSetup() {
 	// Set buffer frame amount for all inputs
 	bufferTime = 5;
@@ -7,7 +13,13 @@ function controlsSetup() {
 	jumpKeyBufferTimer = 0;
 }
 
-function getControls() {
+function getMenuControls() {
+	up = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W")) || gamepad_button_check_pressed(0, gp_padu);
+	down = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S")) || gamepad_button_check_pressed(0, gp_padd);
+	select = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1);
+}
+
+function getPlayerControls() {
 	/*---------------------------------- Directional Inputs ----------------------------------*/
 	// Joystick
 	gpDeadzone = gamepad_set_axis_deadzone(0, 0.15);

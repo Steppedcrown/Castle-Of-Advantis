@@ -1,5 +1,5 @@
 // Get movement input
-getControls();
+getPlayerControls();
 
 /*---------------------------------- X Movement ----------------------------------*/
 

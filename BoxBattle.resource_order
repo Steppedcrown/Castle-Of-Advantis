@@ -48,6 +48,7 @@
     {"name":"obj_slope_top_right_long","order":10,"path":"objects/obj_slope_top_right_long/obj_slope_top_right_long.yy",},
     {"name":"obj_slope_top_right_medium","order":6,"path":"objects/obj_slope_top_right_medium/obj_slope_top_right_medium.yy",},
     {"name":"obj_slope_top_right_short","order":3,"path":"objects/obj_slope_top_right_short/obj_slope_top_right_short.yy",},
+    {"name":"obj_title_menu","order":5,"path":"objects/obj_title_menu/obj_title_menu.yy",},
     {"name":"obj_title","order":4,"path":"objects/obj_title/obj_title.yy",},
     {"name":"obj_top_left_corner","order":2,"path":"objects/obj_top_left_corner/obj_top_left_corner.yy",},
     {"name":"obj_top_right_corner","order":3,"path":"objects/obj_top_right_corner/obj_top_right_corner.yy",},

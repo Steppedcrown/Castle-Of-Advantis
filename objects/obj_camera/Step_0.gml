@@ -1,3 +1,6 @@
+// Go to main menu
+if keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0, gp_start) {room_goto(rm_title_screen);}
+
 // Toggle fullscreen
 if keyboard_check_pressed(vk_f11) {
 	window_set_fullscreen(!window_get_fullscreen());

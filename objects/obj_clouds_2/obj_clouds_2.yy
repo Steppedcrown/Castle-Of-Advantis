@@ -1,7 +1,10 @@
 {
   "$GMObject":"",
   "%Name":"obj_clouds_2",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_clouds_2",
   "overriddenProperties":[],
@@ -9,7 +12,10 @@
     "name":"Title Screen",
     "path":"folders/Objects/Title Screen.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_clouds_1",
+    "path":"objects/obj_clouds_1/obj_clouds_1.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

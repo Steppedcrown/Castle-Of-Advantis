@@ -76,6 +76,7 @@
     {"id":{"name":"obj_slope_top_right_long","path":"objects/obj_slope_top_right_long/obj_slope_top_right_long.yy",},},
     {"id":{"name":"obj_slope_top_right_medium","path":"objects/obj_slope_top_right_medium/obj_slope_top_right_medium.yy",},},
     {"id":{"name":"obj_slope_top_right_short","path":"objects/obj_slope_top_right_short/obj_slope_top_right_short.yy",},},
+    {"id":{"name":"obj_title_menu","path":"objects/obj_title_menu/obj_title_menu.yy",},},
     {"id":{"name":"obj_title","path":"objects/obj_title/obj_title.yy",},},
     {"id":{"name":"obj_top_left_corner","path":"objects/obj_top_left_corner/obj_top_left_corner.yy",},},
     {"id":{"name":"obj_top_right_corner","path":"objects/obj_top_right_corner/obj_top_right_corner.yy",},},
@@ -133,8 +134,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
-    {"roomId":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
     {"roomId":{"name":"rm_title_screen","path":"rooms/rm_title_screen/rm_title_screen.yy",},},
+    {"roomId":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

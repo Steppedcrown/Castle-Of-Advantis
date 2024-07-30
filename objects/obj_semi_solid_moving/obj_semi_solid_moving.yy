@@ -1,13 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_pass_through_middle",
-  "eventList":[],
+  "%Name":"obj_semi_solid_moving",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_pass_through_middle",
+  "name":"obj_semi_solid_moving",
   "overriddenProperties":[],
   "parent":{
-    "name":"Pass Throughs",
-    "path":"folders/Objects/Environment Objects/Pass Throughs.yy",
+    "name":"Walls",
+    "path":"folders/Objects/Walls.yy",
   },
   "parentObjectId":{
     "name":"obj_semi_solid_wall",
@@ -31,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_pass_through_middle",
-    "path":"sprites/spr_pass_through_middle/spr_pass_through_middle.yy",
+    "name":"spr_semi_solid_moving",
+    "path":"sprites/spr_semi_solid_moving/spr_semi_solid_moving.yy",
   },
   "spriteMaskId":null,
   "visible":true,

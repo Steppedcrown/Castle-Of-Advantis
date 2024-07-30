@@ -9,7 +9,10 @@
     "name":"Pass Throughs",
     "path":"folders/Objects/Environment Objects/Pass Throughs.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_semi_solid_wall",
+    "path":"objects/obj_semi_solid_wall/obj_semi_solid_wall.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

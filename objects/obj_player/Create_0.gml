@@ -6,9 +6,12 @@ function setOnGround (_val = true) {
 	}
 	else {
 		onGround = false;
+		myFloorPlat = noone;
 		coyoteHangTimer = 0;
 	}
 }
+
+depth = -30;
 
 /*---------------------------------- Controls setup ----------------------------------*/
 controlsSetup();
@@ -52,3 +55,8 @@ coyoteHangTimer = 0;
 // Jump buffer time
 coyoteJumpFrames = 10;
 coyoteJumpTimer = 0;
+
+/*---------------------------------- Moving platforms ----------------------------------*/
+myFloorPlat = noone;
+movePlatXspd = 0;
+movePlatMaxYspd = termVel; // How fast player can follow downwards moving platform

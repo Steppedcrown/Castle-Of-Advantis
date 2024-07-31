@@ -45,6 +45,9 @@ if yspd >= 0 && !place_meeting(x+xspd, y+1, obj_wall) && place_meeting(x+xspd, y
 		while !place_meeting(x+xspd, y+_subPixel, obj_wall) {y += _subPixel;}
 }
 
+// Pause movement
+if instance_exists(obj_pauser) {xspd = 0;}
+
 // Move X
 x += xspd;
 
@@ -238,3 +241,9 @@ if abs(xspd) >= moveSpd[1] {sprite_index = runSpr;}
 if !onGround {sprite_index = jumpSpr;}
 // Collision mask
 mask_index = maskSpr;
+
+/*---------------------------------- Out of play area ----------------------------------*/
+if room == rm_title_screen {
+	x = -999;
+	y = -999;
+}

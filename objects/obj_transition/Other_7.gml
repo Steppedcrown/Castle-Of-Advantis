@@ -3,4 +3,4 @@ obj_player.x = target_x;
 obj_player.y = target_y;
 obj_player.moveDir = moveDir;
 
-image_speed = -1;
+image_speed = imageSpd;

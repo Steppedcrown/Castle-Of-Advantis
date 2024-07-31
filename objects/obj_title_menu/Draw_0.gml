@@ -4,7 +4,7 @@ draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 
 // Find center
-var _center = camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])/2;
+var _center = centerOnX();
 
 // Update which menu we are in
 op_length = array_length(options[menu_depth]);

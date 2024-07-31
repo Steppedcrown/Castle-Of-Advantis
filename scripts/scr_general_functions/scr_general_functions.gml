@@ -1,7 +1,23 @@
-function centerOnX (obj) {
-	with (obj) {
-		x = camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])/2 - sprite_width/2;
+function centerOnX (obj=noone) {
+	if obj != noone {
+		with (obj) {
+			x = camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])/2 - sprite_width/2;
+		}
 	}
+	else {
+		return camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])/2;
+	}
+}
+
+function playTransition (_rm=rm_title_screen, _x=-999, _y=-999, _dir=1, _spd = -1) {
+	if !instance_exists(obj_transition) {
+		var inst = instance_create_depth(0, 0, -9999, obj_transition);
+		inst.target_rm = _rm;
+		inst.target_x = _x;
+		inst.target_y = _y;
+		inst.moveDir = _dir;
+		inst.imageSpd = _spd;
+	}	
 }
 
 function controlsSetup() {

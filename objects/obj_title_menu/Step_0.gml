@@ -16,25 +16,13 @@ if select {
 			switch (pos) {
 				// Start game
 				case 0: 
-					if !instance_exists(obj_transition) {
-						var inst = instance_create_depth(0, 0, -9999, obj_transition);
-						inst.target_rm = rm_main;
-						inst.target_x = 270;
-						inst.target_y = 315;
-						inst.moveDir = 1;
-					}
+					playTransition(rm_main, 270, 315);
 					break;
 				// Settings
 				case 1: menu_depth++; pos = 0; break;
 				// Quit game
 				case 2: 
-					if !instance_exists(obj_transition) {
-						var inst = instance_create_depth(0, 0, -9999, obj_transition);
-						inst.target_rm = rm_quit;
-						inst.target_x = -999;
-						inst.target_y = -999;
-						inst.moveDir = 1;
-					}
+					playTransition(rm_quit);
 					//game_end(); 
 					break;
 			}

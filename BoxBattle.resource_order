@@ -1,6 +1,5 @@
 {
   "FolderOrderSettings":[
-    {"name":"Fonts","order":3,"path":"folders/Fonts.yy",},
     {"name":"Objects","order":4,"path":"folders/Objects.yy",},
     {"name":"Environment Objects","order":12,"path":"folders/Objects/Environment Objects.yy",},
     {"name":"Blocks","order":3,"path":"folders/Objects/Environment Objects/Blocks.yy",},
@@ -8,6 +7,7 @@
     {"name":"Misc","order":4,"path":"folders/Objects/Environment Objects/Misc.yy",},
     {"name":"Pass Throughs","order":2,"path":"folders/Objects/Environment Objects/Pass Throughs.yy",},
     {"name":"Slopes","order":5,"path":"folders/Objects/Environment Objects/Slopes.yy",},
+    {"name":"Fonts","order":16,"path":"folders/Objects/Fonts.yy",},
     {"name":"Title Screen","order":14,"path":"folders/Objects/Title Screen.yy",},
     {"name":"Walls","order":15,"path":"folders/Objects/Walls.yy",},
     {"name":"Rooms","order":5,"path":"folders/Rooms.yy",},
@@ -18,7 +18,7 @@
     {"name":"Misc","order":3,"path":"folders/Sprites/Environment Sprites/Misc.yy",},
     {"name":"Pass Throughs","order":4,"path":"folders/Sprites/Environment Sprites/Pass Throughs.yy",},
     {"name":"Slopes","order":5,"path":"folders/Sprites/Environment Sprites/Slopes.yy",},
-    {"name":"Font","order":5,"path":"folders/Sprites/Font.yy",},
+    {"name":"Fonts","order":5,"path":"folders/Sprites/Fonts.yy",},
     {"name":"Player Sprites","order":2,"path":"folders/Sprites/Player Sprites.yy",},
     {"name":"Title Screen","order":3,"path":"folders/Sprites/Title Screen.yy",},
     {"name":"Walls","order":4,"path":"folders/Sprites/Walls.yy",},
@@ -66,7 +66,7 @@
     {"name":"spr_ceiling","order":2,"path":"sprites/spr_ceiling/spr_ceiling.yy",},
     {"name":"spr_clouds_2","order":1,"path":"sprites/spr_clouds_2/spr_clouds_2.yy",},
     {"name":"spr_floor","order":3,"path":"sprites/spr_floor/spr_floor.yy",},
-    {"name":"spr_font","order":1,"path":"sprites/spr_font/spr_font.yy",},
+    {"name":"spr_font_main","order":1,"path":"sprites/spr_font_main/spr_font_main.yy",},
     {"name":"spr_hanging_fire","order":1,"path":"sprites/spr_hanging_fire/spr_hanging_fire.yy",},
     {"name":"spr_pass_through_middle","order":1,"path":"sprites/spr_pass_through_middle/spr_pass_through_middle.yy",},
     {"name":"spr_pass_through_right","order":2,"path":"sprites/spr_pass_through_right/spr_pass_through_right.yy",},

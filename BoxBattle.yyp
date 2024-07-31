@@ -47,6 +47,7 @@
   "resources":[
     {"id":{"name":"obj_among_us","path":"objects/obj_among_us/obj_among_us.yy",},},
     {"id":{"name":"obj_background","path":"objects/obj_background/obj_background.yy",},},
+    {"id":{"name":"obj_bg_fire","path":"objects/obj_bg_fire/obj_bg_fire.yy",},},
     {"id":{"name":"obj_bottom_left_corner","path":"objects/obj_bottom_left_corner/obj_bottom_left_corner.yy",},},
     {"id":{"name":"obj_bottom_right_corner","path":"objects/obj_bottom_right_corner/obj_bottom_right_corner.yy",},},
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},},
@@ -90,6 +91,7 @@
     {"id":{"name":"scr_general_functions","path":"scripts/scr_general_functions/scr_general_functions.yy",},},
     {"id":{"name":"spr_among_us","path":"sprites/spr_among_us/spr_among_us.yy",},},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},},
+    {"id":{"name":"spr_bg_fire","path":"sprites/spr_bg_fire/spr_bg_fire.yy",},},
     {"id":{"name":"spr_bottom_left_corner","path":"sprites/spr_bottom_left_corner/spr_bottom_left_corner.yy",},},
     {"id":{"name":"spr_bottom_right_corner","path":"sprites/spr_bottom_right_corner/spr_bottom_right_corner.yy",},},
     {"id":{"name":"spr_button","path":"sprites/spr_button/spr_button.yy",},},

@@ -26,6 +26,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_background","order":6,"path":"objects/obj_background/obj_background.yy",},
+    {"name":"obj_bg_fire","order":7,"path":"objects/obj_bg_fire/obj_bg_fire.yy",},
     {"name":"obj_bottom_right_corner","order":1,"path":"objects/obj_bottom_right_corner/obj_bottom_right_corner.yy",},
     {"name":"obj_button","order":3,"path":"objects/obj_button/obj_button.yy",},
     {"name":"obj_camera","order":13,"path":"objects/obj_camera/obj_camera.yy",},
@@ -59,6 +60,7 @@
     {"name":"rm_title_screen","order":2,"path":"rooms/rm_title_screen/rm_title_screen.yy",},
     {"name":"spr_among_us","order":3,"path":"sprites/spr_among_us/spr_among_us.yy",},
     {"name":"spr_background","order":6,"path":"sprites/spr_background/spr_background.yy",},
+    {"name":"spr_bg_fire","order":7,"path":"sprites/spr_bg_fire/spr_bg_fire.yy",},
     {"name":"spr_bottom_right_corner","order":1,"path":"sprites/spr_bottom_right_corner/spr_bottom_right_corner.yy",},
     {"name":"spr_button","order":4,"path":"sprites/spr_button/spr_button.yy",},
     {"name":"spr_ceiling","order":2,"path":"sprites/spr_ceiling/spr_ceiling.yy",},

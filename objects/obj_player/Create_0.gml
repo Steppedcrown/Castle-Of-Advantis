@@ -39,13 +39,13 @@ grav = 0.4;
 termVel = 4;
 onGround = true;
 // Advanced jumping
-jumpMax = 2;
+jumpMax = 1;
 jumpCount = 0;
 jumpHoldTimer = 0;
 // Values for successive jumps
 jumpHoldFrames[0] = 15;
 jumpHoldFrames[1] = 10;
-jspd[0] = -3.25;
+jspd[0] = -2.5;
 jspd[1] = -2.9;
 
 /*---------------------------------- Coyote time ----------------------------------*/

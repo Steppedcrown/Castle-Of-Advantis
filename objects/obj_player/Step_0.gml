@@ -11,7 +11,7 @@ if moveDir < 0 {face = -1;}
 else if moveDir > 0 {face = 1;}
 
 // Get runType
-runType = runKey;
+runType = 0;
 
 // Get xspd
 xspd = moveDir * moveSpd[runType];

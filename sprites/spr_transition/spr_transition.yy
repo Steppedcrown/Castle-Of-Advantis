@@ -68,7 +68,7 @@
     },
     "name":"spr_transition",
     "playback":1,
-    "playbackSpeed":24.0,
+    "playbackSpeed":22.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",

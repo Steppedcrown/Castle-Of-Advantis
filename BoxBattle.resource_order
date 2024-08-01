@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings":[
     {"name":"Objects","order":4,"path":"folders/Objects.yy",},
+    {"name":"Enemies","order":20,"path":"folders/Objects/Enemies.yy",},
     {"name":"Environment Objects","order":12,"path":"folders/Objects/Environment Objects.yy",},
     {"name":"Blocks","order":3,"path":"folders/Objects/Environment Objects/Blocks.yy",},
     {"name":"Edges","order":1,"path":"folders/Objects/Environment Objects/Edges.yy",},
@@ -8,7 +9,6 @@
     {"name":"Pass Throughs","order":2,"path":"folders/Objects/Environment Objects/Pass Throughs.yy",},
     {"name":"Slopes","order":5,"path":"folders/Objects/Environment Objects/Slopes.yy",},
     {"name":"Fonts","order":16,"path":"folders/Objects/Fonts.yy",},
-    {"name":"Enemies","order":20,"path":"folders/Objects/Enemies.yy",},
     {"name":"Room Transitions","order":19,"path":"folders/Objects/Room Transitions.yy",},
     {"name":"Title Screen","order":14,"path":"folders/Objects/Title Screen.yy",},
     {"name":"Walls","order":15,"path":"folders/Objects/Walls.yy",},

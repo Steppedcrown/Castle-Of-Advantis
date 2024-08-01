@@ -11,6 +11,7 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Objects/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Environment Objects","folderPath":"folders/Objects/Environment Objects.yy","name":"Environment Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Blocks","folderPath":"folders/Objects/Environment Objects/Blocks.yy","name":"Blocks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Corners","folderPath":"folders/Objects/Environment Objects/Corners.yy","name":"Corners","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -19,7 +20,6 @@
     {"$GMFolder":"","%Name":"Pass Throughs","folderPath":"folders/Objects/Environment Objects/Pass Throughs.yy","name":"Pass Throughs","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Slopes","folderPath":"folders/Objects/Environment Objects/Slopes.yy","name":"Slopes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Objects/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Objects/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Room Transitions","folderPath":"folders/Objects/Room Transitions.yy","name":"Room Transitions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Title Screen","folderPath":"folders/Objects/Title Screen.yy","name":"Title Screen","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Walls","folderPath":"folders/Objects/Walls.yy","name":"Walls","resourceType":"GMFolder","resourceVersion":"2.0",},

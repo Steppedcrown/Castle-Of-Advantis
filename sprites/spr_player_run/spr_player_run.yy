@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Maria",
-    "path":"folders/Sprites/Player Sprites/Maria.yy",
+    "name":"Knight",
+    "path":"folders/Sprites/Player Sprites/Knight.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

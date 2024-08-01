@@ -17,11 +17,11 @@ depth = -30;
 controlsSetup();
 
 /*---------------------------------- Sprites ----------------------------------*/
-maskSpr = spr_player_idle;
-idleSpr = spr_player_idle;
-walkSpr = spr_player_walk;
+maskSpr = spr_knight_idle;
+idleSpr = spr_knight_idle;
+walkSpr = spr_knight_walk;
 runSpr = spr_player_run;
-jumpSpr = spr_player_jump;
+jumpSpr = spr_knight_jump;
 
 /*---------------------------------- Combat ----------------------------------*/
 maxHp = 1;

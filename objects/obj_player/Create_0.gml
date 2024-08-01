@@ -20,11 +20,11 @@ controlsSetup();
 maskSpr = spr_knight_idle;
 idleSpr = spr_knight_idle;
 walkSpr = spr_knight_walk;
-runSpr = spr_player_run;
+runSpr = spr_knight_run;
 jumpSpr = spr_knight_jump;
 
 /*---------------------------------- Combat ----------------------------------*/
-maxHp = 1;
+maxHp = 5;
 hp = maxHp;
 
 /*---------------------------------- Movement ----------------------------------*/

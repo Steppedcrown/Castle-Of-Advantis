@@ -11,7 +11,8 @@ initX = 0;
 initY = 0;
 rangeX = 0;
 rangeY = 0;
-finalX = 0;
+finalX = noone;
+finalY = noone;
 
 /*---------------------------------- Damage ----------------------------------*/
 damage = 0;

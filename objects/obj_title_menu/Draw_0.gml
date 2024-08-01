@@ -42,3 +42,8 @@ for (var i = 0; i < op_length; i++) {
 	var _currString = options[menu_depth][i]
 	draw_text_color(_center - string_width(_currString)/2, _currY + text_space - string_height(_currString)/2, _currString, _color, _color, _color, _color, 1);
 }
+
+/*---------------------------------- Death ----------------------------------*/
+if global.player_deaths > 0 {
+	draw_text_transformed_color(40, 80, string_concat("DEATHS: ", global.player_deaths) , 3, 3, 30, c_red, c_red, c_red, c_red, 1);
+}

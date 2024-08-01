@@ -23,6 +23,10 @@ walkSpr = spr_player_walk;
 runSpr = spr_player_run;
 jumpSpr = spr_player_jump;
 
+/*---------------------------------- Combat ----------------------------------*/
+maxHp = 1;
+hp = maxHp;
+
 /*---------------------------------- Movement ----------------------------------*/
 face = 1;
 moveDir = 0;

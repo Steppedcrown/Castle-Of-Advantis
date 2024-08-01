@@ -1,6 +1,13 @@
 // Get movement input
 getPlayerControls();
 
+/*---------------------------------- DEATH ----------------------------------*/
+if hp <= 0 {
+	hp = maxHp;
+	global.player_deaths++;
+	playTransition();
+}
+
 /*---------------------------------- X Movement ----------------------------------*/
 
 // Get direction
@@ -11,7 +18,7 @@ if moveDir < 0 {face = -1;}
 else if moveDir > 0 {face = 1;}
 
 // Get runType
-runType = 0;
+runType = 0; // set to runKey to enable sprinting
 
 // Get xspd
 xspd = moveDir * moveSpd[runType];
@@ -176,7 +183,7 @@ if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatMaxYspd, myFloo
 // Land on platform
 if instance_exists(myFloorPlat) {
 	// Move up to wall
-	var _subPixel = 0.5;
+	_subPixel = 0.5;
 	while !place_meeting(x, y + _subPixel, myFloorPlat) && !place_meeting(x, y, obj_wall) {y += _subPixel;}
 	// Make sure we do not end up below the top of a semi-solid
 	if myFloorPlat.object_index == obj_semi_solid_wall || object_is_ancestor(myFloorPlat.object_index, obj_semi_solid_wall) {
@@ -198,7 +205,7 @@ movePlatXspd = 0;
 if instance_exists(myFloorPlat) {movePlatXspd = myFloorPlat.xspd;}
 // Move with movePlatXspd
 if place_meeting(x + movePlatXspd, y, obj_wall) {
-	var _subPixel = 0.5;
+	_subPixel = 0.5;
 	var _pixelCheck = _subPixel * sign(movePlatXspd);
 	while !place_meeting(x + _pixelCheck, y, obj_wall) {x += _pixelCheck;}
 	movePlatXspd = 0;
@@ -219,7 +226,7 @@ if instance_exists(myFloorPlat) && (myFloorPlat.yspd != 0
 	if myFloorPlat.yspd < 0 && place_meeting(x, y-1, obj_wall) {
 			if myFloorPlat.object_index == obj_semi_solid_moving || object_is_ancestor(myFloorPlat.object_index, obj_semi_solid_moving) {
 				// Get pushed down through semi-solid
-				var _subPixel = 0.25;
+				_subPixel = 0.25;
 				while place_meeting(x, y-1, obj_wall) {y += _subPixel;}
 				// If player got pushed into solid wall while going down, push player back out
 				while place_meeting(x, y, obj_wall) {y -= _subPixel;}

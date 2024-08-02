@@ -1,31 +1,28 @@
 // Find rotation
-var _x;
-var _y;
+var _x = mouse_x - x;
+var _y = mouse_y - y;
 
-if mouse_x - x > 0 {_x = 1;}
-else if mouse_x - x < 0 {_x = -1;}
-else {_x = 0;}
-
-if mouse_y - y > 0 {_y = -1;}
-else if mouse_y - y < 0 {_y = 1;}
-else {_y = 0;}
-
-// Find quadrant
-var _angle = image_angle;
+// Rotate
 if canRotate {
-	switch (global.player.face) {
-		// Facing right
-		case 1:
-			if _y == 1 {_angle = 45;} // Up
-			else if _y == -1 {_angle = 315;} // Down
-			else {_angle = 0;} // Forward
-			break;
-		// Facing left
-		case -1:
-			if _y == 1 {_angle = -45;} // Up
-			else if _y == -1 {_angle = -315;} // Down
-			else {_angle = 0;} // Forward
-			break;
+	// Find angle
+	var _angle = arctan2(_y, _x) * -180 / pi;
+	
+	// Cap angle
+	// Up and right
+	if  _angle <= 90 && _angle > 45{
+		_angle = 60;
+	}
+	// Up and left
+	if _angle >= 90 && _angle < 135 {
+		_angle = 120;	
+	}
+	// Down and right
+	if _angle >= 270 && _angle < 315 {
+		_angle = 315;	
+	}
+	// Down and left
+	if _angle <= 270 && _angle > 225 {
+		_angle = 225;
 	}
 }
 

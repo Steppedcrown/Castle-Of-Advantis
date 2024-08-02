@@ -1,18 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_knight_head",
-  "eventList":[],
+  "%Name":"obj_player_head_template",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_knight_head",
+  "name":"obj_player_head_template",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player Objects",
-    "path":"folders/Objects/Player Objects.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"obj_player_head_template",
-    "path":"objects/obj_player_head_template/obj_player_head_template.yy",
-  },
+  "parentObjectId":null,
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

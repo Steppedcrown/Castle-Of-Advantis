@@ -16,7 +16,7 @@ if select {
 			switch (pos) {
 				// Start game
 				case 0: 
-					playTransition(rm_main, 270, 315);
+					playTransition(rm_main, 38, 335);
 					break;
 				// Settings
 				case 1: menu_depth++; pos = 0; break;

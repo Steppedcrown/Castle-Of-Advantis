@@ -17,7 +17,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":24,
+  "height":10,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"b5cbf563-fa11-4cd5-8b6f-09af80292ab0","blendMode":0,"displayName":"default","isLocked":false,"name":"b5cbf563-fa11-4cd5-8b6f-09af80292ab0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -60,7 +60,7 @@
     },
     "name":"spr_knight_head_idle",
     "playback":1,
-    "playbackSpeed":30.0,
+    "playbackSpeed":2.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -80,7 +80,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":10,
-    "yorigin":24,
+    "yorigin":10,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
@@ -90,5 +90,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":18,
+  "width":16,
 }

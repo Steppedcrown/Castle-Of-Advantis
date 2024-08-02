@@ -11,8 +11,6 @@ function setOnGround (_val = true) {
 	}
 }
 
-depth = -30;
-
 /*---------------------------------- Controls setup ----------------------------------*/
 controlsSetup();
 
@@ -23,8 +21,12 @@ walkSpr = spr_knight_walk;
 runSpr = spr_knight_run;
 jumpSpr = spr_knight_jump;
 
+// Depth
+playerDepth = -30;
+depth = playerDepth;
+
 /*---------------------------------- Combat ----------------------------------*/
-maxHp = 5;
+maxHp = 100;
 hp = maxHp;
 
 /*---------------------------------- Movement ----------------------------------*/

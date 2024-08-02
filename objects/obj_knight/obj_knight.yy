@@ -10,8 +10,8 @@
   "name":"obj_knight",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Player Objects",
+    "path":"folders/Objects/Player Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_player_template",

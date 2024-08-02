@@ -4,8 +4,8 @@ moveDirY = 0;
 moveSpd = 1;
 xspd = 0;
 yspd = 0;
-paddingX = 100;
-paddingY = 0;
+paddingX = 80;
+paddingY = 40;
 
 /*---------------------------------- Combat ----------------------------------*/
 inRangeX = false;

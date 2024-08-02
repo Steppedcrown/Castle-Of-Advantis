@@ -56,6 +56,12 @@ if inRange {
 			// Store initial x and y coords
 			_proj.initX = x;
 			_proj.initY = y;
+			// Set moveSpd for x and y directions
+			//var _distToPlayer = distance_to_object(global.player);
+			var _xToPlayer = abs(x - global.player.x);
+			var _yToPlayer = abs(y - global.player.y);
+			_proj.moveSpdX = _xToPlayer / _yToPlayer;
+			_proj.moveSpdY = _yToPlayer / _xToPlayer;
 			// Pass on range of enemy
 			_proj.rangeX = rangeX;
 			_proj.rangeY = rangeY;

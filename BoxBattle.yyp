@@ -104,6 +104,7 @@
     {"id":{"name":"scr_general_functions","path":"scripts/scr_general_functions/scr_general_functions.yy",},},
     {"id":{"name":"scr_global_variables","path":"scripts/scr_global_variables/scr_global_variables.yy",},},
     {"id":{"name":"knight_head","path":"sprites/knight_head/knight_head.yy",},},
+    {"id":{"name":"knight_swing_1","path":"sprites/knight_swing_1/knight_swing_1.yy",},},
     {"id":{"name":"spr_among_us","path":"sprites/spr_among_us/spr_among_us.yy",},},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},},
     {"id":{"name":"spr_bg_fire","path":"sprites/spr_bg_fire/spr_bg_fire.yy",},},

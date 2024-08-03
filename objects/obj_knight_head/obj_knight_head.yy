@@ -10,8 +10,8 @@
     "path":"folders/Objects/Player Objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_player_head_template",
-    "path":"objects/obj_player_head_template/obj_player_head_template.yy",
+    "name":"objT_player_head",
+    "path":"objects/objT_player_head/objT_player_head.yy",
   },
   "persistent":true,
   "physicsAngularDamping":0.1,

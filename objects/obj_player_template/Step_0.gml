@@ -17,11 +17,6 @@ moveDir = rightKey - leftKey;
 if mouse_x - x > 0 {face = 1;}
 else if mouse_x - x < 0 {face = -1;}
 
-/*
-if moveDir < 0 {face = -1;}
-else if moveDir > 0 {face = 1;}
-*/
-
 // Get runType
 runType = 0; // set to runKey to enable sprinting
 

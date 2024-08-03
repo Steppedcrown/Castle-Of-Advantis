@@ -4,15 +4,24 @@ moveDirY = 0;
 moveSpd = 1;
 xspd = 0;
 yspd = 0;
-paddingX = 80;
-paddingY = 40;
+paddingX = 100;
+paddingY = 100;
 
 /*---------------------------------- Combat ----------------------------------*/
+// Range
 inRangeX = false;
 inRangeY = false;
 inRange = false;
 rangeX = paddingX * 2;
 rangeY = paddingY * 2;
+// Attack speed
 attackSpd = 90;
 attackTimer = attackSpd;
+// Projectile
 damage = 1;
+projSpd = 2;
+maxMoveSpd = 3;
+moveSpdMargin = 2;
+homing = true;
+tempHoming = true;
+homingCount = attackSpd / 4;

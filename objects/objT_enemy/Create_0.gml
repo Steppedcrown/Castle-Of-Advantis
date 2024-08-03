@@ -25,7 +25,7 @@ maxMoveSpd = 3;
 moveSpdMargin = 0;
 // Homing
 homing = true;
-tempHoming = false;
+tempHoming = true;
 minSpd = 75; // 100 to disable
-homingCount = attackSpd * 4;
-homingLagCount = 0;
+homingCount = attackSpd / 2;
+homingLagCount = 15;

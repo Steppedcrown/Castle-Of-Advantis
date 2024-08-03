@@ -40,10 +40,9 @@ if startupFrame || homing {
 	if moveSpdY == 0 {moveSpdX = maxMoveSpd;}
 	
 	// Cap move speeds
-	var _count = 0;
 	var _modifier = 0.5;
-	while moveSpdX > maxMoveSpd+moveSpdMargin && _count < 2 {moveSpdX *= _modifier; moveSpdY *= _modifier;}
-	while moveSpdY > maxMoveSpd+moveSpdMargin && _count < 2 {moveSpdX *= _modifier; moveSpdY *= _modifier;}
+	while moveSpdX > maxMoveSpd+moveSpdMargin {moveSpdX *= _modifier; moveSpdY *= _modifier;}
+	while moveSpdY > maxMoveSpd+moveSpdMargin {moveSpdX *= _modifier; moveSpdY *= _modifier;}
 	
 	// Will no longer be on first frame
 	startupFrame = false;

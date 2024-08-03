@@ -4,7 +4,7 @@ moveDirY = 0;
 moveSpd = 1;
 xspd = 0;
 yspd = 0;
-paddingX = 0;
+paddingX = 100;
 paddingY = 100;
 
 /*---------------------------------- Combat ----------------------------------*/
@@ -25,6 +25,7 @@ maxMoveSpd = 3;
 moveSpdMargin = 0;
 // Homing
 homing = true;
-tempHoming = true;
-homingCount = attackSpd * 2;
-homingLagCount = 15;
+tempHoming = false;
+minSpd = 75; // 100 to disable
+homingCount = attackSpd * 4;
+homingLagCount = 0;

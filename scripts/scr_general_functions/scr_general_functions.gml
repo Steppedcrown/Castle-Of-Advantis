@@ -9,7 +9,7 @@ function centerOnX (obj=noone) {
 	}
 }
 
-function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, moveSpdMargin, homing, tempHoming, homingCount, homingLagCount) {
+function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, moveSpdMargin, homing, tempHoming, homingCount, homingLagCount, minSpd) {
 	var _proj = instance_create_depth(x, y - sprite_height/2, -40, projectile);
 	// Determine x direction
 	if x < global.player.x {_proj.moveDirX = 1;}
@@ -39,7 +39,8 @@ function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, mo
 	_proj.homing = homing;
 	_proj.tempHoming = tempHoming;
 	_proj.homingCount = homingCount;
-	_proj.homingLag = homingLagCount;
+	_proj.homingLagCount = homingLagCount;
+	_proj.minSpd = minSpd;
 }
 
 function playTransition (_rm=rm_title_screen, _x=-999, _y=-999, _dir=1, _spd = -1) {

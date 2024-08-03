@@ -22,10 +22,14 @@ damage = 0;
 // Homing
 homing = false;
 tempHoming = false;
+minSpd = 0;
 homingCount = 0;
 homingTimer = 0;
 homingLagCount = 0;
 homingLagTimer = 0;
+// x y array
+coordinate_list = ds_list_create();
 
 /*---------------------------------- Misc ----------------------------------*/
 startupFrame = true;
+destroyed = false;

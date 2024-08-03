@@ -9,8 +9,8 @@ function centerOnX (obj=noone) {
 	}
 }
 
-function createProj (rangeX, rangeY, damage, projSpd, maxMoveSpd, moveSpdMargin, homing, tempHoming, homingCount) {
-	var _proj = instance_create_depth(x, y - sprite_height/2, -40, objT_projectile);
+function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, moveSpdMargin, homing, tempHoming, homingCount) {
+	var _proj = instance_create_depth(x, y - sprite_height/2, -40, projectile);
 	// Determine x direction
 	if x < global.player.x {_proj.moveDirX = 1;}
 	else if x > global.player.x {_proj.moveDirX = -1;}

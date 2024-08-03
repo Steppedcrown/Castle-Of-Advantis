@@ -18,10 +18,11 @@ rangeY = paddingY * 2;
 attackSpd = 90;
 attackTimer = attackSpd;
 // Projectile
+projectile = objT_projectile;
 damage = 1;
-projSpd = 2;
+projSpd = 1.5;
 maxMoveSpd = 3;
-moveSpdMargin = 2;
+moveSpdMargin = 0;
 homing = true;
 tempHoming = true;
 homingCount = attackSpd / 4;

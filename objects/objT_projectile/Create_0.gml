@@ -19,10 +19,13 @@ rangeY = 0;
 
 /*---------------------------------- Attack ----------------------------------*/
 damage = 0;
+// Homing
 homing = false;
 tempHoming = false;
 homingCount = 0;
 homingTimer = 0;
+homingLagCount = 0;
+homingLagTimer = 0;
 
 /*---------------------------------- Misc ----------------------------------*/
 startupFrame = true;

@@ -9,7 +9,7 @@ if startupFrame || homing {
 		moveSpdY = initMSY;
 	}
 	// Set moveSpds if homing and not on first frame
-	if !startupFrame && homing {
+	if !startupFrame && homing && homingLagTimer >= homingLagCount {
 		// Determine move speeds
 		var _xToPlayer = abs(x - global.player.x);
 		var _yToPlayer = abs(y - global.player.y);
@@ -69,5 +69,6 @@ if x < 0 || x > room_width
 	instance_destroy();
 }
 
-// Increment homing count
+// Increment homing timers
 homingTimer++;
+homingLagTimer++;

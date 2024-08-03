@@ -4,7 +4,7 @@ moveDirY = 0;
 moveSpd = 1;
 xspd = 0;
 yspd = 0;
-paddingX = 100;
+paddingX = 0;
 paddingY = 100;
 
 /*---------------------------------- Combat ----------------------------------*/
@@ -20,9 +20,11 @@ attackTimer = attackSpd;
 // Projectile
 projectile = objT_projectile;
 damage = 1;
-projSpd = 1.5;
+projSpd = 1;
 maxMoveSpd = 3;
 moveSpdMargin = 0;
+// Homing
 homing = true;
 tempHoming = true;
-homingCount = attackSpd / 4;
+homingCount = attackSpd * 2;
+homingLagCount = 15;

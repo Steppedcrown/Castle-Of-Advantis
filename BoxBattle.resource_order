@@ -89,6 +89,7 @@
     {"name":"spr_button","order":4,"path":"sprites/spr_button/spr_button.yy",},
     {"name":"spr_ceiling","order":2,"path":"sprites/spr_ceiling/spr_ceiling.yy",},
     {"name":"spr_clouds_2","order":1,"path":"sprites/spr_clouds_2/spr_clouds_2.yy",},
+    {"name":"spr_cursor","order":10,"path":"sprites/spr_cursor/spr_cursor.yy",},
     {"name":"spr_floor","order":3,"path":"sprites/spr_floor/spr_floor.yy",},
     {"name":"spr_font_main","order":1,"path":"sprites/spr_font_main/spr_font_main.yy",},
     {"name":"spr_hanging_fire","order":1,"path":"sprites/spr_hanging_fire/spr_hanging_fire.yy",},

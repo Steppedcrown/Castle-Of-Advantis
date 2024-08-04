@@ -13,9 +13,13 @@ if hp <= 0 {
 // Get direction
 moveDir = rightKey - leftKey;
 
-// Get face
+// Get face based off mouse
 if mouse_x - x > 0 {face = 1;}
 else if mouse_x - x < 0 {face = -1;}
+
+// Get face based of moveDir
+//if moveDir > 0 {face = 1;}
+//else if moveDir < 0 {face = -1;}
 
 // Get runType
 runType = 0; // set to runKey to enable sprinting

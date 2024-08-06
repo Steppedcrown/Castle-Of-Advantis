@@ -11,4 +11,4 @@ yspd = _targetY - y;
 
 // Move
 x += xspd;
-//y += yspd;
+y += yspd;

@@ -153,48 +153,61 @@ if yspd < 0 && place_meeting(x, y+yspd, obj_wall) {
 var _clampYspd = max(0, yspd);
 var _list = ds_list_create();
 var _array = array_create(0);
-array_push(_array, obj_wall, obj_semi_solid_wall);
+array_push(_array, obj_wall, obj_semi_solid_wall, obj_semi_solid_moving);
 
 // Do the check and store objs in _list
 var _listSize = instance_place_list(x, y+1 + _clampYspd + movePlatMaxYspd, _array, _list, false);
 
 // Iterate through each object
 for (var i = 0; i < _listSize; i++) {
+	
 	// Get current instance
 	var _listInst = _list[| i];
+	
 	// Avoid magnetism
 	if (_listInst.yspd <= yspd || instance_exists(myFloorPlat))
 	&& (_listInst.yspd > 0 || place_meeting(x, y+1 + _clampYspd, _listInst)) {
+		
 		// Return solid walls or semi-solid walls below the player
 		if _listInst.object_index == obj_wall
 		|| object_is_ancestor(_listInst.object_index, obj_wall)
 		|| floor(bbox_bottom) <= ceil(_listInst.bbox_top - _listInst.yspd) {
+			
 			// Find highest platform
 			if !instance_exists(myFloorPlat)
-			|| _listInst.bbox_top + _listInst.yspd <= myFloorPlat.bbox_top + myFloorPlat.yspd
-			|| _listInst.bbox_top + _listInst.yspd <= bbox_bottom {
+			|| (_listInst.bbox_top + _listInst.yspd <= myFloorPlat.bbox_top + myFloorPlat.yspd
+			|| _listInst.bbox_top + _listInst.yspd <= bbox_bottom) {
+				
+				// Set myFloorPlat
 				myFloorPlat = _listInst;
 			}
 		}
 	}
 }
+
 // Destroy list to avoid memory leak
 ds_list_destroy(_list);
+
 // Make sure platform is actually below us and clear myFloorPlat if not
 if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatMaxYspd, myFloorPlat) {
 	myFloorPlat = noone;
 }
+
 // Land on platform
 if instance_exists(myFloorPlat) {
+	
 	// Move up to wall
 	_subPixel = 0.5;
 	while !place_meeting(x, y + _subPixel, myFloorPlat) && !place_meeting(x, y, obj_wall) {y += _subPixel;}
+	
 	// Make sure we do not end up below the top of a semi-solid
 	if myFloorPlat.object_index == obj_semi_solid_wall || object_is_ancestor(myFloorPlat.object_index, obj_semi_solid_wall) {
 		while place_meeting(x, y, myFloorPlat) {y -= _subPixel;}	
 	}
+	
 	// Floor y
 	y = floor(y);
+	
 	// Collide with ground
 	yspd = 0;
 	setOnGround(true);

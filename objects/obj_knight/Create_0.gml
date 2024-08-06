@@ -6,4 +6,4 @@ playerHead.defaultSpr = spr_knight_head;
 playerHead.idleSpr = spr_knight_head_idle;
 playerHead.maxAngle = 40;
 
-//jumpMax = 2;
+jumpMax = 2;

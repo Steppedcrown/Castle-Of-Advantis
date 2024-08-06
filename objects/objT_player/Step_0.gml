@@ -52,8 +52,12 @@ if place_meeting(x+xspd, y, obj_wall) {
 }
 
 // Go down slopes
+downSlopeSemiSolid = noone;
 if yspd >= 0 && !place_meeting(x+xspd, y+1, obj_wall) && place_meeting(x+xspd, y + abs(xspd)+1, obj_wall) {
+	downSlopeSemiSolid = checkForSemiSolidPlatformPlayer(x+xspd, y + abs(xspd)+1);
+	if !instance_exists(downSlopeSemiSolid) {
 		while !place_meeting(x+xspd, y+_subPixel, obj_wall) {y += _subPixel;}
+	}
 }
 
 // Pause movement
@@ -88,7 +92,10 @@ else {
 }
 
 // Initialize jump
-if jumpKeyBuffered && jumpCount < jumpMax {
+var _floorIsSolid = false;
+if instance_exists(myFloorPlat)
+&& (myFloorPlat.object_index == obj_wall || object_is_ancestor(myFloorPlat.object_index, obj_wall)) {_floorIsSolid = true;}
+if jumpKeyBuffered && jumpCount < jumpMax && (!downKey || _floorIsSolid) {
 	// Reset the buffer
 	jumpKeyBuffered = 0;
 	jumpKeyBufferTimer = 0;
@@ -158,6 +165,11 @@ array_push(_array, obj_wall, obj_semi_solid_wall, obj_semi_solid_moving);
 // Do the check and store objs in _list
 var _listSize = instance_place_list(x, y+1 + _clampYspd + movePlatMaxYspd, _array, _list, false);
 
+// High res/speed fix
+var _yCheck = y+1 + _clampYspd;
+if instance_exists(myFloorPlat) {_yCheck += max(0, myFloorPlat.yspd);}
+var _semiSolid = checkForSemiSolidPlatformPlayer(x, _yCheck);
+
 // Iterate through each object
 for (var i = 0; i < _listSize; i++) {
 	
@@ -165,8 +177,10 @@ for (var i = 0; i < _listSize; i++) {
 	var _listInst = _list[| i];
 	
 	// Avoid magnetism
-	if (_listInst.yspd <= yspd || instance_exists(myFloorPlat))
-	&& (_listInst.yspd > 0 || place_meeting(x, y+1 + _clampYspd, _listInst)) {
+	if ( (_listInst != forgetSemiSolid)
+	&& (_listInst.yspd <= yspd || instance_exists(myFloorPlat))
+	&& (_listInst.yspd > 0 || place_meeting(x, y+1 + _clampYspd, _listInst)) )
+	|| (_listInst == _semiSolid) { // High speed fix
 		
 		// Return solid walls or semi-solid walls below the player
 		if _listInst.object_index == obj_wall
@@ -188,10 +202,11 @@ for (var i = 0; i < _listSize; i++) {
 // Destroy list to avoid memory leak
 ds_list_destroy(_list);
 
+// Set myFloorPlat to downSlopeSemiSolid if it exists
+if instance_exists(downSlopeSemiSolid) {myFloorPlat = downSlopeSemiSolid;}
+
 // Make sure platform is actually below us and clear myFloorPlat if not
-if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatMaxYspd, myFloorPlat) {
-	myFloorPlat = noone;
-}
+if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatMaxYspd, myFloorPlat) {myFloorPlat = noone;}
 
 // Land on platform
 if instance_exists(myFloorPlat) {
@@ -213,13 +228,41 @@ if instance_exists(myFloorPlat) {
 	setOnGround(true);
 }
 
+// Manually fall through semi-solid platform
+if downKey && jumpKeyPressed {
+	// Make sure we are on semi-solid
+	if instance_exists(myFloorPlat)
+	&& (myFloorPlat.object_index == obj_semi_solid_wall || object_is_ancestor(myFloorPlat.object_index, obj_semi_solid_wall)) {
+		// Make sure we can drop below semi-solid
+		var _yCheck = max(1, myFloorPlat.yspd+1);
+		if !place_meeting(x, y + _yCheck, obj_wall) {
+			// Move below platform
+			y += 1;
+			
+			// Inheirit downwards yspd
+			yspd = _yCheck - 1;
+			
+			// Forget current platform
+			forgetSemiSolid = myFloorPlat;
+			
+			// Reset myFloorPlat
+			setOnGround(false);
+		}
+	}
+}
+
 // Move Y
 y += yspd;
 
+// Reset forgetSemiSolid
+if instance_exists(forgetSemiSolid) && !place_meeting(x, y, forgetSemiSolid) {forgetSemiSolid = noone;}
+
 // Final moving platforms movement and collision
-// X move with platform
+// X Movement
+// Get x move speed
 movePlatXspd = 0;
 if instance_exists(myFloorPlat) {movePlatXspd = myFloorPlat.xspd;}
+
 // Move with movePlatXspd
 if place_meeting(x + movePlatXspd, y, obj_wall) {
 	_subPixel = 0.5;
@@ -227,30 +270,37 @@ if place_meeting(x + movePlatXspd, y, obj_wall) {
 	while !place_meeting(x + _pixelCheck, y, obj_wall) {x += _pixelCheck;}
 	movePlatXspd = 0;
 }
+
 // Move
 x += movePlatXspd;
 
+// Y Movement
 // Y snap to platform
 if instance_exists(myFloorPlat) && (myFloorPlat.yspd != 0
 || myFloorPlat.object_index == obj_semi_solid_moving
 || object_is_ancestor(myFloorPlat.object_index, obj_semi_solid_moving)) {
+	
 	// Snap to top of floor platform
 	if !place_meeting(x, myFloorPlat.bbox_top, obj_wall)
 	&& myFloorPlat.bbox_top >= bbox_bottom-movePlatMaxYspd {
 		y = myFloorPlat.bbox_top;
 	}
+	
 	// Going up into solid wall on semi-solid platform
 	if myFloorPlat.yspd < 0 && place_meeting(x, y-1, obj_wall) {
 			if myFloorPlat.object_index == obj_semi_solid_moving || object_is_ancestor(myFloorPlat.object_index, obj_semi_solid_moving) {
+				
 				// Get pushed down through semi-solid
 				_subPixel = 0.25;
 				while place_meeting(x, y-1, obj_wall) {y += _subPixel;}
+				
 				// If player got pushed into solid wall while going down, push player back out
 				while place_meeting(x, y, obj_wall) {y -= _subPixel;}
 				y = round(y);
 			}
+			
 			// Reset myFloorPlat
-			myFloorPlat = noone;
+			setOnGround(false);
 	}
 }
 

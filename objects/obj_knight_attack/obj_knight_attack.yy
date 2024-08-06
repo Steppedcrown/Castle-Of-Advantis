@@ -6,8 +6,8 @@
   "name":"obj_knight_attack",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player Objects",
-    "path":"folders/Objects/Player Objects.yy",
+    "name":"Knight",
+    "path":"folders/Objects/Player Objects/Knight.yy",
   },
   "parentObjectId":null,
   "persistent":false,

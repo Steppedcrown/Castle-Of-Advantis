@@ -23,7 +23,7 @@
   ],
   "name":"spr_knight_sword",
   "nineSlice":null,
-  "origin":0,
+  "origin":3,
   "parent":{
     "name":"Knight",
     "path":"folders/Sprites/Player Sprites/Knight.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":0,
-    "yorigin":0,
+    "yorigin":2,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

@@ -179,9 +179,9 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
+    {"roomId":{"name":"rm_level01","path":"rooms/rm_level01/rm_level01.yy",},},
     {"roomId":{"name":"rm_title_screen","path":"rooms/rm_title_screen/rm_title_screen.yy",},},
     {"roomId":{"name":"rm_level00","path":"rooms/rm_level00/rm_level00.yy",},},
-    {"roomId":{"name":"rm_level01","path":"rooms/rm_level01/rm_level01.yy",},},
     {"roomId":{"name":"rm_quit","path":"rooms/rm_quit/rm_quit.yy",},},
   ],
   "templateType":"game",

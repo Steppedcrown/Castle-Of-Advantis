@@ -91,10 +91,12 @@ else {
 	if jumpCount == 0  && coyoteJumpTimer <= 0 {jumpCount = 1;}
 }
 
-// Initialize jump
+// Allow for jumping while holding down if on solid platform
 var _floorIsSolid = false;
 if instance_exists(myFloorPlat)
 && (myFloorPlat.object_index == obj_wall || object_is_ancestor(myFloorPlat.object_index, obj_wall)) {_floorIsSolid = true;}
+
+// Initialize jump
 if jumpKeyBuffered && jumpCount < jumpMax && (!downKey || _floorIsSolid) {
 	// Reset the buffer
 	jumpKeyBuffered = 0;
@@ -245,8 +247,12 @@ if downKey && jumpKeyPressed {
 			// Forget current platform
 			forgetSemiSolid = myFloorPlat;
 			
-			// Reset myFloorPlat
+			// Reset myFloorPlatp
 			setOnGround(false);
+			
+			// Reset jump buffer
+			jumpKeyBuffered = 0;
+			jumpKeyBufferTimer = 0;
 		}
 	}
 }

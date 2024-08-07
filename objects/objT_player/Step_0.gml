@@ -1,7 +1,11 @@
 // Only run if there is not a pauser active
 if !instance_exists(obj_pauser) {
-	// Get movement input if not in title screen
-	if room != rm_title_screen {getPlayerControls();}
+	// Get player inputs
+	getPlayerControls();
+	
+	// Warp if touching a warp block
+	var _warp = instance_place(x, y, obj_warp);
+	if (_warp != noone) {playTransition(_warp.transition, _warp.targetRoom, _warp.targetX, _warp.targetY, _warp.imageSpd);}
 
 	// Get out of solid moveplats that the player got stuck in during the begin step event
 	#region

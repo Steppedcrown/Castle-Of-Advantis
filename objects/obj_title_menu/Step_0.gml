@@ -16,13 +16,13 @@ if select {
 			switch (pos) {
 				// Start game
 				case 0: 
-					playTransition(rm_level00, 38, 335);
+					playTransition(,rm_level00, 38, 335);
 					break;
 				// Settings
 				case 1: menu_depth++; pos = 0; break;
 				// Quit game
 				case 2: 
-					playTransition(rm_quit);
+					playTransition(,rm_quit);
 					//game_end(); 
 					break;
 			}

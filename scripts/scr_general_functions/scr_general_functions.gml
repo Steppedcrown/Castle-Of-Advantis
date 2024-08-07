@@ -73,13 +73,12 @@ function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, mo
 	_proj.minSpd = minSpd;
 }
 
-function playTransition (_rm=rm_title_screen, _x=-999, _y=-999, _dir=1, _spd = -1) {
-	if !instance_exists(obj_transition) {
+function playTransition (_transition=obj_transition, _rm=rm_title_screen, _x=-999, _y=-999, _spd = -1) {
+	if !instance_exists(_transition) {
 		var inst = instance_create_depth(0, 0, -9999, obj_transition);
 		inst.target_rm = _rm;
 		inst.target_x = _x;
 		inst.target_y = _y;
-		inst.moveDir = _dir;
 		inst.imageSpd = _spd;
 	}	
 }

@@ -11,8 +11,8 @@
   "name":"obj_knight",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player Objects",
-    "path":"folders/Objects/Player Objects.yy",
+    "name":"Knight",
+    "path":"folders/Objects/Player Objects/Knight.yy",
   },
   "parentObjectId":{
     "name":"objT_player",

@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_knight_attack",
+  "%Name":"obj_archer_arrow",
   "eventList":[],
   "managed":true,
-  "name":"obj_knight_attack",
+  "name":"obj_archer_arrow",
   "overriddenProperties":[],
   "parent":{
-    "name":"Knight",
-    "path":"folders/Objects/Player Objects/Knight.yy",
+    "name":"Archer",
+    "path":"folders/Objects/Player Objects/Archer.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_knight_attack",
-    "path":"sprites/spr_knight_attack/spr_knight_attack.yy",
+    "name":"spr_archer_arrow",
+    "path":"sprites/spr_archer_arrow/spr_archer_arrow.yy",
   },
   "spriteMaskId":null,
   "visible":true,

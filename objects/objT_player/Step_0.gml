@@ -1,6 +1,79 @@
 // Get movement input
 getPlayerControls();
 
+// Get out of solid moveplats that the player got stuck in during the begin step event
+#region
+var _rightWall = noone;
+var _leftWall = noone;
+var _bottomWall = noone;
+var _topWall = noone;
+var _list = ds_list_create();
+var _listSize = instance_place_list(x, y, obj_solid_moving, _list, false);
+
+// Loop through each found instance
+for (var i = 0; i < _listSize; i++) {
+	// Get current inst
+	var _listInst = _list[| i];
+	
+	// Check for walls on each side
+	// Right wall
+	if _listInst.bbox_left - _listInst.xspd >= bbox_right-1 {
+		// Get rightmost wall
+		if !instance_exists(_rightWall) || _listInst.bbox_left < _rightWall.bbox_left {_rightWall = _listInst;}
+	}
+	// Left wall
+	if _listInst.bbox_right - _listInst.xspd <= bbox_left+1 {
+		// Get leftmost wall
+		if !instance_exists(_leftWall) || _listInst.bbox_right > _leftWall.bbox_right {_leftWall = _listInst;}
+	}
+	// Bottom wall
+	if _listInst.bbox_top - _listInst.yspd >= bbox_bottom-1 {
+		if !instance_exists(_bottomWall) || _listInst.bbox_top < _bottomWall.bbox_top {_bottomWall = _listInst;}
+	}
+	// Top wall
+	if _listInst.bbox_bottom - _listInst.yspd <= bbox_top+1 {
+		if !instance_exists(_topWall) || _listInst.bbox_bottom > _topWall.bbox_bottom {_topWall = _listInst;}	
+	}
+}
+// Destroy list
+ds_list_destroy(_list);
+
+// Move out of walls
+// Right wall
+if instance_exists(_rightWall) {
+	var _rightDist = bbox_right - x;
+	x = _rightWall.bbox_left - _rightDist;
+}
+// Left wall
+if instance_exists(_leftWall) {
+	var _leftDist = x - bbox_left;
+	x = _leftWall.bbox_right + _leftDist;
+}
+// Bottom wall
+if instance_exists(_bottomWall) {
+	var _bottomDist = bbox_bottom - y;
+	y = _bottomWall.bbox_top - _bottomDist;
+}
+// Top wall
+if instance_exists(_topWall) {
+	var _topDist = y - bbox_top;
+	var _targetY = _topWall.bbox_bottom + _topDist;
+	
+	// Check there is not a wall in the way
+	if !place_meeting(x, _targetY, obj_wall) {y = _targetY;}
+}
+#endregion
+
+// Don't get left behind by moving platform
+earlyMovePlatXspd = false;
+if instance_exists(myFloorPlat) && myFloorPlat.xspd != 0 && !place_meeting(x, y + movePlatMaxYspd+1, myFloorPlat) {
+	// Move back onto platform if there is not a wall
+	if !place_meeting(x + myFloorPlat.xspd, y, obj_wall) {
+		x += myFloorPlat.xspd;
+		earlyMovePlatXspd = true;
+	}
+}
+
 /*---------------------------------- DEATH ----------------------------------*/
 if hp <= 0 {
 	hp = maxHp;
@@ -160,12 +233,12 @@ if yspd < 0 && place_meeting(x, y+yspd, obj_wall) {
 /*---------------------------------- Platform/Floor Y collision ----------------------------------*/
 // Check for solid and semi-solid platforms under me
 var _clampYspd = max(0, yspd);
-var _list = ds_list_create();
+_list = ds_list_create();
 var _array = array_create(0);
 array_push(_array, obj_wall, obj_semi_solid_wall, obj_semi_solid_moving);
 
 // Do the check and store objs in _list
-var _listSize = instance_place_list(x, y+1 + _clampYspd + movePlatMaxYspd, _array, _list, false);
+_listSize = instance_place_list(x, y+1 + _clampYspd + movePlatMaxYspd, _array, _list, false);
 
 // High res/speed fix
 var _yCheck = y+1 + _clampYspd;
@@ -236,7 +309,7 @@ if downKey && jumpKeyPressed {
 	if instance_exists(myFloorPlat)
 	&& (myFloorPlat.object_index == obj_semi_solid_wall || object_is_ancestor(myFloorPlat.object_index, obj_semi_solid_wall)) {
 		// Make sure we can drop below semi-solid
-		var _yCheck = max(1, myFloorPlat.yspd+1);
+		_yCheck = max(1, myFloorPlat.yspd+1);
 		if !place_meeting(x, y + _yCheck, obj_wall) {
 			// Move below platform
 			y += 1;
@@ -258,7 +331,7 @@ if downKey && jumpKeyPressed {
 }
 
 // Move Y
-y += yspd;
+if !place_meeting(x, y + yspd, obj_wall) {y += yspd;}
 
 // Reset forgetSemiSolid
 if instance_exists(forgetSemiSolid) && !place_meeting(x, y, forgetSemiSolid) {forgetSemiSolid = noone;}
@@ -269,20 +342,26 @@ if instance_exists(forgetSemiSolid) && !place_meeting(x, y, forgetSemiSolid) {fo
 movePlatXspd = 0;
 if instance_exists(myFloorPlat) {movePlatXspd = myFloorPlat.xspd;}
 
-// Move with movePlatXspd
-if place_meeting(x + movePlatXspd, y, obj_wall) {
-	_subPixel = 0.5;
-	var _pixelCheck = _subPixel * sign(movePlatXspd);
-	while !place_meeting(x + _pixelCheck, y, obj_wall) {x += _pixelCheck;}
-	movePlatXspd = 0;
-}
+// Move x only if x has not already moved
+if !earlyMovePlatXspd {
+	// Move with movePlatXspd
+	if place_meeting(x + movePlatXspd, y, obj_wall) {
+		_subPixel = 0.5;
+		var _pixelCheck = _subPixel * sign(movePlatXspd);
+		while !place_meeting(x + _pixelCheck, y, obj_wall) {x += _pixelCheck;}
+		movePlatXspd = 0;
+	}
 
-// Move
-x += movePlatXspd;
+	// Move
+	x += movePlatXspd;
+}
 
 // Y Movement
 // Y snap to platform
-if instance_exists(myFloorPlat) && (myFloorPlat.yspd != 0
+if instance_exists(myFloorPlat) 
+&& (myFloorPlat.yspd != 0
+|| myFloorPlat.object_index == obj_solid_moving
+|| object_is_ancestor(myFloorPlat.object_index, obj_solid_moving)
 || myFloorPlat.object_index == obj_semi_solid_moving
 || object_is_ancestor(myFloorPlat.object_index, obj_semi_solid_moving)) {
 	
@@ -292,6 +371,7 @@ if instance_exists(myFloorPlat) && (myFloorPlat.yspd != 0
 		y = myFloorPlat.bbox_top;
 	}
 	
+	/* REDUNDANT DUE TO FOLLOWING CODE BLOCK*
 	// Going up into solid wall on semi-solid platform
 	if myFloorPlat.yspd < 0 && place_meeting(x, y-1, obj_wall) {
 			if myFloorPlat.object_index == obj_semi_solid_moving || object_is_ancestor(myFloorPlat.object_index, obj_semi_solid_moving) {
@@ -308,9 +388,39 @@ if instance_exists(myFloorPlat) && (myFloorPlat.yspd != 0
 			// Reset myFloorPlat
 			setOnGround(false);
 	}
+	*/
 }
 
+// Get pushed down through semi-solid my moving solid MAKES ABOVE CODE REDUNDANT*
+if instance_exists(myFloorPlat)
+&& (myFloorPlat.object_index == obj_semi_solid_wall || object_is_ancestor(myFloorPlat.object_index, obj_semi_solid_wall))
+&& place_meeting(x, y, obj_wall) {
+		// If player is stuck in a wall, try to push down through semi-solid
+		// Don't check too far down to avoid warping through walls
+		var _maxPushDist = 10;
+		var _pushedDist = 0;
+		var _startY = y;
+		while place_meeting(x, y, obj_wall) && _pushedDist <= _maxPushDist {
+			y++;
+			_pushedDist++;
+		}
+		// Forget myFloorPlat
+		myFloorPlat = noone;
+		
+		// Revert back to old y pos if player is still in wall
+		if _pushedDist > _maxPushDist {y = _startY;}
+}
+
+// Crushed code
+image_blend = c_white;
+if place_meeting(x, y, obj_wall) {
+	image_blend = c_blue;
+	crushDeathTimer++;
+	if crushDeathTimer >= crushDeathFrames {hp = 0;}
+} else {crushDeathTimer = 0;}
+
 /*---------------------------------- Sprites ----------------------------------*/
+#region
 // Idle
 if xspd == 0 {sprite_index = idleSpr;}
 // Walking
@@ -321,6 +431,7 @@ if abs(xspd) >= moveSpd[1] {sprite_index = runSpr;}
 if !onGround {sprite_index = jumpSpr;}
 // Collision mask
 mask_index = maskSpr;
+#endregion
 
 /*---------------------------------- Out of play area ----------------------------------*/
 if room == rm_title_screen {

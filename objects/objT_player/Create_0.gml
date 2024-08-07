@@ -55,6 +55,9 @@ depth = playerDepth;
 /*---------------------------------- Combat ----------------------------------*/
 maxHp = 15;
 hp = maxHp;
+// Crushing
+crushDeathFrames = 3;
+crushDeathTimer = 0;
 
 /*---------------------------------- Movement ----------------------------------*/
 face = 1;
@@ -94,4 +97,5 @@ myFloorPlat = noone;
 downSlopeSemiSolid = noone;
 forgetSemiSolid = noone;
 movePlatXspd = 0;
+earlyMovePlatXspd = false;
 movePlatMaxYspd = termVel; // How fast player can follow downwards moving platform

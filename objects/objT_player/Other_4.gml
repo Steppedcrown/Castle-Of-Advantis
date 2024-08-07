@@ -1,1 +1,1 @@
-hp = maxHp;
+if room == rm_title_screen {hp = maxHp;}

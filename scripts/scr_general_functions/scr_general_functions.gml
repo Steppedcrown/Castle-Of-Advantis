@@ -129,6 +129,7 @@ function getPlayerControls() {
 	/*---------------------------------- Action inputs ----------------------------------*/
 	// Jumping
 	jumpKeyPressed = clamp(keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1), 0, 1);
+	if isNotInPlayArea() {jumpKeyPressed = 0;} // Do not read jump unless in play area
 	jumpKey = clamp(keyboard_check(vk_space) || gamepad_button_check(0, gp_face1), 0, 1);
 	
 	// Sprinting

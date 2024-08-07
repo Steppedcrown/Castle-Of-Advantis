@@ -436,7 +436,7 @@ if !instance_exists(obj_pauser) {
 	#endregion
 
 	/*---------------------------------- Out of play area ----------------------------------*/
-	if room == rm_title_screen {
+	if isNotInPlayArea() {
 		x = -999;
 		y = -999;
 		sprite_index = idleSpr;

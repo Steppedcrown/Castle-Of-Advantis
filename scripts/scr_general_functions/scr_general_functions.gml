@@ -8,6 +8,10 @@ function centerOnX (obj=noone) {
 		return camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])/2;
 	}
 }
+	
+function isNotInPlayArea() {
+	return (room == rm_init || room == rm_title_screen || room == rm_quit);
+}
 
 function checkForSemiSolidPlatform (_x, _y) {
 	// Create return variable

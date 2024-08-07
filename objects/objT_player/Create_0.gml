@@ -42,11 +42,12 @@ function checkForSemiSolidPlatformPlayer (_x, _y) {
 controlsSetup();
 
 /*---------------------------------- Sprites ----------------------------------*/
-maskSpr = spr_knight_idle;
-idleSpr = spr_knight_idle;
-walkSpr = spr_knight_walk;
-runSpr = spr_knight_run;
-jumpSpr = spr_knight_jump;
+maskSpr = spr_maria_idle;
+idleSpr = spr_maria_idle;
+walkSpr = spr_maria_walk;
+runSpr = spr_maria_run;
+jumpSpr = spr_maria_jump;
+crouchSpr = spr_maria_crouch;
 
 // Depth
 playerDepth = -30;

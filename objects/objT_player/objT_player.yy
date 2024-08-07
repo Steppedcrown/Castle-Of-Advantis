@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_knight_idle",
-    "path":"sprites/spr_knight_idle/spr_knight_idle.yy",
+    "name":"spr_maria_idle",
+    "path":"sprites/spr_maria_idle/spr_maria_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -10,6 +10,33 @@ function setOnGround (_val = true) {
 		coyoteHangTimer = 0;
 	}
 }
+	
+function checkForSemiSolidPlatformPlayer (_x, _y) {
+	// Create return variable
+	var _semiSolidPlat = noone;
+	
+	// If not moving upwards and colliding with semi-solid
+	if yspd >= 0 && place_meeting(_x, _y, obj_semi_solid_wall) {
+		// Create list to store all collisions
+		var _list = ds_list_create();
+		var _listSize = instance_place_list(_x, _y, obj_semi_solid_wall, _list, false);
+			
+		// Check all found instances
+		for (var i = 0; i < _listSize; i++) {
+			var _listInst = _list[| i];
+			if _listInst != forgetSemiSolid && floor(bbox_bottom) <= ceil(_listInst.bbox_top - _listInst.yspd) {
+				// Set return value
+				_semiSolidPlat = _listInst;
+				// Exit loop early
+				i = _listSize;
+			}
+		}
+		// Destroy list
+		ds_list_destroy(_list);
+	}
+	return _semiSolidPlat;
+}
+
 
 /*---------------------------------- Controls setup ----------------------------------*/
 controlsSetup();
@@ -28,6 +55,9 @@ depth = playerDepth;
 /*---------------------------------- Combat ----------------------------------*/
 maxHp = 15;
 hp = maxHp;
+// Crushing
+crushDeathFrames = 3;
+crushDeathTimer = 0;
 
 /*---------------------------------- Movement ----------------------------------*/
 face = 1;
@@ -64,5 +94,8 @@ coyoteJumpTimer = 0;
 
 /*---------------------------------- Moving platforms ----------------------------------*/
 myFloorPlat = noone;
+downSlopeSemiSolid = noone;
+forgetSemiSolid = noone;
 movePlatXspd = 0;
+earlyMovePlatXspd = false;
 movePlatMaxYspd = termVel; // How fast player can follow downwards moving platform

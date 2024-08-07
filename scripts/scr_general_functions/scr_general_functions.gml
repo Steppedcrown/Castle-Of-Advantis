@@ -9,6 +9,32 @@ function centerOnX (obj=noone) {
 	}
 }
 
+function checkForSemiSolidPlatform (_x, _y) {
+	// Create return variable
+	var _semiSolidPlat = noone;
+	
+	// If not moving upwards and colliding with semi-solid
+	if yspd >= 0 && place_meeting(_x, _y, obj_semi_solid_wall) {
+		// Create list to store all collisions
+		var _list = ds_list_create();
+		var _listSize = instance_place_list(_x, _y, obj_semi_solid_wall, _list, false);
+			
+		// Check all found instances
+		for (var i = 0; i < _listSize; i++) {
+			var _listInst = _list[| i];
+			if floor(bbox_bottom) <= ceil(_listInst.bbox_top - _listInst.yspd) {
+				// Set return value
+				_semiSolidPlat = _listInst;
+				// Exit loop early
+				i = _listSize;
+			}
+		}
+		// Destroy list
+		ds_list_destroy(_list);
+	}
+	return _semiSolidPlat;
+}
+
 function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, moveSpdMargin, homing, tempHoming, homingCount, homingLagCount, minSpd) {
 	var _proj = instance_create_depth(x, y - sprite_height/2, -40, projectile);
 	// Determine x direction
@@ -73,18 +99,29 @@ function getPlayerControls() {
 	/*---------------------------------- Directional Inputs ----------------------------------*/
 	// Joystick
 	gpDeadzone = gamepad_set_axis_deadzone(0, 0.15);
-	gpJoystick = gamepad_axis_value(0, gp_axislh);
+	gpJoystickLH = gamepad_axis_value(0, gp_axislh);
+	gpJoystickLV = gamepad_axis_value(0, gp_axislv);
 	
 	// Keyboard
 	rightKey = keyboard_check(ord("D"));
 	leftKey = keyboard_check(ord("A"));
+	upKey = keyboard_check(ord("W"));
+	downKey = keyboard_check(ord("S"));
 	
-	if !(rightKey && leftKey) {
-		if gpJoystick >= gpDeadzone {rightKey += gpJoystick;}
-		else if gpJoystick <= gpDeadzone {leftKey =+ abs(gpJoystick);}
+	if !(rightKey && leftKey && upKey && downKey) {
+		// Horizontal checks
+		if gpJoystickLH >= gpDeadzone {rightKey += abs(gpJoystickLH);}
+		else if gpJoystickLH <= gpDeadzone {leftKey =+ abs(gpJoystickLH);}
+		// Vertical checks
+		if gpJoystickLV <= gpDeadzone {upKey += abs(gpJoystickLV);}
+		else if gpJoystickLV >= gpDeadzone {downKey += abs(gpJoystickLV);}
 	}
+	
+	// Clamp inputs
 	rightKey = clamp(rightKey, 0, 1);
 	leftKey = clamp(leftKey, 0, 1);
+	upKey = clamp(upKey, 0, 1);
+	downKey = clamp(downKey, 0, 1);
 	
 	/*---------------------------------- Action inputs ----------------------------------*/
 	// Jumping

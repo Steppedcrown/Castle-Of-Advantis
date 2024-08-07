@@ -6,5 +6,4 @@ for (var i = 0; i < instance_count; i++) {
 	}
 }
 
-//playTransition();
 room_goto_next();

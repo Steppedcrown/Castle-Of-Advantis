@@ -18,5 +18,8 @@ if canRotate {
 	}
 }
 
+// If not in play area, just look forward
+if isNotInPlayArea() || instance_exists(obj_pauser) {angle = 0;}
+
 // Draw sprite
 draw_sprite_ext(sprite_index, global.player.image_index, x, y, image_xscale*global.player.face, image_yscale, angle, image_blend, image_alpha);

@@ -8,6 +8,10 @@ function centerOnX (obj=noone) {
 		return camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])/2;
 	}
 }
+	
+function isNotInPlayArea() {
+	return (room == rm_init || room == rm_title_screen || room == rm_quit);
+}
 
 function checkForSemiSolidPlatform (_x, _y) {
 	// Create return variable
@@ -69,13 +73,12 @@ function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, mo
 	_proj.minSpd = minSpd;
 }
 
-function playTransition (_rm=rm_title_screen, _x=-999, _y=-999, _dir=1, _spd = -1) {
-	if !instance_exists(obj_transition) {
+function playTransition (_transition=obj_transition, _rm=rm_title_screen, _x=-999, _y=-999, _spd = -1) {
+	if !instance_exists(_transition) {
 		var inst = instance_create_depth(0, 0, -9999, obj_transition);
 		inst.target_rm = _rm;
 		inst.target_x = _x;
 		inst.target_y = _y;
-		inst.moveDir = _dir;
 		inst.imageSpd = _spd;
 	}	
 }
@@ -126,6 +129,7 @@ function getPlayerControls() {
 	/*---------------------------------- Action inputs ----------------------------------*/
 	// Jumping
 	jumpKeyPressed = clamp(keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1), 0, 1);
+	if isNotInPlayArea() {jumpKeyPressed = 0;} // Do not read jump unless in play area
 	jumpKey = clamp(keyboard_check(vk_space) || gamepad_button_check(0, gp_face1), 0, 1);
 	
 	// Sprinting

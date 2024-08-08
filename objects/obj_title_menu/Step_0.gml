@@ -18,12 +18,14 @@ if select {
 				case 0: 
 					playTransition(,rm_level00, 38, 335);
 					break;
+				// Character select
+				case 1:
+					break;
 				// Settings
-				case 1: menu_depth++; pos = 0; break;
+				case 2: menu_depth++; pos = 0; break;
 				// Quit game
-				case 2: 
+				case 3: 
 					playTransition(,rm_quit);
-					//game_end(); 
 					break;
 			}
 			break;

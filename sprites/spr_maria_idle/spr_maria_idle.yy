@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_maria_idle",
   "bboxMode":2,
-  "bbox_bottom":30,
+  "bbox_bottom":29,
   "bbox_left":4,
   "bbox_right":13,
   "bbox_top":3,

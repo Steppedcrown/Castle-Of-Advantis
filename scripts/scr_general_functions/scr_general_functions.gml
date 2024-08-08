@@ -111,6 +111,7 @@ function getPlayerControls() {
 	upKey = keyboard_check(ord("W"));
 	downKey = keyboard_check(ord("S"));
 	
+	// Movement
 	if !(rightKey && leftKey && upKey && downKey) {
 		// Horizontal checks
 		if gpJoystickLH >= gpDeadzone {rightKey += abs(gpJoystickLH);}
@@ -125,6 +126,16 @@ function getPlayerControls() {
 	leftKey = clamp(leftKey, 0, 1);
 	upKey = clamp(upKey, 0, 1);
 	downKey = clamp(downKey, 0, 1);
+	
+	// Move cursor with joystick
+	#region
+	scrollSpeed = 25;
+	var inputx = gamepad_axis_value(0, gp_axisrh);
+	var inputy = gamepad_axis_value(0, gp_axisrv);
+	var cursorx = window_mouse_get_x() + inputx * scrollSpeed;
+	var cursory = window_mouse_get_y() + inputy * scrollSpeed;
+	window_mouse_set( cursorx, cursory);
+	#endregion
 	
 	/*---------------------------------- Action inputs ----------------------------------*/
 	// Jumping

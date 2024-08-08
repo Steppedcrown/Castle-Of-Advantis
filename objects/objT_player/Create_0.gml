@@ -56,6 +56,9 @@ depth = playerDepth;
 /*---------------------------------- States ----------------------------------*/
 dead = false;
 crouching = false;
+// Out of room
+outOfRoomCount = 30;
+outOfRoomTimer = 0;
 
 /*---------------------------------- Combat ----------------------------------*/
 maxHp = 15;

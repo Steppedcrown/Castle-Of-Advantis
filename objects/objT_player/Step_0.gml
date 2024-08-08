@@ -444,6 +444,13 @@ if !instance_exists(obj_pauser) {
 		crushDeathTimer++;
 		if crushDeathTimer >= crushDeathFrames {dead = true; crushDeathTimer = 0;}
 	} else {crushDeathTimer = 0;}
+	
+	// Die when out of room
+	if !isNotInPlayArea() {
+		if x < 0 || y < 0 || x > room_width || y > room_height {outOfRoomTimer++;}
+		else {outOfRoomTimer = 0;}
+		if outOfRoomTimer >= outOfRoomCount {dead = true; outOfRoomTimer = 0;}
+	}
 
 	/*---------------------------------- Sprites ----------------------------------*/
 	#region

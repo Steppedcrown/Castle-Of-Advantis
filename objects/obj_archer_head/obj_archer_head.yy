@@ -9,8 +9,11 @@
     "name":"Archer",
     "path":"folders/Objects/Player Objects/Archer.yy",
   },
-  "parentObjectId":null,
-  "persistent":false,
+  "parentObjectId":{
+    "name":"objT_player_head",
+    "path":"objects/objT_player_head/objT_player_head.yy",
+  },
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,

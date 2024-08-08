@@ -97,8 +97,9 @@ if !instance_exists(obj_pauser) {
 	}
 
 	/*---------------------------------- DEATH ----------------------------------*/
-	if hp <= 0 {
+	if hp <= 0 || dead {
 		hp = maxHp;
+		dead = false;
 		global.player_deaths++;
 		playTransition();
 	}
@@ -441,7 +442,7 @@ if !instance_exists(obj_pauser) {
 	if place_meeting(x, y, obj_wall) {
 		image_blend = c_blue;
 		crushDeathTimer++;
-		//if crushDeathTimer >= crushDeathFrames {hp = 0;}
+		if crushDeathTimer >= crushDeathFrames {dead = true; crushDeathTimer = 0;}
 	} else {crushDeathTimer = 0;}
 
 	/*---------------------------------- Sprites ----------------------------------*/

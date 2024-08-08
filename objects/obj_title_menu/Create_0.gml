@@ -4,7 +4,8 @@ options[0, 1] = "Settings";
 options[0, 2] = "Quit";
 
 // Settings submenu
-options[1, 0] = "Something that has a super long name";
+if window_get_fullscreen() {options[1, 0] = "Fullscreen: Enabled";}
+else {options[1, 0] = "Fullscreen: Disabled";}
 options[1, 1] = "Back";
 
 // Menu variables

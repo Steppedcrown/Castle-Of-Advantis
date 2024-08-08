@@ -8,6 +8,17 @@ function centerOnX (obj=noone) {
 		return camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])/2;
 	}
 }
+
+function centerOnY (obj=noone) {
+	if obj != noone {
+		with (obj) {
+			y = camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0])/2 - sprite_height/2;
+		}
+	}
+	else {
+		return camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0])/2;
+	}
+}
 	
 function isNotInPlayArea() {
 	return (room == rm_init || room == rm_title_screen || room == rm_quit);

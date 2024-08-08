@@ -1,6 +1,5 @@
-// Destroy the title if there is a pauser
+// Move title out of room if there is a pauserd
 if instance_exists(obj_pauser) {
-	// Move title out of room
 	with (obj_title) {
 		x = -999;
 		y = -999;

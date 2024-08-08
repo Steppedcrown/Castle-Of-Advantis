@@ -20,6 +20,7 @@ if select {
 					break;
 				// Character select
 				case 1:
+					charSelector = instance_create_depth(0, 0, -999, obj_character_selector);
 					break;
 				// Settings
 				case 2: menu_depth++; pos = 0; break;

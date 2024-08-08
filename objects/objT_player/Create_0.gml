@@ -42,7 +42,7 @@ function checkForSemiSolidPlatformPlayer (_x, _y) {
 controlsSetup();
 
 /*---------------------------------- Sprites ----------------------------------*/
-maskSpr = spr_maria_idle;
+defaultMaskSpr = spr_maria_idle;
 idleSpr = spr_maria_idle;
 walkSpr = spr_maria_walk;
 runSpr = spr_maria_run;
@@ -52,6 +52,13 @@ crouchSpr = spr_maria_crouch;
 // Depth
 playerDepth = -30;
 depth = playerDepth;
+
+/*---------------------------------- States ----------------------------------*/
+dead = false;
+crouching = false;
+// Out of room
+outOfRoomCount = 30;
+outOfRoomTimer = 0;
 
 /*---------------------------------- Combat ----------------------------------*/
 maxHp = 15;
@@ -65,10 +72,11 @@ face = 1;
 moveDir = 0;
 xspd = 0;
 yspd = 0;
-// Walking and sprinting
+// Move speeds
 runType = 0;
 moveSpd[0] = 2;
 moveSpd[1] = 3.5
+crouchMoveSpd = moveSpd[0] / 2; // Set to 0 to disable movement while crouching
 
 /*---------------------------------- Jumping ----------------------------------*/
 // Basic jumping

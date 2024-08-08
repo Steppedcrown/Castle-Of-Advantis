@@ -30,8 +30,17 @@ if select {
 		// Settings sub-menu
 		case 1:
 			switch (pos) {
-				// Something
-				case 0: break;	
+				// Fullscreen
+				case 0: 
+					// Toggle fullscreen
+					window_set_fullscreen(!window_get_fullscreen());
+					if window_get_fullscreen() {options[1, 0] = "Fullscreen: Enabled";}
+					else {options[1, 0] = "Fullscreen: Disabled";}
+					// Set cursor in center (just in case it would otherwise get locked out of window)
+					var _cursorX = centerOnX();
+					var _cursorY = centerOnY();
+					window_mouse_set( _cursorX, _cursorY);
+					break;	
 				// Back
 				case 1: menu_depth--; pos = 0; break;
 			}

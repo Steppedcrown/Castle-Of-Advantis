@@ -79,10 +79,27 @@ if !instance_exists(obj_pauser) {
 			earlyMovePlatXspd = true;
 		}
 	}
+		
+	/*---------------------------------- Crouching ----------------------------------*/
+	// Manually or automatically crouch
+	if onGround && (downKey || place_meeting(x, y, obj_wall)) {crouching = true;}
+	
+	// Change collision mask
+	if crouching {mask_index = crouchSpr;}
+	
+	// Manually or automatically uncrouch
+	if crouching && (!downKey || !onGround) {
+		mask_index = defaultMaskSpr;
+		// Check if uncrouching will put player in a wall
+		if !place_meeting(x, y, obj_wall) {crouching = false;}
+		// Coninue crouching if it will
+		else {mask_index = crouchSpr;}
+	}
 
 	/*---------------------------------- DEATH ----------------------------------*/
-	if hp <= 0 {
+	if hp <= 0 || dead {
 		hp = maxHp;
+		dead = false;
 		global.player_deaths++;
 		playTransition();
 	}
@@ -105,6 +122,9 @@ if !instance_exists(obj_pauser) {
 
 	// Get xspd
 	xspd = moveDir * moveSpd[runType];
+	
+	// Movement if crouching
+	if crouching {xspd = moveDir * crouchMoveSpd;}
 
 	// X collision
 	var _subPixel = 0.5;
@@ -422,11 +442,20 @@ if !instance_exists(obj_pauser) {
 	if place_meeting(x, y, obj_wall) {
 		image_blend = c_blue;
 		crushDeathTimer++;
-		if crushDeathTimer >= crushDeathFrames {hp = 0;}
+		if crushDeathTimer >= crushDeathFrames {dead = true; crushDeathTimer = 0;}
 	} else {crushDeathTimer = 0;}
+	
+	// Die when out of room
+	if !isNotInPlayArea() {
+		if x < 0 || y < 0 || x > room_width || y > room_height {outOfRoomTimer++;}
+		else {outOfRoomTimer = 0;}
+		if outOfRoomTimer >= outOfRoomCount {dead = true; outOfRoomTimer = 0;}
+	}
 
 	/*---------------------------------- Sprites ----------------------------------*/
 	#region
+	// Collision mask default
+	mask_index = defaultMaskSpr;
 	// Idle
 	if xspd == 0 {sprite_index = idleSpr;}
 	// Walking
@@ -435,8 +464,8 @@ if !instance_exists(obj_pauser) {
 	if abs(xspd) >= moveSpd[1] {sprite_index = runSpr;}
 	// Jumping/In air
 	if !onGround {sprite_index = jumpSpr;}
-	// Collision mask
-	mask_index = maskSpr;
+	// Crouching
+	if crouching {sprite_index = crouchSpr; mask_index = crouchSpr;}
 	#endregion
 
 	/*---------------------------------- Out of play area ----------------------------------*/

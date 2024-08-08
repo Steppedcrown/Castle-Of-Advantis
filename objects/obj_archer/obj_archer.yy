@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_archer",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_archer",
   "overriddenProperties":[],
@@ -9,8 +11,11 @@
     "name":"Archer",
     "path":"folders/Objects/Player Objects/Archer.yy",
   },
-  "parentObjectId":null,
-  "persistent":false,
+  "parentObjectId":{
+    "name":"objT_player",
+    "path":"objects/objT_player/objT_player.yy",
+  },
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,

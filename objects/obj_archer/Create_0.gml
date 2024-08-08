@@ -6,6 +6,7 @@ defaultMaskSpr = spr_archer_idle;
 idleSpr = spr_archer_idle;
 walkSpr = spr_archer_walk;
 jumpSpr = spr_archer_jump;
+crouchSpr = spr_archer_crouch;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, playerDepth - 1, obj_archer_head);

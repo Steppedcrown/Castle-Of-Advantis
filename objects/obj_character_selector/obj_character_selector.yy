@@ -1,21 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_spearbearer",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_character_selector",
+  "eventList":[],
   "managed":true,
-  "name":"obj_spearbearer",
+  "name":"obj_character_selector",
   "overriddenProperties":[],
   "parent":{
-    "name":"Spearbearer",
-    "path":"folders/Objects/Player Objects/Spearbearer.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"objT_player",
-    "path":"objects/objT_player/objT_player.yy",
+    "name":"obj_pauser",
+    "path":"objects/obj_pauser/obj_pauser.yy",
   },
-  "persistent":true,
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -32,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_spearbearer_idle",
-    "path":"sprites/spr_spearbearer_idle/spr_spearbearer_idle.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

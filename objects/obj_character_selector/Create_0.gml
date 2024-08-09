@@ -17,7 +17,7 @@ len = array_length(charArray);
 pos = 0;
 
 // Set head height offset
-headOffset = obj_knight.sprite_height - obj_knight_head.sprite_height;
+headOffset = global.player.sprite_height - global.player.playerHead.sprite_height;
 // Head padding
 headPad = 20;
 // Head scale

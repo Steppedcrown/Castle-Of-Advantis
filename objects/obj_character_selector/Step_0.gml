@@ -3,8 +3,8 @@ getMenuControls();
 
 // Set pos and loop if needed
 pos += right-left;
-if pos > len {pos = 0;}
-else if pos < 0 {pos = len;}
+if pos > len-1 {pos = 0;}
+else if pos < 0 {pos = len-1;}
 
 // If selected
 if select {
@@ -13,6 +13,7 @@ if select {
 		var _currObj = instance_find(all, i).object_index;
 		if object_is_ancestor(_currObj, objT_player) {
 			instance_destroy(_currObj);
+			break;
 		}
 	}
 	switch (pos) {
@@ -28,4 +29,5 @@ if select {
 		case 4:	global.player = obj_spearbearer; instance_create_depth(-999, -999, -30, obj_spearbearer); break;
 	}
 	playTransition();
+	instance_destroy();
 }

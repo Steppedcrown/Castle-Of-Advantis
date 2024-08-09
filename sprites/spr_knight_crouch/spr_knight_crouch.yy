@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_knight_crouch",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":21,
-  "bbox_left":0,
-  "bbox_right":15,
+  "bbox_left":6,
+  "bbox_right":12,
   "bbox_top":2,
   "collisionKind":1,
   "collisionTolerance":0,

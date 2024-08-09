@@ -10,7 +10,7 @@ crouchSpr = spr_mage_crouch;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, playerDepth - 1, obj_mage_head);
-playerHead.defaultSpr = spr_mage_head_idle;
+playerHead.defaultSpr = spr_mage_head;
 playerHead.idleSpr = spr_mage_head_idle;
 playerHead.maxAngle = 40;
 

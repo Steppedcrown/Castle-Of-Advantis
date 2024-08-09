@@ -10,7 +10,7 @@ crouchSpr = spr_archer_crouch;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, playerDepth - 1, obj_archer_head);
-playerHead.defaultSpr = spr_archer_head_idle;
+playerHead.defaultSpr = spr_archer_head;
 playerHead.idleSpr = spr_archer_head_idle;
 playerHead.maxAngle = 40;
 

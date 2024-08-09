@@ -19,7 +19,7 @@ pos = 0;
 // Set head height offset
 headOffset = global.player.sprite_height - global.player.playerHead.sprite_height;
 // Head padding
-headPad = 20;
+headPad = 24;
 // Head scale
 headScale = 2;
 

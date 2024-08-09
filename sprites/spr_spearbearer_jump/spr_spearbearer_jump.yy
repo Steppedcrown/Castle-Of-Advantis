@@ -23,7 +23,7 @@
   ],
   "name":"spr_spearbearer_jump",
   "nineSlice":null,
-  "origin":9,
+  "origin":7,
   "parent":{
     "name":"Spearbearer",
     "path":"folders/Sprites/Player Sprites/Spearbearer.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":8,
-    "yorigin":21,
+    "yorigin":24,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

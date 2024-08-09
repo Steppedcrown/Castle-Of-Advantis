@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_spearbearer_jump",
   "bboxMode":0,
-  "bbox_bottom":20,
+  "bbox_bottom":23,
   "bbox_left":0,
   "bbox_right":15,
   "bbox_top":0,

@@ -13,11 +13,20 @@ charArray[4, 1] = spr_spearbearer_head_idle;
 
 // Get array length
 len = array_length(charArray);
+// Set cursor position
+pos = 0;
+
+// Set head height offset
+headOffset = obj_knight.sprite_height - obj_knight_head.sprite_height;
+// Head padding
+headPad = 20;
+// Head scale
+headScale = 2;
 
 // Dist from left for char windows
 distLeft = 15;
 // Dist from top for char windows
-distTop = 40;
+distTop = 25;
 
 // Get total width
 totalWidth = camera_get_view_width(view_camera[0]) / len;

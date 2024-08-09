@@ -439,6 +439,7 @@ if !instance_exists(obj_pauser) {
 
 	// Crushed code
 	image_blend = c_white;
+	playerHead.image_blend = c_white;
 	if place_meeting(x, y, obj_wall) {
 		image_blend = c_red;
 		playerHead.image_blend = c_red;

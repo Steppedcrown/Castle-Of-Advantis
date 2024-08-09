@@ -1,17 +1,22 @@
 {
   "$GMObject":"",
-  "%Name":"obj_button",
+  "%Name":"obj_character_selector",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_button",
+  "name":"obj_character_selector",
   "overriddenProperties":[],
   "parent":{
-    "name":"Title Screen",
-    "path":"folders/Objects/Title Screen.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_pauser",
+    "path":"objects/obj_pauser/obj_pauser.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,10 +34,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_button",
-    "path":"sprites/spr_button/spr_button.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

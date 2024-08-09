@@ -1,7 +1,8 @@
 // Main menu options
 options[0, 0] = "Start";
-options[0, 1] = "Settings";
-options[0, 2] = "Quit";
+options[0, 1] = "Character Select";
+options[0, 2] = "Settings";
+options[0, 3] = "Quit";
 
 // Settings submenu
 if window_get_fullscreen() {options[1, 0] = "Fullscreen: Enabled";}
@@ -17,8 +18,8 @@ op_space = 4;
 
 // Button options
 if !instance_exists(obj_button) {instance_create_depth(0, 0, 9999, obj_button);}
-default_button_width = obj_button.sprite_width;
-default_button_height = obj_button.sprite_height;
+default_button_width = obj_button.width;
+default_button_height = obj_button.height;
 button_width = default_button_width;
 button_height = default_button_height;
 button_space = button_height + 10;

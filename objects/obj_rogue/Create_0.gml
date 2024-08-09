@@ -10,7 +10,7 @@ crouchSpr = spr_rogue_crouch;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, playerDepth - 1, obj_rogue_head);
-playerHead.defaultSpr = spr_rogue_head_idle;
+playerHead.defaultSpr = spr_rogue_head;
 playerHead.idleSpr = spr_rogue_head_idle;
 playerHead.maxAngle = 40;
 

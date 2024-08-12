@@ -125,7 +125,7 @@ function getPlayerControls() {
 	downKey = keyboard_check(ord("S"));
 	
 	// Movement
-	if !(rightKey && leftKey && upKey && downKey) {
+	if !(rightKey && leftKey && upKey && downKey) && gamepad_is_connected(0) {
 		// Horizontal checks
 		if gpJoystickLH >= gpDeadzone {rightKey += abs(gpJoystickLH);}
 		else if gpJoystickLH <= gpDeadzone {leftKey =+ abs(gpJoystickLH);}

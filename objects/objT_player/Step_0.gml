@@ -82,9 +82,15 @@ if !instance_exists(obj_pauser) {
 		
 	/*---------------------------------- Attacking ----------------------------------*/
 	// Initialize attack
-	if attackKeyPressed {
+	if attackKeyPressed && attackFramesTimer == 0 {
 		attacking = true;
-		instance_create_depth(x, y, -35, obj_mage_energy_ball);
+		
+		// Determine attack effect
+		switch (global.player) {
+			case obj_mage:
+				instance_create_depth(x, y - sprite_height/2, playerDepth-5, obj_mage_energy_ball);
+				break;
+		}
 	}
 	// Count attack frames
 	if attacking {

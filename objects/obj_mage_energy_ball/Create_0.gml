@@ -1,21 +1,21 @@
-// Get head angle
-angle = global.player.playerHead.angle;
-
 // Proj stats
-projSpd = 200;
+projSpd = 4;
 projDamage = 1;
 
-// Move speeds
+// Calculate absolute distances
 xdist = abs(x - mouse_x);
 ydist = abs(y - mouse_y);
-xspd = (xdist / (xdist * ydist)) * projSpd;
-yspd = (ydist / (xdist * ydist)) * projSpd;
+// Set Euclidean difference
+dist = sqrt(sqr(xdist) + sqr(ydist));
+// Standardize values
+xdist /= dist;
+ydist /= dist;
+// Multiple by projSpd
+xspd = xdist * projSpd;
+yspd = ydist * projSpd;
 
 // X Direction
-if mouse_x > x {moveDirX = 1;}
-else if mouse_x < x {moveDirX = -1;}
-else {moveDirX = 0;}
-//moveDirX = global.player.face;
+moveDirX = global.player.face;
 
 // Y direction
 if mouse_y > y {moveDirY = 1;}

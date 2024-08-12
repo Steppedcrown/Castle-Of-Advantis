@@ -44,8 +44,8 @@
   },
   "origin":9,
   "parent":{
-    "name":"Knight",
-    "path":"folders/Sprites/Player Sprites/Knight.yy",
+    "name":"Head",
+    "path":"folders/Sprites/Player Sprites/Knight/Head.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

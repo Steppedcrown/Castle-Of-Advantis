@@ -45,8 +45,8 @@
   },
   "origin":9,
   "parent":{
-    "name":"Rogue",
-    "path":"folders/Sprites/Player Sprites/Rogue.yy",
+    "name":"Movement",
+    "path":"folders/Sprites/Player Sprites/Rogue/Movement.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

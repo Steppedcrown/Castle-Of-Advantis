@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Rogue",
-    "path":"folders/Sprites/Player Sprites/Rogue.yy",
+    "name":"Head",
+    "path":"folders/Sprites/Player Sprites/Rogue/Head.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

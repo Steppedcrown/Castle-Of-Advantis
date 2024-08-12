@@ -27,8 +27,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Spearbearer",
-    "path":"folders/Sprites/Player Sprites/Spearbearer.yy",
+    "name":"Attack",
+    "path":"folders/Sprites/Player Sprites/Spearbearer/Attack.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

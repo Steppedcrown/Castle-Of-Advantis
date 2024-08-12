@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Rogue",
-    "path":"folders/Sprites/Player Sprites/Rogue.yy",
+    "name":"Attack",
+    "path":"folders/Sprites/Player Sprites/Rogue/Attack.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -9,7 +9,10 @@
     "name":"Mage",
     "path":"folders/Objects/Player Objects/Mage.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"objT_projectile",
+    "path":"objects/objT_projectile/objT_projectile.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

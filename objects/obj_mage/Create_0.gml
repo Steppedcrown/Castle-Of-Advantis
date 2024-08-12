@@ -7,6 +7,10 @@ idleSpr = spr_mage_idle;
 walkSpr = spr_mage_walk;
 jumpSpr = spr_mage_jump;
 crouchSpr = spr_mage_crouch;
+attackSpr = spr_mage_attack;
+
+/*---------------------------------- Attacking ----------------------------------*/
+attackFramesCount = 15;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, playerDepth - 1, obj_mage_head);

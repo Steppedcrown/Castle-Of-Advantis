@@ -48,6 +48,7 @@ walkSpr = spr_maria_walk;
 runSpr = spr_maria_run;
 jumpSpr = spr_maria_jump;
 crouchSpr = spr_maria_crouch;
+attackSpr = noone;
 
 // Depth
 playerDepth = -30;
@@ -56,6 +57,10 @@ depth = playerDepth;
 /*---------------------------------- States ----------------------------------*/
 dead = false;
 crouching = false;
+// Attacking
+attacking = false;
+attackFramesCount = 0;
+attackFramesTimer = 0;
 // Out of room
 outOfRoomCount = 30;
 outOfRoomTimer = 0;
@@ -77,6 +82,7 @@ runType = 0;
 moveSpd[0] = 2;
 moveSpd[1] = 3.5
 crouchMoveSpd = moveSpd[0] / 2; // Set to 0 to disable movement while crouching
+attackMoveSpd = moveSpd[0] / 2; // Set to 0 to disable movement while attacking
 
 /*---------------------------------- Jumping ----------------------------------*/
 // Basic jumping

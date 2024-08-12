@@ -81,7 +81,12 @@ if !instance_exists(obj_pauser) {
 	}
 		
 	/*---------------------------------- Attacking ----------------------------------*/
-	if attackKeyPressed {attacking = true;}
+	// Initialize attack
+	if attackKeyPressed {
+		attacking = true;
+		instance_create_depth(x, y, -35, obj_mage_energy_ball);
+	}
+	// Count attack frames
 	if attacking {
 		// Increment timer
 		attackFramesTimer++;

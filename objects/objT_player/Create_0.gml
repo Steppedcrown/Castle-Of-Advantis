@@ -50,6 +50,9 @@ jumpSpr = spr_maria_jump;
 crouchSpr = spr_maria_crouch;
 attackSpr = noone;
 
+// Other
+playerHead = noone;
+
 // Depth
 playerDepth = -30;
 depth = playerDepth;
@@ -66,7 +69,7 @@ outOfRoomCount = 30;
 outOfRoomTimer = 0;
 
 /*---------------------------------- Combat ----------------------------------*/
-maxHp = 15;
+maxHp = 150;
 hp = maxHp;
 // Crushing
 crushDeathFrames = 3;

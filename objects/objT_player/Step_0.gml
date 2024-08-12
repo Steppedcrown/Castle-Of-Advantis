@@ -80,6 +80,29 @@ if !instance_exists(obj_pauser) {
 		}
 	}
 		
+	/*---------------------------------- Attacking ----------------------------------*/
+	// Initialize attack
+	if attackKeyPressed && attackFramesTimer == 0 {
+		attacking = true;
+		
+		// Determine attack effect
+		switch (global.player) {
+			case obj_mage:
+				instance_create_depth(x, y - sprite_height/2, playerDepth-5, obj_mage_energy_ball);
+				break;
+		}
+	}
+	// Count attack frames
+	if attacking {
+		// Increment timer
+		attackFramesTimer++;
+		if attackFramesTimer >= attackFramesCount {
+			// Stop attacking when target frames have been reached
+			attacking = false;
+			attackFramesTimer = 0;
+		}
+	}
+		
 	/*---------------------------------- Crouching ----------------------------------*/
 	// Manually or automatically crouch
 	if onGround && (downKey || place_meeting(x, y, obj_wall)) {crouching = true;}
@@ -125,6 +148,8 @@ if !instance_exists(obj_pauser) {
 	
 	// Movement if crouching
 	if crouching {xspd = moveDir * crouchMoveSpd;}
+	// Movement if attacking
+	if attacking {xspd = moveDir * attackMoveSpd;}
 
 	// X collision
 	var _subPixel = 0.5;
@@ -455,20 +480,28 @@ if !instance_exists(obj_pauser) {
 	}
 
 	/*---------------------------------- Sprites ----------------------------------*/
-	#region
+	// Change sprites if player is not attacking
+	if !attacking {
+		// Idle
+		if xspd == 0 {sprite_index = idleSpr;}
+		// Walking
+		if abs(xspd) > 0 {sprite_index = walkSpr;}
+		// Running
+		if abs(xspd) >= moveSpd[1] {sprite_index = runSpr;}
+		// Jumping/In air
+		if !onGround {sprite_index = jumpSpr;}
+		// Crouching
+		if crouching {sprite_index = crouchSpr;}
+	} 
+	// Otherwise set to attack spr
+	else {
+		if attacking {sprite_index = attackSpr;}	
+	}
+	
 	// Collision mask default
 	mask_index = defaultMaskSpr;
-	// Idle
-	if xspd == 0 {sprite_index = idleSpr;}
-	// Walking
-	if abs(xspd) > 0 {sprite_index = walkSpr;}
-	// Running
-	if abs(xspd) >= moveSpd[1] {sprite_index = runSpr;}
-	// Jumping/In air
-	if !onGround {sprite_index = jumpSpr;}
-	// Crouching
-	if crouching {sprite_index = crouchSpr; mask_index = crouchSpr;}
-	#endregion
+	// Collision mask crouching
+	if crouching && !attacking {mask_index = crouchSpr;}
 
 	/*---------------------------------- Out of play area ----------------------------------*/
 	if isNotInPlayArea() {

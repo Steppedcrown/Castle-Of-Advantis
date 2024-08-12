@@ -3,11 +3,6 @@ if keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0, gp_start
 	playTransition(,rm_title_screen);
 }
 
-/* Toggle fullscreen
-if keyboard_check_pressed(vk_f11) {
-	window_set_fullscreen(!window_get_fullscreen());
-} */
-
 // Exit if there is not a player
 if !instance_exists(global.player) {exit;}
 

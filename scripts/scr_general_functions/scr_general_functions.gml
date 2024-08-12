@@ -125,7 +125,7 @@ function getPlayerControls() {
 	downKey = keyboard_check(ord("S"));
 	
 	// Movement
-	if !(rightKey && leftKey && upKey && downKey) {
+	if !(rightKey && leftKey && upKey && downKey) && gamepad_is_connected(0) {
 		// Horizontal checks
 		if gpJoystickLH >= gpDeadzone {rightKey += abs(gpJoystickLH);}
 		else if gpJoystickLH <= gpDeadzone {leftKey =+ abs(gpJoystickLH);}
@@ -158,6 +158,9 @@ function getPlayerControls() {
 	
 	// Sprinting
 	runKey = clamp(keyboard_check(vk_lshift) || gamepad_button_check(0, gp_face2), 0, 1);
+	
+	// Attacking
+	attackKeyPressed = clamp(mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0, gp_shoulderrb), 0, 1);
 	
 	/*---------------------------------- Input buffering ----------------------------------*/
 	// Jump buffering

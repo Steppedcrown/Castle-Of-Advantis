@@ -1,4 +1,6 @@
 if !instance_exists(obj_pauser) {
+	// DEATH
+	if hp <= 0 {instance_destroy();}
 	/*---------------------------------- Movement ----------------------------------*/
 	// Face player X
 	if x + paddingX < global.player.x {moveDirX = 1;}

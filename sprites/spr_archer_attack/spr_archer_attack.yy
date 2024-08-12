@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Archer",
-    "path":"folders/Sprites/Player Sprites/Archer.yy",
+    "name":"Attack",
+    "path":"folders/Sprites/Player Sprites/Archer/Attack.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

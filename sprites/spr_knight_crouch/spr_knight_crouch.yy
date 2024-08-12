@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Knight",
-    "path":"folders/Sprites/Player Sprites/Knight.yy",
+    "name":"Movement",
+    "path":"folders/Sprites/Player Sprites/Knight/Movement.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

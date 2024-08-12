@@ -8,6 +8,8 @@ paddingX = 100;
 paddingY = 100;
 
 /*---------------------------------- Combat ----------------------------------*/
+// General
+hp = 5;
 // Range
 inRangeX = false;
 inRangeY = false;

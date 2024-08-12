@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Mage",
-    "path":"folders/Sprites/Player Sprites/Mage.yy",
+    "name":"Attack",
+    "path":"folders/Sprites/Player Sprites/Mage/Attack.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

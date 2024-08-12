@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Knight",
-    "path":"folders/Sprites/Player Sprites/Knight.yy",
+    "name":"Attack",
+    "path":"folders/Sprites/Player Sprites/Knight/Attack.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

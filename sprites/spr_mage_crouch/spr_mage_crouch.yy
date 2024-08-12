@@ -44,8 +44,8 @@
   },
   "origin":9,
   "parent":{
-    "name":"Mage",
-    "path":"folders/Sprites/Player Sprites/Mage.yy",
+    "name":"Movement",
+    "path":"folders/Sprites/Player Sprites/Mage/Movement.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Mage",
-    "path":"folders/Sprites/Player Sprites/Mage.yy",
+    "name":"Head",
+    "path":"folders/Sprites/Player Sprites/Mage/Head.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

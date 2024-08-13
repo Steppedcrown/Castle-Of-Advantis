@@ -51,7 +51,7 @@ function checkForSemiSolidPlatform (_x, _y) {
 }
 
 function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, moveSpdMargin, homing, tempHoming, homingCount, homingLagCount, minSpd) {
-	var _proj = instance_create_depth(x, y - sprite_height/2, -40, projectile);
+	var _proj = instance_create_depth(x, y - sprite_height/2, PLAYER_DEPTH-10, projectile);
 	// Determine x direction
 	if x < global.player.x {_proj.moveDirX = 1;}
 	else if x > global.player.x {_proj.moveDirX = -1;}
@@ -66,8 +66,9 @@ function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, mo
 	// Set moveSpd for x and y directions
 	var _xToPlayer = abs(x - global.player.x);
 	var _yToPlayer = abs(y - global.player.y);
-	_proj.moveSpdX = _xToPlayer / (_yToPlayer * _xToPlayer);
-	_proj.moveSpdY = _yToPlayer / (_xToPlayer * _yToPlayer);
+	var _dist = sqrt(sqr(_xToPlayer) + sqr(_yToPlayer));
+	_proj.moveSpdX = _xToPlayer / _dist;
+	_proj.moveSpdY = _yToPlayer / _dist;
 	// Pass on range of enemy
 	_proj.rangeX = rangeX;
 	_proj.rangeY = rangeY;

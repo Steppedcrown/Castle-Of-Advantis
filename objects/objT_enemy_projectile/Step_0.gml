@@ -16,9 +16,6 @@ if !instance_exists(obj_pauser) {
 
 	// If on first frame or projectile homes
 	if startupFrame || homing {
-		// Set homing slow-down modifier
-		var _slowingMod = 100 - homingTimer;
-		if _slowingMod < minSpd {_slowingMod = minSpd;}
 		// Reset homing if it is only temporary
 		if tempHoming && homing && homingTimer >= homingCount {
 			homing = false;
@@ -31,8 +28,9 @@ if !instance_exists(obj_pauser) {
 			// Determine move speeds
 			var _xToPlayer = abs(x - _lagX);
 			var _yToPlayer = abs(y - _lagY);
-			moveSpdX = _xToPlayer / (_yToPlayer * _xToPlayer);
-			moveSpdY = _yToPlayer / (_xToPlayer * _yToPlayer);
+			var _dist = sqrt(sqr(_xToPlayer) + sqr(_yToPlayer));
+			moveSpdX = _xToPlayer / _dist;
+			moveSpdY = _yToPlayer / _dist;
 		
 			// Determine x direction
 			if x < global.player.x {moveDirX = 1;}
@@ -45,22 +43,15 @@ if !instance_exists(obj_pauser) {
 			else {moveDirY = 0;}
 		}
 	
-		// Scale values
-		moveSpdX *= projSpd * _slowingMod;
-		moveSpdY *= projSpd * _slowingMod;
+		// Scale values if proj is still homing, otherwise keep previous values
+		if homing {
+			moveSpdX *= projSpd;
+			moveSpdY *= projSpd;
+		}
 	
 		// 0 if is not a number
 		if is_nan(moveSpdX) {moveSpdX = 0;}
 		if is_nan(moveSpdY) {moveSpdY = 0;}
-	
-		// Set horizontal and vertical max speeds
-		if moveSpdX == 0 {moveSpdY = maxMoveSpd;}
-		if moveSpdY == 0 {moveSpdX = maxMoveSpd;}
-	
-		// Cap move speeds
-		var _modifier = 0.9;
-		while moveSpdX > maxMoveSpd {moveSpdX *= _modifier; moveSpdY *= _modifier;}
-		while moveSpdY > maxMoveSpd {moveSpdX *= _modifier; moveSpdY *= _modifier;}
 	
 		// Will no longer be on first frame
 		startupFrame = false;

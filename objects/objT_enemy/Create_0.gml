@@ -20,13 +20,13 @@ rangeY = paddingY * 2;
 attackSpd = 90;
 attackTimer = attackSpd;
 // Projectile
-projectile = objT_projectile;
+projectile = objT_enemy_projectile;
 damage = 1;
-projSpd = 2;
+projSpd = 3;
 maxMoveSpd = 3;
 moveSpdMargin = 0;
 // Homing
-homing = false;
+homing = true;
 tempHoming = true;
 minSpd = 75; // 100 to disable
 homingCount = attackSpd / 2;

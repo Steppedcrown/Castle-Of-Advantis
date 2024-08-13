@@ -54,8 +54,7 @@ attackSpr = noone;
 playerHead = noone;
 
 // Depth
-playerDepth = -30;
-depth = playerDepth;
+depth = PLAYER_DEPTH;
 
 /*---------------------------------- States ----------------------------------*/
 dead = false;

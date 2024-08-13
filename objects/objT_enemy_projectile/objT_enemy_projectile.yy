@@ -1,21 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_mage_energy_ball",
+  "%Name":"objT_enemy_projectile",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_mage_energy_ball",
+  "name":"objT_enemy_projectile",
   "overriddenProperties":[],
   "parent":{
-    "name":"Mage",
-    "path":"folders/Objects/Player Objects/Mage.yy",
+    "name":"Templates",
+    "path":"folders/Objects/Templates.yy",
   },
-  "parentObjectId":{
-    "name":"objT_player_projectile",
-    "path":"objects/objT_player_projectile/objT_player_projectile.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -34,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mage_energy_ball",
-    "path":"sprites/spr_mage_energy_ball/spr_mage_energy_ball.yy",
+    "name":"spr_projectile",
+    "path":"sprites/spr_projectile/spr_projectile.yy",
   },
   "spriteMaskId":null,
   "visible":true,

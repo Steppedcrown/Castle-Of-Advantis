@@ -20,7 +20,7 @@ rangeY = paddingY * 2;
 attackSpd = 90;
 attackTimer = attackSpd;
 // Projectile
-projectile = objT_projectile;
+projectile = objT_enemy_projectile;
 damage = 1;
 projSpd = 2;
 maxMoveSpd = 3;

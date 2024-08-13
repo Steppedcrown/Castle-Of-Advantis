@@ -3,12 +3,25 @@ if startUpFrame {
 	// Multiple by projSpd
 	xspd = xdist * projSpd;
 	yspd = ydist * projSpd;
+	maxY = yspd;
 }
 
 // Account for gravity
 if affectedByGrav {
 	gravTimer++;
-	if gravTimer >= gravCount {yspd *= grav;}
+	if gravTimer >= gravCount {
+		// Proj moving up
+		if moveDirY < 0 {
+			yspd *= grav;
+			if yspd < minY {yspd *= 0.25;}
+			if yspd < 0.15 {moveDirY = 1;}
+		}
+		// Proj moving down
+		else {
+			// If it is still below the max speed
+			if yspd/grav < maxY {yspd /= grav;}
+		}
+	}
 }
 
 // Move

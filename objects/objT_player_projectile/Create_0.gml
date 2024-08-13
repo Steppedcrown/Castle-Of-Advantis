@@ -7,6 +7,8 @@ affectedByGrav = false;
 grav = 0;
 gravCount = 0;
 gravTimer = 0;
+minY = 0;
+maxY = 0;
 
 // Calculate absolute distances
 xdist = abs(x - mouse_x);

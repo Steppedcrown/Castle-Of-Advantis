@@ -82,8 +82,10 @@ if !instance_exists(obj_pauser) {
 		
 	/*---------------------------------- Attacking ----------------------------------*/
 	// Initialize attack
-	if attackKeyPressed && attackFramesTimer == 0 {
+	attackCooldownTimer++;
+	if attackKeyPressed && attackCooldownTimer >= attackCooldownCount {
 		attacking = true;
+		attackCooldownTimer = 0;
 		
 		// Determine attack effect
 		switch (global.player) {
@@ -92,6 +94,7 @@ if !instance_exists(obj_pauser) {
 				break;
 		}
 	}
+	
 	// Count attack frames
 	if attacking {
 		// Increment timer
@@ -148,8 +151,8 @@ if !instance_exists(obj_pauser) {
 	
 	// Movement if crouching
 	if crouching {xspd = moveDir * crouchMoveSpd;}
-	// Movement if attacking
-	if attacking {xspd = moveDir * attackMoveSpd;}
+	// Movement if attacking on ground
+	if attacking  && onGround {xspd = moveDir * attackMoveSpd;}
 
 	// X collision
 	var _subPixel = 0.5;

@@ -8,9 +8,10 @@ if _enemyHit {
 	_enemyHit.hp -= projDamage;
 	destroyed = true;
 }
-// Destroy when out of room
+// Destroy when out of room or hitting a wall
 else if x < 0 || x > room_width 
-|| y < 0 || y > room_height {
+|| y < 0 || y > room_height
+|| place_meeting(x, y, obj_wall) {
 	destroyed = true;
 }
 

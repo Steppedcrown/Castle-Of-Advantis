@@ -6,7 +6,7 @@ projSpd = 3;
 projDamage = 1;
 
 // Gravity
-affectedByGrav = false;
-grav = 0.9;
-gravCount = 45;
+affectedByGrav = true;
+grav = 0.95;
+gravCount = 30;
 minY = 0.6;

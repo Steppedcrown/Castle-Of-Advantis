@@ -114,6 +114,7 @@
     {"name":"objT_player_head","order":3,"path":"objects/objT_player_head/objT_player_head.yy",},
     {"name":"objT_player_projectile","order":4,"path":"objects/objT_player_projectile/objT_player_projectile.yy",},
     {"name":"objT_player","order":2,"path":"objects/objT_player/objT_player.yy",},
+    {"name":"objT_pproj2","order":5,"path":"objects/objT_pproj2/objT_pproj2.yy",},
     {"name":"rm_init","order":1,"path":"rooms/rm_init/rm_init.yy",},
     {"name":"rm_level01","order":4,"path":"rooms/rm_level01/rm_level01.yy",},
     {"name":"rm_quit","order":3,"path":"rooms/rm_quit/rm_quit.yy",},

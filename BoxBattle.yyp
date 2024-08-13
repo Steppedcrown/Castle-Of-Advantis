@@ -152,6 +152,7 @@
     {"id":{"name":"objT_player_head","path":"objects/objT_player_head/objT_player_head.yy",},},
     {"id":{"name":"objT_player_projectile","path":"objects/objT_player_projectile/objT_player_projectile.yy",},},
     {"id":{"name":"objT_player","path":"objects/objT_player/objT_player.yy",},},
+    {"id":{"name":"objT_pproj2","path":"objects/objT_pproj2/objT_pproj2.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"id":{"name":"rm_level00","path":"rooms/rm_level00/rm_level00.yy",},},
     {"id":{"name":"rm_level01","path":"rooms/rm_level01/rm_level01.yy",},},

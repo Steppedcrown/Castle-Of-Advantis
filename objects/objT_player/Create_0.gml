@@ -64,6 +64,8 @@ crouching = false;
 attacking = false;
 attackFramesCount = 0;
 attackFramesTimer = 0;
+attackCooldownCount = 0;
+attackCooldownTimer = 0;
 // Out of room
 outOfRoomCount = 30;
 outOfRoomTimer = 0;

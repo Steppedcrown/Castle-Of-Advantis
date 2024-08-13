@@ -16,7 +16,7 @@ attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 0.25;
 
 /*---------------------------------- Head ----------------------------------*/
-playerHead = instance_create_depth(x, y, playerDepth - 1, obj_mage_head);
+playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_mage_head);
 playerHead.defaultSpr = spr_mage_head;
 playerHead.idleSpr = spr_mage_head_idle;
 playerHead.maxAngle = 40;

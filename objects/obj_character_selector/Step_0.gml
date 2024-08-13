@@ -18,15 +18,15 @@ if select {
 	}
 	switch (pos) {
 		// Knight
-		case 0:	global.player = obj_knight; instance_create_depth(-999, -999, -30, obj_knight); break;
+		case 0:	global.player = obj_knight; instance_create_depth(-999, -999, PLAYER_DEPTH, obj_knight); break;
 		// Archer
-		case 1:	global.player = obj_archer; instance_create_depth(-999, -999, -30, obj_archer); break;
+		case 1:	global.player = obj_archer; instance_create_depth(-999, -999, PLAYER_DEPTH, obj_archer); break;
 		// Mage
-		case 2:	global.player = obj_mage; instance_create_depth(-999, -999, -30, obj_mage); break;
+		case 2:	global.player = obj_mage; instance_create_depth(-999, -999, PLAYER_DEPTH, obj_mage); break;
 		// Rogue
-		case 3:	global.player = obj_rogue; instance_create_depth(-999, -999, -30, obj_rogue); break;
+		case 3:	global.player = obj_rogue; instance_create_depth(-999, -999, PLAYER_DEPTH, obj_rogue); break;
 		// Spearbearer
-		case 4:	global.player = obj_spearbearer; instance_create_depth(-999, -999, -30, obj_spearbearer); break;
+		case 4:	global.player = obj_spearbearer; instance_create_depth(-999, -999, PLAYER_DEPTH, obj_spearbearer); break;
 	}
 	playTransition();
 	instance_destroy();

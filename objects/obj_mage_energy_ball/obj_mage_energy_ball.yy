@@ -13,8 +13,8 @@
     "path":"folders/Objects/Player Objects/Mage.yy",
   },
   "parentObjectId":{
-    "name":"objT_pproj2",
-    "path":"objects/objT_pproj2/objT_pproj2.yy",
+    "name":"objT_player_projectile",
+    "path":"objects/objT_player_projectile/objT_player_projectile.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -83,14 +83,19 @@ if !instance_exists(obj_pauser) {
 	/*---------------------------------- Attacking ----------------------------------*/
 	// Initialize attack
 	attackCooldownTimer++;
-	if attackKeyPressed && attackCooldownTimer >= attackCooldownCount {
+	if (attackKeyPressed && attackCooldownTimer >= attackCooldownCount) || attackChargeTimer > 0 {
+		// Set variables
 		attacking = true;
 		attackCooldownTimer = 0;
+		if attackChargeTimer < attackChargeCount {attackChargeTimer++;}
 		
 		// Determine attack effect
 		switch (global.player) {
 			case obj_mage:
 				instance_create_depth(x, y - sprite_height/2, depth-5, obj_mage_energy_ball);
+				break;
+			case obj_archer:
+				if attackKeyReleased {instance_create_depth(x, y - sprite_height/2, depth-5, obj_archer_arrow); attackChargeTimer = 0;}
 				break;
 		}
 	}

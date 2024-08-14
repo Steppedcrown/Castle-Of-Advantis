@@ -1,13 +1,14 @@
 // Proj stats
 projSpd = 1;
-projDamage = 0;
+projDamage = 1;
+
+// Bow charge
+chargeable = false;
+chargedCount = global.player.attackChargeTimer / 60;
 
 // Gravity
 affectedByGrav = false;
 grav = 0;
-gravCount = 0;
-gravTimer = 0;
-minY = 0;
 maxY = 0;
 
 // Calculate absolute distances

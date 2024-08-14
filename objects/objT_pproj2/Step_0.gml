@@ -1,7 +1,7 @@
-originY += sqr(clamp(ydist, 0, 0.75));
+originY += sqr(0.25);
 
-x += xspd;
-y += -spdY + originY;
+x += -xspd;
+y += -yspd + originY;
 
 // Destroy when out of room or hitting a wall
 if x < 0 || x > room_width 

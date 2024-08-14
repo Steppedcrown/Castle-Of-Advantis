@@ -1,27 +1,20 @@
 if startUpFrame {
 	startUpFrame = false;
+	// Increase proj stats by charged amount
+	if chargeable {
+		projSpd += chargedCount;
+		projDamage *= max(1, chargedCount);
+	}
 	// Multiple by projSpd
 	xspd = xdist * projSpd;
 	yspd = ydist * projSpd;
-	maxY = yspd;
+	maxY = yspd * 1.1;
 }
 
 // Account for gravity
 if affectedByGrav {
-	gravTimer++;
-	if gravTimer >= gravCount {
-		// Proj moving up
-		if moveDirY < 0 {
-			yspd *= grav;
-			if yspd < minY {yspd *= 0.25;}
-			if yspd < 0.15 {moveDirY = 1;}
-		}
-		// Proj moving down
-		else {
-			// If it is still below the max speed
-			if yspd/grav < maxY {yspd /= grav;}
-		}
-	}
+	//if abs(yspd) < maxY {yspd -= grav;}
+	yspd -= grav;
 }
 
 // Move

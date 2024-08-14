@@ -162,6 +162,7 @@ function getPlayerControls() {
 	
 	// Attacking
 	attackKeyPressed = clamp(mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0, gp_shoulderrb), 0, 1);
+	attackKeyReleased = clamp(mouse_check_button_released(mb_left) || gamepad_button_check_released(0, gp_shoulderrb), 0, 1);
 	
 	/*---------------------------------- Input buffering ----------------------------------*/
 	// Jump buffering

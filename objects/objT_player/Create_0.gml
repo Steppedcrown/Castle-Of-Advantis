@@ -59,15 +59,21 @@ depth = PLAYER_DEPTH;
 /*---------------------------------- States ----------------------------------*/
 dead = false;
 crouching = false;
-// Attacking
 attacking = false;
-attackFramesCount = 0;
-attackFramesTimer = 0;
-attackCooldownCount = 0;
-attackCooldownTimer = 0;
 // Out of room
 outOfRoomCount = 30;
 outOfRoomTimer = 0;
+
+/*---------------------------------- Attacking ----------------------------------*/
+// Animation tracker
+attackFramesCount = 0;
+attackFramesTimer = 0;
+// Spam prevention
+attackCooldownCount = 0;
+attackCooldownTimer = 0;
+// Charged attacks
+attackChargeCount = 0;
+attackChargeTimer = 0;
 
 /*---------------------------------- Combat ----------------------------------*/
 maxHp = 150;

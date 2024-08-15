@@ -22,7 +22,6 @@ damage = 0;
 // Homing
 homing = false;
 tempHoming = false;
-minSpd = 0;
 homingCount = 0;
 homingTimer = 0;
 homingLagCount = 0;

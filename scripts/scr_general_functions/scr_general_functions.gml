@@ -50,7 +50,7 @@ function checkForSemiSolidPlatform (_x, _y) {
 	return _semiSolidPlat;
 }
 
-function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, moveSpdMargin, homing, tempHoming, homingCount, homingLagCount, minSpd) {
+function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, moveSpdMargin, homing, tempHoming, homingCount, homingLagCount) {
 	var _proj = instance_create_depth(x, y - sprite_height/2, PLAYER_DEPTH-10, projectile);
 	// Determine x direction
 	if x < global.player.x {_proj.moveDirX = 1;}
@@ -82,7 +82,6 @@ function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, mo
 	_proj.tempHoming = tempHoming;
 	_proj.homingCount = homingCount;
 	_proj.homingLagCount = homingLagCount;
-	_proj.minSpd = minSpd;
 }
 
 function playTransition (_transition=obj_transition, _rm=rm_title_screen, _x=-999, _y=-999, _spd = -1) {

@@ -49,6 +49,10 @@ runSpr = spr_maria_run;
 jumpSpr = spr_maria_jump;
 crouchSpr = spr_maria_crouch;
 attackSpr = noone;
+// Spearbearer only
+attackUpSpr = noone;
+attackDownSpr = noone;
+attackSideSpr = noone;
 
 // Other
 playerHead = noone;

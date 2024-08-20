@@ -6,6 +6,17 @@ if !instance_exists(obj_pauser) {
 	// Warp if touching a warp block
 	var _warp = instance_place(x, y, obj_warp);
 	if (_warp != noone) {playTransition(_warp.transition, _warp.targetRoom, _warp.targetX, _warp.targetY, _warp.imageSpd);}
+	
+	// Get movement directions
+	moveDir = rightKey - leftKey;
+
+	// Get face based off mouse
+	if mouse_x - x > 0 {face = 1;}
+	else if mouse_x - x < 0 {face = -1;}
+
+	// Get face based of moveDir
+	//if moveDir > 0 {face = 1;}
+	//else if moveDir < 0 {face = -1;}
 
 	// Get out of solid moveplats that the player got stuck in during the begin step event
 	#region
@@ -97,7 +108,19 @@ if !instance_exists(obj_pauser) {
 			case obj_archer:
 				if attackKeyReleased {instance_create_depth(x, y - sprite_height/2, depth-5, obj_archer_arrow); attackChargeTimer = 0;}
 				break;
+			case obj_spearbearer:
+				// Determine correct attackSpr
+				if  (playerHead.angleCappedUp && face == 1) || (playerHead.angleCappedDown && face == -1) {attackSpr = attackUpSpr; playerHead.depth = PLAYER_DEPTH + 1;}
+				else if (playerHead.angleCappedUp && face == -1) || (playerHead.angleCappedDown && face == 1) {attackSpr = attackDownSpr; playerHead.depth = PLAYER_DEPTH + 1;}
+				else {attackSpr = attackSideSpr;}
+				// Create spear of light
+				instance_create_depth(x, y - sprite_height/2, depth+5, obj_spear_of_light);
+				break;
 		}
+		
+		// Move forward
+		var _attackMovement =  face * attackMoveSpd;
+		if moveDir == 0 && !place_meeting(x + _attackMovement, y, obj_wall) {x += _attackMovement}
 	}
 	
 	// Count attack frames
@@ -108,6 +131,7 @@ if !instance_exists(obj_pauser) {
 			// Stop attacking when target frames have been reached
 			attacking = false;
 			attackFramesTimer = 0;
+			playerHead.depth = PLAYER_DEPTH - 1;
 		}
 	}
 		
@@ -116,7 +140,7 @@ if !instance_exists(obj_pauser) {
 	if onGround && (downKey || place_meeting(x, y, obj_wall)) {crouching = true;}
 	
 	// Change collision mask
-	if crouching {mask_index = crouchSpr;}
+	if crouching && !attacking {mask_index = crouchSpr;}
 	
 	// Manually or automatically uncrouch
 	if crouching && (!downKey || !onGround) {
@@ -136,18 +160,6 @@ if !instance_exists(obj_pauser) {
 	}
 
 	/*---------------------------------- X Movement ----------------------------------*/
-
-	// Get direction
-	moveDir = rightKey - leftKey;
-
-	// Get face based off mouse
-	if mouse_x - x > 0 {face = 1;}
-	else if mouse_x - x < 0 {face = -1;}
-
-	// Get face based of moveDir
-	//if moveDir > 0 {face = 1;}
-	//else if moveDir < 0 {face = -1;}
-
 	// Get runType
 	runType = 0; // set to runKey to enable sprinting
 
@@ -157,7 +169,7 @@ if !instance_exists(obj_pauser) {
 	// Movement if crouching
 	if crouching {xspd = moveDir * crouchMoveSpd;}
 	// Movement if attacking on ground
-	if attacking && onGround {xspd = moveDir * attackMoveSpd;}
+	//if attacking && onGround {xspd = moveDir * attackMoveSpd;}
 
 	// X collision
 	var _subPixel = 0.5;

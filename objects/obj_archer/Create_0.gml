@@ -16,10 +16,10 @@ playerHead.idleSpr = spr_archer_head_idle;
 playerHead.maxAngle = 40;
 
 /*---------------------------------- Attacking ----------------------------------*/
-//attackFramesCount = 15;
+attackFramesCount = 15;
 attackCooldownCount = 20;
 attackCooldownTimer = attackCooldownCount;
-attackMoveSpd = 0.25;
+attackMoveSpd = 0;
 // Attack charge stats
 chargeable = true;
 chargeSprFrames = 3;

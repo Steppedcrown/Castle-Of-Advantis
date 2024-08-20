@@ -26,7 +26,7 @@
   ],
   "name":"spr_spearbearer_attack_down",
   "nineSlice":null,
-  "origin":7,
+  "origin":9,
   "parent":{
     "name":"Attack",
     "path":"folders/Sprites/Player Sprites/Spearbearer/Attack.yy",
@@ -88,7 +88,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":7,
-    "yorigin":24,
+    "yorigin":22,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

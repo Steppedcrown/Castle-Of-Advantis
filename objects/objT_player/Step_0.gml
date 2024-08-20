@@ -6,6 +6,17 @@ if !instance_exists(obj_pauser) {
 	// Warp if touching a warp block
 	var _warp = instance_place(x, y, obj_warp);
 	if (_warp != noone) {playTransition(_warp.transition, _warp.targetRoom, _warp.targetX, _warp.targetY, _warp.imageSpd);}
+	
+	// Get movement directions
+	moveDir = rightKey - leftKey;
+
+	// Get face based off mouse
+	if mouse_x - x > 0 {face = 1;}
+	else if mouse_x - x < 0 {face = -1;}
+
+	// Get face based of moveDir
+	//if moveDir > 0 {face = 1;}
+	//else if moveDir < 0 {face = -1;}
 
 	// Get out of solid moveplats that the player got stuck in during the begin step event
 	#region
@@ -97,7 +108,18 @@ if !instance_exists(obj_pauser) {
 			case obj_archer:
 				if attackKeyReleased {instance_create_depth(x, y - sprite_height/2, depth-5, obj_archer_arrow); attackChargeTimer = 0;}
 				break;
+			case obj_spearbearer:
+				// Determine correct attackSpr
+				with (playerHead) {
+					if  angle <= 90 && angle > maxAngle {other.attackSpr = other.attackUpSpr;}
+					else if angle >= -90 && angle < -maxAngle {other.attackSpr = other.attackDownSpr;}
+					else {other.attackSpr = other.attackSideSpr;}
+				}
+				break;
 		}
+		
+		// Move forward
+		x += face * attackMoveSpd;
 	}
 	
 	// Count attack frames
@@ -116,7 +138,7 @@ if !instance_exists(obj_pauser) {
 	if onGround && (downKey || place_meeting(x, y, obj_wall)) {crouching = true;}
 	
 	// Change collision mask
-	if crouching {mask_index = crouchSpr;}
+	if crouching && !attacking {mask_index = crouchSpr;}
 	
 	// Manually or automatically uncrouch
 	if crouching && (!downKey || !onGround) {
@@ -136,18 +158,6 @@ if !instance_exists(obj_pauser) {
 	}
 
 	/*---------------------------------- X Movement ----------------------------------*/
-
-	// Get direction
-	moveDir = rightKey - leftKey;
-
-	// Get face based off mouse
-	if mouse_x - x > 0 {face = 1;}
-	else if mouse_x - x < 0 {face = -1;}
-
-	// Get face based of moveDir
-	//if moveDir > 0 {face = 1;}
-	//else if moveDir < 0 {face = -1;}
-
 	// Get runType
 	runType = 0; // set to runKey to enable sprinting
 
@@ -157,7 +167,7 @@ if !instance_exists(obj_pauser) {
 	// Movement if crouching
 	if crouching {xspd = moveDir * crouchMoveSpd;}
 	// Movement if attacking on ground
-	if attacking && onGround {xspd = moveDir * attackMoveSpd;}
+	//if attacking && onGround {xspd = moveDir * attackMoveSpd;}
 
 	// X collision
 	var _subPixel = 0.5;

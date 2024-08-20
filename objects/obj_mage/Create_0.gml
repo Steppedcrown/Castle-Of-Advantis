@@ -13,7 +13,7 @@ attackSpr = spr_mage_attack;
 attackFramesCount = 15;
 attackCooldownCount = 30;
 attackCooldownTimer = attackCooldownCount;
-attackMoveSpd = 0.25;
+attackMoveSpd = 0;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_mage_head);

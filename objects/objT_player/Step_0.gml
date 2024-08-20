@@ -110,16 +110,15 @@ if !instance_exists(obj_pauser) {
 				break;
 			case obj_spearbearer:
 				// Determine correct attackSpr
-				with (playerHead) {
-					if  angle <= 90 && angle > maxAngle {other.attackSpr = other.attackUpSpr;}
-					else if angle >= -90 && angle < -maxAngle {other.attackSpr = other.attackDownSpr;}
-					else {other.attackSpr = other.attackSideSpr;}
-				}
+					if  (playerHead.angleCappedUp && face == 1) || (playerHead.angleCappedDown && face == -1) {attackSpr = attackUpSpr; playerHead.depth = PLAYER_DEPTH + 1;}
+					else if (playerHead.angleCappedUp && face == -1) || (playerHead.angleCappedDown && face == 1) {attackSpr = attackDownSpr; playerHead.depth = PLAYER_DEPTH + 1;}
+					else {attackSpr = attackSideSpr;}
 				break;
 		}
 		
 		// Move forward
-		x += face * attackMoveSpd;
+		var _attackMovement =  face * attackMoveSpd;
+		if moveDir == 0 && !place_meeting(x + _attackMovement, y, obj_wall) {x += _attackMovement}
 	}
 	
 	// Count attack frames
@@ -130,6 +129,7 @@ if !instance_exists(obj_pauser) {
 			// Stop attacking when target frames have been reached
 			attacking = false;
 			attackFramesTimer = 0;
+			playerHead.depth = PLAYER_DEPTH - 1;
 		}
 	}
 		

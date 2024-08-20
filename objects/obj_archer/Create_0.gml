@@ -7,6 +7,7 @@ idleSpr = spr_archer_idle;
 walkSpr = spr_archer_walk;
 jumpSpr = spr_archer_jump;
 crouchSpr = spr_archer_crouch;
+attackSpr = spr_archer_attack;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_archer_head);
@@ -20,6 +21,8 @@ attackCooldownCount = 20;
 attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 0.25;
 // Attack charge stats
+chargeable = true;
+chargeSprFrames = 3;
 attackChargeCount = 240;
 
 jumpMax = 2;

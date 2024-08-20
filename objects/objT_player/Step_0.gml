@@ -104,7 +104,7 @@ if !instance_exists(obj_pauser) {
 	if attacking {
 		// Increment timer
 		attackFramesTimer++;
-		if attackFramesTimer >= attackFramesCount {
+		if (!chargeable && attackFramesTimer >= attackFramesCount) || (chargeable && attackKeyReleased) {
 			// Stop attacking when target frames have been reached
 			attacking = false;
 			attackFramesTimer = 0;
@@ -157,7 +157,7 @@ if !instance_exists(obj_pauser) {
 	// Movement if crouching
 	if crouching {xspd = moveDir * crouchMoveSpd;}
 	// Movement if attacking on ground
-	if attacking  && onGround {xspd = moveDir * attackMoveSpd;}
+	if attacking && onGround {xspd = moveDir * attackMoveSpd;}
 
 	// X collision
 	var _subPixel = 0.5;
@@ -503,7 +503,11 @@ if !instance_exists(obj_pauser) {
 	} 
 	// Otherwise set to attack spr
 	else {
-		if attacking {sprite_index = attackSpr;}	
+		if attacking {
+			sprite_index = attackSpr;
+			// If it is a chargeable attack, set correct attack frame
+			if chargeable {image_index = clamp(floor(attackChargeTimer / 60), 0, chargeSprFrames);}
+		}	
 	}
 	
 	// Collision mask default

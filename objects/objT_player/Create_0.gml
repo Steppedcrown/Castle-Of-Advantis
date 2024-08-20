@@ -72,6 +72,8 @@ attackFramesTimer = 0;
 attackCooldownCount = 0;
 attackCooldownTimer = 0;
 // Charged attacks
+chargeable = false;
+chargeSprFrames = 0;
 attackChargeCount = 0;
 attackChargeTimer = 0;
 

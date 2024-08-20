@@ -14,7 +14,8 @@ if startUpFrame {
 // Account for gravity
 if affectedByGrav {
 	//if abs(yspd) < maxY {yspd -= grav;}
-	yspd -= grav;
+	if moveDirY == 1 {yspd += grav;}
+	else {yspd -= grav;}
 }
 
 // Move
@@ -30,7 +31,8 @@ if _enemyHit {
 // Destroy when out of room or hitting a wall
 else if x < 0 || x > room_width 
 || y < 0 || y > room_height
-|| place_meeting(x, y, obj_wall) {
+//|| place_meeting(x, y, obj_wall) 
+{
 	destroyed = true;
 }
 

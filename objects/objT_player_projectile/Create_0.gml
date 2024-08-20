@@ -3,7 +3,7 @@ projSpd = 1;
 projDamage = 1;
 
 // Bow charge
-chargeable = false;
+chargeable = global.player.chargeable;
 chargedCount = global.player.attackChargeTimer / 60;
 
 // Gravity

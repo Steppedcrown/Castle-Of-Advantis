@@ -114,7 +114,7 @@ if !instance_exists(obj_pauser) {
 				else if (playerHead.angleCappedUp && face == -1) || (playerHead.angleCappedDown && face == 1) {attackSpr = attackDownSpr; playerHead.depth = PLAYER_DEPTH + 1;}
 				else {attackSpr = attackSideSpr;}
 				// Create spear of light
-				instance_create_depth(x, y - sprite_height/2, depth-5, obj_spear_of_light);
+				instance_create_depth(x, y - sprite_height/2, depth+5, obj_spear_of_light);
 				break;
 		}
 		

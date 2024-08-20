@@ -110,9 +110,11 @@ if !instance_exists(obj_pauser) {
 				break;
 			case obj_spearbearer:
 				// Determine correct attackSpr
-					if  (playerHead.angleCappedUp && face == 1) || (playerHead.angleCappedDown && face == -1) {attackSpr = attackUpSpr; playerHead.depth = PLAYER_DEPTH + 1;}
-					else if (playerHead.angleCappedUp && face == -1) || (playerHead.angleCappedDown && face == 1) {attackSpr = attackDownSpr; playerHead.depth = PLAYER_DEPTH + 1;}
-					else {attackSpr = attackSideSpr;}
+				if  (playerHead.angleCappedUp && face == 1) || (playerHead.angleCappedDown && face == -1) {attackSpr = attackUpSpr; playerHead.depth = PLAYER_DEPTH + 1;}
+				else if (playerHead.angleCappedUp && face == -1) || (playerHead.angleCappedDown && face == 1) {attackSpr = attackDownSpr; playerHead.depth = PLAYER_DEPTH + 1;}
+				else {attackSpr = attackSideSpr;}
+				// Create spear of light
+				instance_create_depth(x, y - sprite_height/2, depth-5, obj_spear_of_light);
 				break;
 		}
 		

@@ -82,7 +82,7 @@ attackChargeCount = 0;
 attackChargeTimer = 0;
 
 /*---------------------------------- Combat ----------------------------------*/
-maxHp = 150;
+maxHp = 16;
 hp = maxHp;
 // Crushing
 crushDeathFrames = 3;

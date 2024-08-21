@@ -8,8 +8,15 @@ paddingX = 100;
 paddingY = 100;
 
 /*---------------------------------- Combat ----------------------------------*/
-// General
-hp = 5;
+// Hp
+maxHp = 5;
+hp = maxHp;
+hpX = 0;
+hpY = 0;
+hpRatio = 1;
+hpScaleOutline = 7.3;
+hpScaleBar = hpScaleOutline * 3;
+hpScaleOutline += 0.7;
 // Range
 inRangeX = false;
 inRangeY = false;

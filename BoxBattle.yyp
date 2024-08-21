@@ -12,6 +12,7 @@
   "Folders":[
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Objects/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Mosquito","folderPath":"folders/Objects/Enemies/Mosquito.yy","name":"Mosquito","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Environment Objects","folderPath":"folders/Objects/Environment Objects.yy","name":"Environment Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Blocks","folderPath":"folders/Objects/Environment Objects/Blocks.yy","name":"Blocks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Corners","folderPath":"folders/Objects/Environment Objects/Corners.yy","name":"Corners","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -119,6 +120,8 @@
     {"id":{"name":"obj_medium_long_slope_top_left_corner","path":"objects/obj_medium_long_slope_top_left_corner/obj_medium_long_slope_top_left_corner.yy",},},
     {"id":{"name":"obj_medium_slope_bottom_right_corner","path":"objects/obj_medium_slope_bottom_right_corner/obj_medium_slope_bottom_right_corner.yy",},},
     {"id":{"name":"obj_medium_slope_top_right_corner","path":"objects/obj_medium_slope_top_right_corner/obj_medium_slope_top_right_corner.yy",},},
+    {"id":{"name":"obj_mosquito_proj","path":"objects/obj_mosquito_proj/obj_mosquito_proj.yy",},},
+    {"id":{"name":"obj_mosquito","path":"objects/obj_mosquito/obj_mosquito.yy",},},
     {"id":{"name":"obj_pass_through_left","path":"objects/obj_pass_through_left/obj_pass_through_left.yy",},},
     {"id":{"name":"obj_pass_through_middle","path":"objects/obj_pass_through_middle/obj_pass_through_middle.yy",},},
     {"id":{"name":"obj_pass_through_right","path":"objects/obj_pass_through_right/obj_pass_through_right.yy",},},

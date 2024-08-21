@@ -68,7 +68,6 @@
     {"name":"inst_133FECE4","path":"rooms/rm_level00/rm_level00.yy",},
     {"name":"inst_341C05B0","path":"rooms/rm_level00/rm_level00.yy",},
     {"name":"inst_148BE986","path":"rooms/rm_level00/rm_level00.yy",},
-    {"name":"inst_43F4FA20","path":"rooms/rm_level00/rm_level00.yy",},
     {"name":"inst_14782354","path":"rooms/rm_level00/rm_level00.yy",},
     {"name":"inst_4B0A82B8","path":"rooms/rm_level00/rm_level00.yy",},
     {"name":"inst_8718A28","path":"rooms/rm_level00/rm_level00.yy",},
@@ -77,6 +76,7 @@
     {"name":"inst_1667FB91","path":"rooms/rm_level00/rm_level00.yy",},
     {"name":"inst_108ACCBA","path":"rooms/rm_level00/rm_level00.yy",},
     {"name":"inst_3919ABA1","path":"rooms/rm_level00/rm_level00.yy",},
+    {"name":"inst_6E11932C","path":"rooms/rm_level00/rm_level00.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -84,8 +84,8 @@
         {"$GMRInstance":"v1","%Name":"inst_4287C873","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4287C873","objectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":49.0,"scaleY":1.0,"x":0.0,"y":-16.0,},
       ],"layers":[],"name":"Walls","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Enemies","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v1","%Name":"inst_43F4FA20","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_43F4FA20","objectId":{"name":"objT_enemy","path":"objects/objT_enemy/objT_enemy.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":368.0,"y":256.0,},
         {"$GMRInstance":"v1","%Name":"inst_14782354","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_14782354","objectId":{"name":"obj_warp","path":"objects/obj_warp/obj_warp.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":2.0,"x":745.0,"y":305.0,},
+        {"$GMRInstance":"v1","%Name":"inst_6E11932C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6E11932C","objectId":{"name":"obj_mosquito","path":"objects/obj_mosquito/obj_mosquito.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":393.0,"y":245.0,},
       ],"layers":[],"name":"Enemies","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_3919ABA1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3919ABA1","objectId":{"name":"obj_chains","path":"objects/obj_chains/obj_chains.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":-54.666523,"scaleX":1.0,"scaleY":9.694748,"x":763.01074,"y":33.23831,},

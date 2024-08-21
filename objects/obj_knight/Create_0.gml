@@ -6,6 +6,13 @@ idleSpr = spr_knight_idle;
 walkSpr = spr_knight_walk;
 jumpSpr = spr_knight_jump;
 crouchSpr = spr_knight_crouch;
+attackSpr = spr_knight_attack;
+
+/*---------------------------------- Attacking ----------------------------------*/
+attackFramesCount = 15;
+attackCooldownCount = 30;
+attackCooldownTimer = attackCooldownCount;
+attackMoveSpd = 2;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_knight_head);

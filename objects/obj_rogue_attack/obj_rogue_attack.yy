@@ -1,6 +1,6 @@
 {
   "$GMObject":"",
-  "%Name":"obj_knight_swing",
+  "%Name":"obj_rogue_attack",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -8,11 +8,11 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_knight_swing",
+  "name":"obj_rogue_attack",
   "overriddenProperties":[],
   "parent":{
-    "name":"Knight",
-    "path":"folders/Objects/Player Objects/Knight.yy",
+    "name":"Rogue",
+    "path":"folders/Objects/Player Objects/Rogue.yy",
   },
   "parentObjectId":{
     "name":"objT_player_melee",
@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_knight_swing",
-    "path":"sprites/spr_knight_swing/spr_knight_swing.yy",
+    "name":"spr_rogue_swipe",
+    "path":"sprites/spr_rogue_swipe/spr_rogue_swipe.yy",
   },
   "spriteMaskId":null,
   "visible":true,

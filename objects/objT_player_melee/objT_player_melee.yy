@@ -1,6 +1,6 @@
 {
   "$GMObject":"",
-  "%Name":"obj_knight_swing",
+  "%Name":"objT_player_melee",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -8,16 +8,13 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_knight_swing",
+  "name":"objT_player_melee",
   "overriddenProperties":[],
   "parent":{
-    "name":"Knight",
-    "path":"folders/Objects/Player Objects/Knight.yy",
+    "name":"Templates",
+    "path":"folders/Objects/Templates.yy",
   },
-  "parentObjectId":{
-    "name":"objT_player_melee",
-    "path":"objects/objT_player_melee/objT_player_melee.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -35,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_knight_swing",
-    "path":"sprites/spr_knight_swing/spr_knight_swing.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

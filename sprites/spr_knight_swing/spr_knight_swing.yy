@@ -46,7 +46,7 @@
     ],
     "top":0,
   },
-  "origin":0,
+  "origin":9,
   "parent":{
     "name":"Attack",
     "path":"folders/Sprites/Player Sprites/Knight/Attack.yy",
@@ -111,7 +111,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":0,
-    "yorigin":0,
+    "yorigin":6,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

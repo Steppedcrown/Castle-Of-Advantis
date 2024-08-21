@@ -1,19 +1,22 @@
 {
   "$GMObject":"",
-  "%Name":"objT_enemy",
+  "%Name":"obj_mosquito",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"objT_enemy",
+  "name":"obj_mosquito",
   "overriddenProperties":[],
   "parent":{
-    "name":"Templates",
-    "path":"folders/Objects/Templates.yy",
+    "name":"Mosquito",
+    "path":"folders/Objects/Enemies/Mosquito.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"objT_enemy",
+    "path":"objects/objT_enemy/objT_enemy.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemy",
-    "path":"sprites/spr_enemy/spr_enemy.yy",
+    "name":"spr_mosquito_idle",
+    "path":"sprites/spr_mosquito_idle/spr_mosquito_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

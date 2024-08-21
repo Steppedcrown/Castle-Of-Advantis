@@ -43,8 +43,8 @@ if !instance_exists(obj_pauser) {
 			else {moveDirY = 0;}
 		}
 	
-		// Scale values if proj is still homing, otherwise keep previous values
-		if homing {
+		// Scale values if proj is still homing/on first frame, otherwise keep previous values
+		if startupFrame || homing {
 			moveSpdX *= projSpd;
 			moveSpdY *= projSpd;
 		}

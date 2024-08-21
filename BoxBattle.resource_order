@@ -2,6 +2,7 @@
   "FolderOrderSettings":[
     {"name":"Objects","order":4,"path":"folders/Objects.yy",},
     {"name":"Enemies","order":7,"path":"folders/Objects/Enemies.yy",},
+    {"name":"Mosquito","order":1,"path":"folders/Objects/Enemies/Mosquito.yy",},
     {"name":"Blocks","order":3,"path":"folders/Objects/Environment Objects/Blocks.yy",},
     {"name":"Edges","order":1,"path":"folders/Objects/Environment Objects/Edges.yy",},
     {"name":"Misc","order":4,"path":"folders/Objects/Environment Objects/Misc.yy",},
@@ -88,6 +89,7 @@
     {"name":"obj_medium_long_slope_top_left_corner","order":6,"path":"objects/obj_medium_long_slope_top_left_corner/obj_medium_long_slope_top_left_corner.yy",},
     {"name":"obj_medium_slope_bottom_right_corner","order":5,"path":"objects/obj_medium_slope_bottom_right_corner/obj_medium_slope_bottom_right_corner.yy",},
     {"name":"obj_medium_slope_top_right_corner","order":4,"path":"objects/obj_medium_slope_top_right_corner/obj_medium_slope_top_right_corner.yy",},
+    {"name":"obj_mosquito_proj","order":1,"path":"objects/obj_mosquito_proj/obj_mosquito_proj.yy",},
     {"name":"obj_pass_through_middle","order":1,"path":"objects/obj_pass_through_middle/obj_pass_through_middle.yy",},
     {"name":"obj_pass_through_right","order":2,"path":"objects/obj_pass_through_right/obj_pass_through_right.yy",},
     {"name":"obj_pauser","order":5,"path":"objects/obj_pauser/obj_pauser.yy",},

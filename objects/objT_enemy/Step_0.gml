@@ -1,6 +1,14 @@
 if !instance_exists(obj_pauser) {
 	// DEATH
 	if hp <= 0 {instance_destroy();}
+	
+	// Set hp bar variables
+	// Set coords
+	hpX = x - sprite_width/2 - 3;
+	hpY = y - sprite_height - 6;
+	// Set hp ratio
+	hpRatio = hp / maxHp;
+	hpRatio *= hpScaleBar;
 	/*---------------------------------- Movement ----------------------------------*/
 	// Face player X
 	if x + paddingX < global.player.x {moveDirX = 1;}
@@ -11,6 +19,9 @@ if !instance_exists(obj_pauser) {
 	if y + paddingY < global.player.y {moveDirY = 1;}
 	else if y - paddingY > global.player.y {moveDirY = -1;}
 	else {moveDirY = 0;}
+	
+	if global.player.x > x {face = -1;}
+	else if global.player.x < x {face = 1;}
 
 	// Set x and y spd
 	xspd = moveDirX * moveSpd;

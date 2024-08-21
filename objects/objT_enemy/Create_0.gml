@@ -1,6 +1,7 @@
 /*---------------------------------- Movement ----------------------------------*/
 moveDirX = 0;
 moveDirY = 0;
+face = 1;
 moveSpd = 1;
 xspd = 0;
 yspd = 0;
@@ -8,8 +9,15 @@ paddingX = 100;
 paddingY = 100;
 
 /*---------------------------------- Combat ----------------------------------*/
-// General
-hp = 5;
+// Hp
+maxHp = 5;
+hp = maxHp;
+hpX = 0;
+hpY = 0;
+hpRatio = 1;
+hpScaleOutline = 7.3;
+hpScaleBar = hpScaleOutline * 3;
+hpScaleOutline += 0.7;
 // Range
 inRangeX = false;
 inRangeY = false;

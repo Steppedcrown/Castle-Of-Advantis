@@ -102,11 +102,17 @@ if !instance_exists(obj_pauser) {
 		
 		// Determine attack effect
 		switch (global.player) {
-			case obj_mage:
-				instance_create_depth(x, y - sprite_height/2, depth-5, obj_mage_energy_ball);
+			case obj_knight:
+				instance_create_depth(x, y - sprite_height/2, depth+1, obj_knight_swing);
 				break;
 			case obj_archer:
-				if attackKeyReleased {instance_create_depth(x, y - sprite_height/2, depth-5, obj_archer_arrow); attackChargeTimer = 0;}
+				if attackKeyReleased {instance_create_depth(x, y - sprite_height/2, depth+1, obj_archer_arrow); attackChargeTimer = 0;}
+				break;
+			case obj_mage:
+				instance_create_depth(x, y - sprite_height/2, depth+1, obj_mage_energy_ball);
+				break;
+			case obj_rogue:
+				instance_create_depth(x, y - sprite_height/2, depth-1, obj_rogue_attack);
 				break;
 			case obj_spearbearer:
 				// Determine correct attackSpr
@@ -114,7 +120,7 @@ if !instance_exists(obj_pauser) {
 				else if (playerHead.angleCappedUp && face == -1) || (playerHead.angleCappedDown && face == 1) {attackSpr = attackDownSpr; playerHead.depth = PLAYER_DEPTH + 1;}
 				else {attackSpr = attackSideSpr;}
 				// Create spear of light
-				instance_create_depth(x, y - sprite_height/2, depth+5, obj_spear_of_light);
+				instance_create_depth(x, y - sprite_height/2, depth+1, obj_spear_of_light);
 				break;
 		}
 		

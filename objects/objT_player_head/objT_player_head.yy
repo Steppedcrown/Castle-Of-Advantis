@@ -10,8 +10,8 @@
   "name":"objT_player_head",
   "overriddenProperties":[],
   "parent":{
-    "name":"Templates",
-    "path":"folders/Objects/Templates.yy",
+    "name":"Player Templates",
+    "path":"folders/Objects/Templates/Player Templates.yy",
   },
   "parentObjectId":null,
   "persistent":true,

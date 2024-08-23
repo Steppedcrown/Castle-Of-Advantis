@@ -11,8 +11,8 @@
   "name":"objT_player_melee",
   "overriddenProperties":[],
   "parent":{
-    "name":"Templates",
-    "path":"folders/Objects/Templates.yy",
+    "name":"Player Attack Templates",
+    "path":"folders/Objects/Templates/Player Attack Templates.yy",
   },
   "parentObjectId":null,
   "persistent":false,

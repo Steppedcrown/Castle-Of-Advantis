@@ -9,8 +9,8 @@
   "name":"objT_enemy_projectile",
   "overriddenProperties":[],
   "parent":{
-    "name":"Templates",
-    "path":"folders/Objects/Templates.yy",
+    "name":"Enemy Templates",
+    "path":"folders/Objects/Templates/Enemy Templates.yy",
   },
   "parentObjectId":null,
   "persistent":false,

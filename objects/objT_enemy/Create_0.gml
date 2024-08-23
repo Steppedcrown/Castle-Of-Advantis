@@ -17,3 +17,9 @@ hpRatio = 1;
 hpScaleOutline = 7.3;
 hpScaleBar = hpScaleOutline * 3;
 hpScaleOutline += 0.7;
+
+/*---------------------------------- Sprites ----------------------------------*/
+defaultMaskSpr = noone;
+idleSpr = noone;
+walkSpr = noone;
+attackSpr = noone;

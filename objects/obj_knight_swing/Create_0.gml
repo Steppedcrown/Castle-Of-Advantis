@@ -3,5 +3,3 @@ event_inherited();
 
 // Set variables
 damage = 2;
-//canPenetrate = false;
-

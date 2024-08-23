@@ -1,5 +1,8 @@
+// Create list to store hit enemies
+enemiesHitCurr = ds_list_create();
+enemiesHitPrev = ds_list_create();
+
 // Damage
-canDamage = true;
 damage = 0;
 
 // Set angle

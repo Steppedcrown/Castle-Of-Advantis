@@ -3,6 +3,8 @@ enemiesHitCurr = ds_list_create();
 enemiesHitPrev = ds_list_create();
 
 // Damage
+canPenetrate = true;
+canDamage = true;
 damage = 0;
 
 // Set angle

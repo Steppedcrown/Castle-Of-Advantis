@@ -112,6 +112,7 @@
     {"id":{"name":"obj_hanging_fire","path":"objects/obj_hanging_fire/obj_hanging_fire.yy",},},
     {"id":{"name":"obj_hp_bar","path":"objects/obj_hp_bar/obj_hp_bar.yy",},},
     {"id":{"name":"obj_hp_outline","path":"objects/obj_hp_outline/obj_hp_outline.yy",},},
+    {"id":{"name":"obj_hud","path":"objects/obj_hud/obj_hud.yy",},},
     {"id":{"name":"obj_knight_head","path":"objects/obj_knight_head/obj_knight_head.yy",},},
     {"id":{"name":"obj_knight_swing","path":"objects/obj_knight_swing/obj_knight_swing.yy",},},
     {"id":{"name":"obj_knight","path":"objects/obj_knight/obj_knight.yy",},},

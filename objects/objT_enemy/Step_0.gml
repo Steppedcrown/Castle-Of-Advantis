@@ -1,6 +1,6 @@
 if !instance_exists(obj_pauser) {
 	// DEATH
-	if hp <= 0 {instance_destroy();}
+	if hp <= 0 {global.player_score += pointValue; instance_destroy();}
 	
 	// Set hp bar variables
 	// Set coords

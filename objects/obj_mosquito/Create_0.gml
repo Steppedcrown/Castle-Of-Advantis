@@ -9,3 +9,6 @@ damage = 2;
 // Set projectile
 projectile = obj_mosquito_proj;
 homing = false;
+
+// Score
+pointValue = maxHp;

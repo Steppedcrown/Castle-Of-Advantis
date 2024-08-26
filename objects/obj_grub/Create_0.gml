@@ -22,3 +22,6 @@ walkSpr = spr_grub_walk;
 
 // Drop to ground
 while !place_meeting(x, y+1, obj_wall) {y += 1;}
+
+// Score
+pointValue = maxHp;

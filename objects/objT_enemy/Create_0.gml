@@ -23,3 +23,6 @@ defaultMaskSpr = noone;
 idleSpr = noone;
 walkSpr = noone;
 attackSpr = noone;
+
+/*---------------------------------- Scoring ----------------------------------*/
+pointValue = 0;

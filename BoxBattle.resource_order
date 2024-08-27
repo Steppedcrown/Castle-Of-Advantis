@@ -83,6 +83,7 @@
     {"name":"obj_floor","order":3,"path":"objects/obj_floor/obj_floor.yy",},
     {"name":"obj_hanging_fire","order":1,"path":"objects/obj_hanging_fire/obj_hanging_fire.yy",},
     {"name":"obj_hp_outline","order":1,"path":"objects/obj_hp_outline/obj_hp_outline.yy",},
+    {"name":"obj_hud","order":14,"path":"objects/obj_hud/obj_hud.yy",},
     {"name":"obj_knight_head","order":2,"path":"objects/obj_knight_head/obj_knight_head.yy",},
     {"name":"obj_knight_swing","order":1,"path":"objects/obj_knight_swing/obj_knight_swing.yy",},
     {"name":"obj_long_slope_bottom_right_corner","order":9,"path":"objects/obj_long_slope_bottom_right_corner/obj_long_slope_bottom_right_corner.yy",},

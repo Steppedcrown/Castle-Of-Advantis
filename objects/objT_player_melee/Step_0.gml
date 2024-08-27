@@ -29,3 +29,7 @@ else {
 		}
 	}
 }
+
+// Set coords
+x = global.player.x;
+y = global.player.y - sprite_height/2;

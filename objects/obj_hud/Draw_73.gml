@@ -12,9 +12,10 @@ if !isNotInPlayArea() && !instance_exists(obj_pauser) {
 	draw_set_valign(fa_top);
 	draw_set_halign(fa_left);
 	// Set coords
-	var _pad = 10;
-	_x = camX + camera_get_view_width(view_camera[0]) - string_width(scoreboard) - _pad;
+	var _pad = 8;
+	var _multiplier = 2;
+	_x = camX + camera_get_view_width(view_camera[0]) - string_width(scoreboard)*_multiplier - _pad;
 	_y = camY + _pad;
 	// Draw text
-	draw_text_transformed(_x, _y, scoreboard, 2, 2, 0);
+	draw_text_transformed(_x, _y, scoreboard, _multiplier, _multiplier, 0);
 }

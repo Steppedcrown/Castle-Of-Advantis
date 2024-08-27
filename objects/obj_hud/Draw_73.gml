@@ -18,4 +18,10 @@ if !isNotInPlayArea() && !instance_exists(obj_pauser) {
 	_y = camY + _pad;
 	// Draw text
 	draw_text_transformed(_x, _y, scoreboard, _multiplier, _multiplier, 0);
+	
+	/*---------------------------------- Super button ----------------------------------*/
+	_x -= sprite_get_width(spr_super_button) - 10;
+	_y += camera_get_view_height(view_camera[0]) - 45;
+	draw_sprite(spr_super_button, image_index, _x, _y);
+	draw_sprite(spr_timer_knight, superCooldownFrame, _x, _y);
 }

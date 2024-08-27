@@ -87,6 +87,9 @@ attackChargeTimer = 0;
 // Animation tracker
 superFramesCount = 0;
 superFramesTimer = 0;
+// Cooldown
+superCooldownIncrement = 1;
+superReady = true;
 
 /*---------------------------------- Combat ----------------------------------*/
 maxHp = 16;

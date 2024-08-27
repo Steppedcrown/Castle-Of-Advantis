@@ -148,6 +148,7 @@ if !instance_exists(obj_pauser) {
 	// Initialize super attack
 	if superKeyPressed {
 		supering = true;
+		superReady = false;
 		// Determine attack effect
 		switch (global.player) {
 			case obj_knight:

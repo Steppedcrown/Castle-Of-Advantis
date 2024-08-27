@@ -155,6 +155,7 @@
     {"name":"spr_char_window","order":1,"path":"sprites/spr_char_window/spr_char_window.yy",},
     {"name":"spr_clouds_2","order":1,"path":"sprites/spr_clouds_2/spr_clouds_2.yy",},
     {"name":"spr_cursor","order":10,"path":"sprites/spr_cursor/spr_cursor.yy",},
+    {"name":"spr_empty","order":12,"path":"sprites/spr_empty/spr_empty.yy",},
     {"name":"spr_floor","order":3,"path":"sprites/spr_floor/spr_floor.yy",},
     {"name":"spr_font_main","order":1,"path":"sprites/spr_font_main/spr_font_main.yy",},
     {"name":"spr_grub_walk","order":1,"path":"sprites/spr_grub_walk/spr_grub_walk.yy",},

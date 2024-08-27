@@ -62,8 +62,10 @@ depth = PLAYER_DEPTH;
 
 /*---------------------------------- States ----------------------------------*/
 dead = false;
+invulnerable = false;
 crouching = false;
 attacking = false;
+supering = false;
 // Out of room
 outOfRoomCount = 30;
 outOfRoomTimer = 0;
@@ -80,6 +82,14 @@ chargeable = false;
 chargeSprFrames = 0;
 attackChargeCount = 0;
 attackChargeTimer = 0;
+
+/*---------------------------------- Supering ----------------------------------*/
+// Animation tracker
+superFramesCount = 0;
+superFramesTimer = 0;
+// Cooldown
+superCooldownIncrement = 1;
+superReady = true;
 
 /*---------------------------------- Combat ----------------------------------*/
 maxHp = 16;

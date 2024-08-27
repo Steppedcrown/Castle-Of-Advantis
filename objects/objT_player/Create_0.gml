@@ -64,6 +64,7 @@ depth = PLAYER_DEPTH;
 dead = false;
 crouching = false;
 attacking = false;
+supering = false;
 // Out of room
 outOfRoomCount = 30;
 outOfRoomTimer = 0;
@@ -80,6 +81,11 @@ chargeable = false;
 chargeSprFrames = 0;
 attackChargeCount = 0;
 attackChargeTimer = 0;
+
+/*---------------------------------- Supering ----------------------------------*/
+// Animation tracker
+superFramesCount = 0;
+superFramesTimer = 0;
 
 /*---------------------------------- Combat ----------------------------------*/
 maxHp = 16;

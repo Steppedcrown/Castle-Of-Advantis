@@ -140,6 +140,51 @@ if !instance_exists(obj_pauser) {
 			playerHead.depth = PLAYER_DEPTH - 1;
 		}
 	}
+	
+	/*---------------------------------- Super Attacking ----------------------------------*/
+	// Initialize super attack
+	if superKeyPressed {
+		supering = true;
+		// Determine attack effect
+		switch (global.player) {
+			case obj_knight:
+				break;
+			case obj_archer:
+				break;
+			case obj_mage:
+				break;
+			case obj_rogue:
+				image_alpha = 0.5;
+				break;
+			case obj_spearbearer:
+				break;
+		}
+	}
+	
+	// Count super frames
+	if supering {
+		// Increment timer
+		superFramesTimer++;
+		// Once super animation has played out, reset
+		if superFramesTimer >= superFramesCount {
+			supering = false;
+			superFramesTimer = 0;
+			// Reset any previously changed stats
+			switch (global.player) {
+				case obj_knight:
+					break;
+				case obj_archer:
+					break;
+				case obj_mage:
+					break;
+				case obj_rogue:
+					image_alpha = 1;
+					break;
+				case obj_spearbearer:
+					break;
+			}
+		}
+	}
 		
 	/*---------------------------------- Crouching ----------------------------------*/
 	// Manually or automatically crouch

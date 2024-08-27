@@ -15,6 +15,9 @@ attackCooldownCount = 30;
 attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 2;
 
+/*---------------------------------- Supering ----------------------------------*/
+superFramesCount = 180;
+
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_rogue_head);
 playerHead.defaultSpr = spr_rogue_head;

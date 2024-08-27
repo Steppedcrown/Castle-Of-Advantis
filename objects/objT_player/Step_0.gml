@@ -3,6 +3,9 @@ if !instance_exists(obj_pauser) {
 	// Get player inputs
 	getPlayerControls();
 	
+	// Collision mask default
+	mask_index = defaultMaskSpr;
+	
 	// Warp if touching a warp block
 	var _warp = instance_place(x, y, obj_warp);
 	if (_warp != noone) {playTransition(_warp.transition, _warp.targetRoom, _warp.targetX, _warp.targetY, _warp.imageSpd);}
@@ -155,6 +158,8 @@ if !instance_exists(obj_pauser) {
 				break;
 			case obj_rogue:
 				image_alpha = 0.5;
+				playerHead.image_alpha = 0.5;
+				invulnerable = true;
 				break;
 			case obj_spearbearer:
 				break;
@@ -179,6 +184,8 @@ if !instance_exists(obj_pauser) {
 					break;
 				case obj_rogue:
 					image_alpha = 1;
+					playerHead.image_alpha = 1;
+					invulnerable = false;
 					break;
 				case obj_spearbearer:
 					break;
@@ -573,10 +580,10 @@ if !instance_exists(obj_pauser) {
 		}	
 	}
 	
-	// Collision mask default
-	mask_index = defaultMaskSpr;
 	// Collision mask crouching
 	if crouching && !attacking {mask_index = crouchSpr;}
+	// Invulnerable mask
+	if invulnerable {mask_index = spr_empty;}
 
 	/*---------------------------------- Out of play area ----------------------------------*/
 	if isNotInPlayArea() {

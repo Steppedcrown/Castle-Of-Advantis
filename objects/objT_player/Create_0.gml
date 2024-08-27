@@ -62,6 +62,7 @@ depth = PLAYER_DEPTH;
 
 /*---------------------------------- States ----------------------------------*/
 dead = false;
+invulnerable = false;
 crouching = false;
 attacking = false;
 supering = false;

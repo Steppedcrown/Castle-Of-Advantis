@@ -8,6 +8,7 @@ walkSpr = spr_archer_walk;
 jumpSpr = spr_archer_jump;
 crouchSpr = spr_archer_crouch;
 attackSpr = spr_archer_attack;
+superSpr = spr_archer_ultimate;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_archer_head);

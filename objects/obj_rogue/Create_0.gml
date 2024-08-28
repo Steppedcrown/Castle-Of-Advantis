@@ -8,6 +8,7 @@ walkSpr = spr_rogue_walk;
 jumpSpr = spr_rogue_jump;
 crouchSpr = spr_rogue_crouch;
 attackSpr = spr_rogue_attack;
+superSpr = spr_archer_ultimate;
 
 /*---------------------------------- Attacking ----------------------------------*/
 attackFramesCount = 15;

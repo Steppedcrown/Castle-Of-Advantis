@@ -7,12 +7,17 @@ walkSpr = spr_knight_walk;
 jumpSpr = spr_knight_jump;
 crouchSpr = spr_knight_crouch;
 attackSpr = spr_knight_attack;
+superSpr = spr_archer_ultimate;
 
 /*---------------------------------- Attacking ----------------------------------*/
 attackFramesCount = 15;
 attackCooldownCount = 30;
 attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 2;
+
+/*---------------------------------- Supering ----------------------------------*/
+superFramesCount = 180;
+superCooldownIncrement = 5;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_knight_head);

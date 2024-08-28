@@ -86,6 +86,7 @@
     {"name":"obj_hud","order":14,"path":"objects/obj_hud/obj_hud.yy",},
     {"name":"obj_knight_head","order":2,"path":"objects/obj_knight_head/obj_knight_head.yy",},
     {"name":"obj_knight_swing","order":1,"path":"objects/obj_knight_swing/obj_knight_swing.yy",},
+    {"name":"obj_knight_sword","order":3,"path":"objects/obj_knight_sword/obj_knight_sword.yy",},
     {"name":"obj_long_slope_bottom_right_corner","order":9,"path":"objects/obj_long_slope_bottom_right_corner/obj_long_slope_bottom_right_corner.yy",},
     {"name":"obj_long_slope_top_right_corner","order":8,"path":"objects/obj_long_slope_top_right_corner/obj_long_slope_top_right_corner.yy",},
     {"name":"obj_mage_energy_ball","order":2,"path":"objects/obj_mage_energy_ball/obj_mage_energy_ball.yy",},

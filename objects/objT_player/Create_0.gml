@@ -49,6 +49,7 @@ runSpr = spr_maria_run;
 jumpSpr = spr_maria_jump;
 crouchSpr = spr_maria_crouch;
 attackSpr = noone;
+superSpr = noone;
 // Spearbearer only
 attackUpSpr = noone;
 attackDownSpr = noone;
@@ -69,6 +70,8 @@ supering = false;
 // Out of room
 outOfRoomCount = 30;
 outOfRoomTimer = 0;
+// Knight only
+hasSword = true;
 
 /*---------------------------------- Attacking ----------------------------------*/
 // Animation tracker

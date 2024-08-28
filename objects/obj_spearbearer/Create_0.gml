@@ -11,6 +11,7 @@ crouchSpr = spr_spearbearer_crouch;
 attackUpSpr = spr_spearbearer_attack_up;
 attackDownSpr = spr_spearbearer_attack_down;
 attackSideSpr = spr_spearbearer_attack_leftright;
+superSpr = spr_archer_ultimate;
 
 /*---------------------------------- Attacking ----------------------------------*/
 attackFramesCount = 15;

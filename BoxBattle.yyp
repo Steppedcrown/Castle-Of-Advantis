@@ -115,6 +115,7 @@
     {"id":{"name":"obj_hud","path":"objects/obj_hud/obj_hud.yy",},},
     {"id":{"name":"obj_knight_head","path":"objects/obj_knight_head/obj_knight_head.yy",},},
     {"id":{"name":"obj_knight_swing","path":"objects/obj_knight_swing/obj_knight_swing.yy",},},
+    {"id":{"name":"obj_knight_sword","path":"objects/obj_knight_sword/obj_knight_sword.yy",},},
     {"id":{"name":"obj_knight","path":"objects/obj_knight/obj_knight.yy",},},
     {"id":{"name":"obj_ledge_block","path":"objects/obj_ledge_block/obj_ledge_block.yy",},},
     {"id":{"name":"obj_long_slope_bottom_right_corner","path":"objects/obj_long_slope_bottom_right_corner/obj_long_slope_bottom_right_corner.yy",},},

@@ -152,12 +152,20 @@ if !instance_exists(obj_pauser) {
 		// Determine attack effect
 		switch (global.player) {
 			case obj_knight:
+				// Throw sword
+				hasSword = false;
+				instance_create_depth(x, y - sprite_height/2, depth+1, obj_knight_sword);
+				// Set new sprites
+				idleSpr = spr_knight_idle_no_sword;
+				walkSpr = spr_knight_walk_no_sword;
+				jumpSpr = spr_knight_jump_no_sword;
 				break;
 			case obj_archer:
 				break;
 			case obj_mage:
 				break;
 			case obj_rogue:
+				// Change opacity
 				image_alpha = 0.5;
 				playerHead.image_alpha = 0.5;
 				invulnerable = true;
@@ -178,12 +186,17 @@ if !instance_exists(obj_pauser) {
 			// Reset any previously changed stats
 			switch (global.player) {
 				case obj_knight:
+					// Reset sprites
+					idleSpr = spr_knight_idle;
+					walkSpr = spr_knight_walk;
+					jumpSpr = spr_knight_jump;
 					break;
 				case obj_archer:
 					break;
 				case obj_mage:
 					break;
 				case obj_rogue:
+					// Reset opacity
 					image_alpha = 1;
 					playerHead.image_alpha = 1;
 					invulnerable = false;

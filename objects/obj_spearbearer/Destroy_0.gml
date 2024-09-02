@@ -1,1 +1,3 @@
-instance_destroy(obj_spearbearer_head);
+// Inherit the parent event
+event_inherited();
+

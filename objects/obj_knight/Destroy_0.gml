@@ -1,1 +1,2 @@
-instance_destroy(obj_knight_head);
+// Inherit the parent event
+event_inherited();

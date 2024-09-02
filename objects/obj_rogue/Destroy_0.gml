@@ -1,1 +1,2 @@
-instance_destroy(obj_rogue_head);
+// Inherit the parent event
+event_inherited();

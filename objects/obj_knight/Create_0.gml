@@ -7,7 +7,6 @@ walkSpr = spr_knight_walk;
 jumpSpr = spr_knight_jump;
 crouchSpr = spr_knight_crouch;
 attackSpr = spr_knight_attack;
-superSpr = spr_archer_ultimate;
 
 /*---------------------------------- Attacking ----------------------------------*/
 attackFramesCount = 15;

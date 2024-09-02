@@ -8,7 +8,6 @@ walkSpr = spr_mage_walk;
 jumpSpr = spr_mage_jump;
 crouchSpr = spr_mage_crouch;
 attackSpr = spr_mage_attack;
-superSpr = spr_archer_ultimate;
 
 /*---------------------------------- Attacking ----------------------------------*/
 attackFramesCount = 15;

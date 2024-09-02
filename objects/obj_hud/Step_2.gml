@@ -46,3 +46,4 @@ if superReady {
 	global.player.superReady = true;
 	superCooldownFrame = 8;
 }
+//else {global.player.superReady = false;}

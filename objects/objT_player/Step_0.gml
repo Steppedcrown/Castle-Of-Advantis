@@ -146,7 +146,7 @@ if !instance_exists(obj_pauser) {
 	
 	/*---------------------------------- Super Attacking ----------------------------------*/
 	// Initialize super attack
-	if superKeyPressed {
+	if superKeyPressed && superReady {
 		supering = true;
 		superReady = false;
 		// Determine attack effect

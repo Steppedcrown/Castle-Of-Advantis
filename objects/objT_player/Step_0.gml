@@ -156,6 +156,7 @@ if !instance_exists(obj_pauser) {
 				hasSword = false;
 				instance_create_depth(x, y - sprite_height/2, depth+1, obj_knight_sword);
 				// Set new sprites
+				superSpr = spr_knight_ultimate;
 				idleSpr = spr_knight_idle_no_sword;
 				walkSpr = spr_knight_walk_no_sword;
 				jumpSpr = spr_knight_jump_no_sword;
@@ -179,31 +180,39 @@ if !instance_exists(obj_pauser) {
 	if supering {
 		// Increment timer
 		superFramesTimer++;
-		// Once super animation has played out, reset
-		if superFramesTimer >= superFramesCount {
-			supering = false;
-			superFramesTimer = 0;
-			// Reset any previously changed stats
-			switch (global.player) {
-				case obj_knight:
+		// End super depending on current character
+		switch (global.player) {
+			case obj_knight:
+				// Stop super animation
+				if superFramesTimer >= superFramesCount {superSpr = noone;}
+				if hasSword {
+					// Stop supering
+					supering = false;
+					superFramesTimer = 0;
 					// Reset sprites
 					idleSpr = spr_knight_idle;
 					walkSpr = spr_knight_walk;
 					jumpSpr = spr_knight_jump;
-					break;
-				case obj_archer:
-					break;
-				case obj_mage:
-					break;
-				case obj_rogue:
+				}
+				break;
+			case obj_archer:
+				break;
+			case obj_mage:
+				break;
+			case obj_rogue:
+				// Once super duration is over
+				if superFramesTimer >= superFramesCount {
+					// Stop supering
+					supering = false;
+					superFramesTimer = 0;
 					// Reset opacity
 					image_alpha = 1;
 					playerHead.image_alpha = 1;
 					invulnerable = false;
-					break;
-				case obj_spearbearer:
-					break;
-			}
+				}
+				break;
+			case obj_spearbearer:
+				break;
 		}
 	}
 		
@@ -571,8 +580,7 @@ if !instance_exists(obj_pauser) {
 		if outOfRoomTimer >= outOfRoomCount {dead = true; outOfRoomTimer = 0;}
 	}
 
-	/*---------------------------------- Sprites ----------------------------------*/
-	// Change sprites if player is not attacking
+	/*---------------------------------- Sprites and Masks ----------------------------------*/
 	if !attacking {
 		// Idle
 		if xspd == 0 {sprite_index = idleSpr;}
@@ -584,15 +592,16 @@ if !instance_exists(obj_pauser) {
 		if !onGround {sprite_index = jumpSpr;}
 		// Crouching
 		if crouching {sprite_index = crouchSpr;}
-	} 
-	// Otherwise set to attack spr
+	}
 	else {
+	// Otherwise set to attack spr
 		if attacking {
 			sprite_index = attackSpr;
 			// If it is a chargeable attack, set correct attack frame
 			if chargeable {image_index = clamp(floor(attackChargeTimer / 60), 0, chargeSprFrames);}
-		}	
+		}
 	}
+	//if superSpr {sprite_index = superSpr;}
 	
 	// Collision mask crouching
 	if crouching && !attacking {mask_index = crouchSpr;}

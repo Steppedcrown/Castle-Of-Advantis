@@ -66,6 +66,7 @@ dead = false;
 invulnerable = false;
 crouching = false;
 attacking = false;
+canAttack = true;
 supering = false;
 // Out of room
 outOfRoomCount = 30;
@@ -95,7 +96,7 @@ superCooldownIncrement = 1;
 superReady = true;
 
 /*---------------------------------- Combat ----------------------------------*/
-maxHp = 16;
+maxHp = 200;
 hp = maxHp;
 // Crushing
 crushDeathFrames = 3;

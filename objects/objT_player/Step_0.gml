@@ -97,7 +97,7 @@ if !instance_exists(obj_pauser) {
 	/*---------------------------------- Attacking ----------------------------------*/
 	// Initialize attack
 	attackCooldownTimer++;
-	if (attackKeyPressed && attackCooldownTimer >= attackCooldownCount) || attackChargeTimer > 0 {
+	if canAttack && (attackKeyPressed && attackCooldownTimer >= attackCooldownCount) || attackChargeTimer > 0 {
 		// Set variables
 		attacking = true;
 		attackCooldownTimer = 0;
@@ -154,6 +154,7 @@ if !instance_exists(obj_pauser) {
 			case obj_knight:
 				// Throw sword
 				hasSword = false;
+				canAttack = false;
 				instance_create_depth(x, y - sprite_height/2, depth+1, obj_knight_sword);
 				// Set new sprites
 				superSpr = spr_knight_ultimate;
@@ -601,7 +602,8 @@ if !instance_exists(obj_pauser) {
 			if chargeable {image_index = clamp(floor(attackChargeTimer / 60), 0, chargeSprFrames);}
 		}
 	}
-	//if superSpr {sprite_index = superSpr;}
+	// Lastly set to superSpr
+	if superSpr != noone {sprite_index = superSpr;}
 	
 	// Collision mask crouching
 	if crouching && !attacking {mask_index = crouchSpr;}

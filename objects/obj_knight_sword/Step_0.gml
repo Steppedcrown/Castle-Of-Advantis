@@ -47,15 +47,25 @@ else {
 	x += xspd * moveDirX;
 	y += yspd * moveDirY;
 }
-
-// Return and damage when hitting enemy
-var _enemyHit = instance_place(x, y, objT_enemy)
-if _enemyHit {
-	_enemyHit.hp -= projDamage;
-	outgoing = false;
+	
+// Get all enemies hit
+var _len = instance_place_list(x, y, objT_enemy, enemiesHitCurr, false);
+// Iterate through for each hit enemy
+for (var i = 0; i < _len; i++) {
+	// Set current hit enemy
+	var _enemyHit = enemiesHitCurr[| i];
+	// If the current enemy was not previously hit
+	if ds_list_find_index(enemiesHitPrev, _enemyHit) == -1 {
+		// Damage it and return the sword
+		_enemyHit.hp -= projDamage;
+		outgoing = false;
+		// Then add it to the list
+		ds_list_add(enemiesHitPrev, _enemyHit);
+	}
 }
+
 // Return when out of room or hitting a wall
-else if outgoing &&
+if outgoing &&
 (x < 0 || x > room_width 
 || y < 0 || y > room_height
 || place_meeting(x, y, obj_wall))
@@ -67,6 +77,7 @@ else if outgoing &&
 if !outgoing &&
 abs(x - global.player.x) <= 10 &&
 abs(y - global.player.y) <= 10 {
+	global.player.canAttack = true;
 	global.player.hasSword = true;
 	instance_destroy();
 }

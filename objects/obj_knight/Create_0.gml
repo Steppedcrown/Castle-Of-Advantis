@@ -16,8 +16,8 @@ attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 2;
 
 /*---------------------------------- Supering ----------------------------------*/
-superFramesCount = 30;
-superCooldownIncrement = 3;
+superFramesCount = 10;
+superCooldownIncrement = 10;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_knight_head);

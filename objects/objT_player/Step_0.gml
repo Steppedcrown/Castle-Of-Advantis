@@ -582,7 +582,7 @@ if !instance_exists(obj_pauser) {
 	}
 
 	/*---------------------------------- Sprites and Masks ----------------------------------*/
-	if !attacking {
+	if !attacking && !superSpr {
 		// Idle
 		if xspd == 0 {sprite_index = idleSpr;}
 		// Walking
@@ -601,9 +601,10 @@ if !instance_exists(obj_pauser) {
 			// If it is a chargeable attack, set correct attack frame
 			if chargeable {image_index = clamp(floor(attackChargeTimer / 60), 0, chargeSprFrames);}
 		}
+		// Lastly set to superSpr
+		if superSpr {sprite_index = superSpr;}
 	}
-	// Lastly set to superSpr
-	if superSpr != noone {sprite_index = superSpr;}
+	
 	
 	// Collision mask crouching
 	if crouching && !attacking {mask_index = crouchSpr;}

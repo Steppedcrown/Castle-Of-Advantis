@@ -94,6 +94,8 @@ superFramesTimer = 0;
 // Cooldown
 superCooldownIncrement = 1;
 superReady = true;
+// Spearbearer Only
+shieldDuration = 0;
 
 /*---------------------------------- Combat ----------------------------------*/
 maxHp = 200;

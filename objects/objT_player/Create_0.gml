@@ -49,6 +49,7 @@ runSpr = spr_maria_run;
 jumpSpr = spr_maria_jump;
 crouchSpr = spr_maria_crouch;
 attackSpr = noone;
+superSpr = noone;
 // Spearbearer only
 attackUpSpr = noone;
 attackDownSpr = noone;
@@ -65,10 +66,13 @@ dead = false;
 invulnerable = false;
 crouching = false;
 attacking = false;
+canAttack = true;
 supering = false;
 // Out of room
 outOfRoomCount = 30;
 outOfRoomTimer = 0;
+// Knight only
+hasSword = true;
 
 /*---------------------------------- Attacking ----------------------------------*/
 // Animation tracker
@@ -92,7 +96,7 @@ superCooldownIncrement = 1;
 superReady = true;
 
 /*---------------------------------- Combat ----------------------------------*/
-maxHp = 16;
+maxHp = 200;
 hp = maxHp;
 // Crushing
 crushDeathFrames = 3;

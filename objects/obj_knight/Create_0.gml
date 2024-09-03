@@ -14,6 +14,10 @@ attackCooldownCount = 30;
 attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 2;
 
+/*---------------------------------- Supering ----------------------------------*/
+superFramesCount = 20;
+superCooldownIncrement = 10;
+
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_knight_head);
 playerHead.defaultSpr = spr_knight_head;

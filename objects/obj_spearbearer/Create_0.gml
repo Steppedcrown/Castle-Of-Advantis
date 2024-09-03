@@ -18,6 +18,11 @@ attackCooldownCount = 30;
 attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 2;
 
+/*---------------------------------- Supering ----------------------------------*/
+superFramesCount = 20;
+superCooldownIncrement = 10;
+shieldDuration = 5;
+
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_spearbearer_head);
 playerHead.defaultSpr = spr_spearbearer_head;

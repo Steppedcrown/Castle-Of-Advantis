@@ -172,6 +172,7 @@ if !instance_exists(obj_pauser) {
 				invulnerable = true;
 				break;
 			case obj_spearbearer:
+				superSpr = spr_spearbearer_ultimate;
 				break;
 		}
 	}
@@ -215,6 +216,17 @@ if !instance_exists(obj_pauser) {
 				}
 				break;
 			case obj_spearbearer:
+				// Stop super animation
+				if superFramesTimer == superFramesCount {
+					superSpr = noone;
+					// Create the shield
+					instance_create_depth(x + (sprite_width/3 * face), y, depth+1, obj_spearbearer_super);
+				}
+				// Stop supering once the shield has expired and animation is complete
+				if !instance_exists(obj_spearbearer_super) && !superSpr {
+					supering = false;
+					superFramesTimer = 0;
+				}
 				break;
 		}
 	}

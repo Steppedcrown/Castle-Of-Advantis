@@ -58,8 +58,16 @@ if !instance_exists(obj_pauser) {
 	}
 
 	// Hit player and destroy proj
-	if collision_line(x, y, x + moveDirX*moveSpdX, y, global.player, true, false) {
-		global.player.hp -= damage;
+	var _playerHit = instance_place(x, y, objT_player)
+	if !destroyed && _playerHit {
+		_playerHit.hp -= damage;
+		destroyed = true;
+	}
+	
+	// Hit enemies if reflected
+	var _enemyHit = instance_place(x, y, objT_enemy)
+	if !destroyed && friendlyFire && _enemyHit {
+		_enemyHit.hp -= damage;
 		destroyed = true;
 	}
 

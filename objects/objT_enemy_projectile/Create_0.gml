@@ -19,6 +19,7 @@ rangeY = 0;
 
 /*---------------------------------- Attack ----------------------------------*/
 damage = 0;
+friendlyFire = false;
 // Homing
 homing = false;
 tempHoming = false;

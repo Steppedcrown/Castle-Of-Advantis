@@ -155,7 +155,6 @@ if !instance_exists(obj_pauser) {
 				// Throw sword
 				hasSword = false;
 				canAttack = false;
-				instance_create_depth(x, y - sprite_height/2, depth+1, obj_knight_sword);
 				// Set new sprites
 				superSpr = spr_knight_ultimate;
 				idleSpr = spr_knight_idle_no_sword;
@@ -185,7 +184,10 @@ if !instance_exists(obj_pauser) {
 		switch (global.player) {
 			case obj_knight:
 				// Stop super animation
-				if superFramesTimer >= superFramesCount {superSpr = noone;}
+				if superFramesTimer == superFramesCount {
+					superSpr = noone;
+					instance_create_depth(x, y - sprite_height/2, depth+1, obj_knight_sword);
+				}
 				if hasSword {
 					// Stop supering
 					supering = false;

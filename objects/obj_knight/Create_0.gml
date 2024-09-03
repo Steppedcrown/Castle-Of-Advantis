@@ -15,7 +15,7 @@ attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 2;
 
 /*---------------------------------- Supering ----------------------------------*/
-superFramesCount = 10;
+superFramesCount = 20;
 superCooldownIncrement = 10;
 
 /*---------------------------------- Head ----------------------------------*/

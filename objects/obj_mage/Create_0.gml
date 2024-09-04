@@ -15,10 +15,12 @@ attackCooldownCount = 30;
 attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 0;
 
+/*---------------------------------- Supering ----------------------------------*/
+superFramesCount = 20;
+superCooldownIncrement = 10;
+
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_mage_head);
 playerHead.defaultSpr = spr_mage_head;
 playerHead.idleSpr = spr_mage_head_idle;
 playerHead.maxAngle = 40;
-
-jumpMax = 2;

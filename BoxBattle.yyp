@@ -99,6 +99,7 @@
     {"id":{"name":"obj_among_us","path":"objects/obj_among_us/obj_among_us.yy",},},
     {"id":{"name":"obj_archer_arrow","path":"objects/obj_archer_arrow/obj_archer_arrow.yy",},},
     {"id":{"name":"obj_archer_head","path":"objects/obj_archer_head/obj_archer_head.yy",},},
+    {"id":{"name":"obj_archer_ult","path":"objects/obj_archer_ult/obj_archer_ult.yy",},},
     {"id":{"name":"obj_archer","path":"objects/obj_archer/obj_archer.yy",},},
     {"id":{"name":"obj_background","path":"objects/obj_background/obj_background.yy",},},
     {"id":{"name":"obj_bg_fire","path":"objects/obj_bg_fire/obj_bg_fire.yy",},},

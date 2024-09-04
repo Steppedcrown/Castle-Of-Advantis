@@ -122,7 +122,7 @@ grav = 0.4;
 termVel = 4;
 onGround = true;
 // Advanced jumping
-jumpMax = 1;
+jumpMax = 2;
 jumpCount = 0;
 jumpHoldTimer = 0;
 // Values for successive jumps

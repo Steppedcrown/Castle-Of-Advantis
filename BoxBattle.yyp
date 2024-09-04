@@ -127,6 +127,7 @@
     {"id":{"name":"obj_long_slope_bottom_right_corner","path":"objects/obj_long_slope_bottom_right_corner/obj_long_slope_bottom_right_corner.yy",},},
     {"id":{"name":"obj_long_slope_top_right_corner","path":"objects/obj_long_slope_top_right_corner/obj_long_slope_top_right_corner.yy",},},
     {"id":{"name":"obj_mage_energy_ball","path":"objects/obj_mage_energy_ball/obj_mage_energy_ball.yy",},},
+    {"id":{"name":"obj_mage_fireball","path":"objects/obj_mage_fireball/obj_mage_fireball.yy",},},
     {"id":{"name":"obj_mage_head","path":"objects/obj_mage_head/obj_mage_head.yy",},},
     {"id":{"name":"obj_mage","path":"objects/obj_mage/obj_mage.yy",},},
     {"id":{"name":"obj_medium_long_slope_bottom_left_corner","path":"objects/obj_medium_long_slope_bottom_left_corner/obj_medium_long_slope_bottom_left_corner.yy",},},

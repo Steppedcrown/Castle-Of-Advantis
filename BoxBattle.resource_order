@@ -96,6 +96,7 @@
     {"name":"obj_long_slope_bottom_right_corner","order":9,"path":"objects/obj_long_slope_bottom_right_corner/obj_long_slope_bottom_right_corner.yy",},
     {"name":"obj_long_slope_top_right_corner","order":8,"path":"objects/obj_long_slope_top_right_corner/obj_long_slope_top_right_corner.yy",},
     {"name":"obj_mage_energy_ball","order":2,"path":"objects/obj_mage_energy_ball/obj_mage_energy_ball.yy",},
+    {"name":"obj_mage_fireball","order":3,"path":"objects/obj_mage_fireball/obj_mage_fireball.yy",},
     {"name":"obj_mage_head","order":1,"path":"objects/obj_mage_head/obj_mage_head.yy",},
     {"name":"obj_medium_long_slope_bottom_left_corner","order":7,"path":"objects/obj_medium_long_slope_bottom_left_corner/obj_medium_long_slope_bottom_left_corner.yy",},
     {"name":"obj_medium_long_slope_top_left_corner","order":6,"path":"objects/obj_medium_long_slope_top_left_corner/obj_medium_long_slope_top_left_corner.yy",},

@@ -20,7 +20,7 @@ chargeSprFrames = 3;
 attackChargeCount = 240;
 
 /*---------------------------------- Supering ----------------------------------*/
-superFramesCount = 20;
+superFramesCount = 30;
 superCooldownIncrement = 10;
 
 /*---------------------------------- Head ----------------------------------*/

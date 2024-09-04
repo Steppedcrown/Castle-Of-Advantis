@@ -26,3 +26,8 @@ attackSpr = noone;
 
 /*---------------------------------- Scoring ----------------------------------*/
 pointValue = 0;
+
+/*---------------------------------- States ----------------------------------*/
+ensnared = false;
+ensnaredDuration = 0;
+ensnaredTimer = 0;

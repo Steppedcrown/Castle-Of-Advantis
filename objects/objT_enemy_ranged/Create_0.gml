@@ -8,6 +8,12 @@ yspd = 0;
 paddingX = 100;
 paddingY = 100;
 
+/*---------------------------------- States ----------------------------------*/
+// Ensnare
+ensnared = false;
+ensnaredDuration = 0;
+ensnaredTimer = 0;
+
 /*---------------------------------- Combat ----------------------------------*/
 // Hp
 maxHp = 5;

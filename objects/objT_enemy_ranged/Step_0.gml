@@ -2,6 +2,14 @@
 event_inherited();
 
 if !instance_exists(obj_pauser) {
+	// Track ensnare duration
+	if ensnared {ensnaredTimer++;}
+	// Unensnare when duration is over
+	if ensnaredTimer >= ensnaredDuration*60 {
+		ensnared = false;
+		ensnaredTimer = 0;
+	}
+	
 	/*---------------------------------- Movement ----------------------------------*/
 	// Face player X
 	if x + paddingX < global.player.x {moveDirX = 1;}
@@ -21,8 +29,10 @@ if !instance_exists(obj_pauser) {
 	yspd = moveDirY * moveSpd;
 
 	// Move
-	x += xspd;
-	y += yspd;
+	if !ensnared {
+		x += xspd;
+		y += yspd;
+	}
 
 	/*---------------------------------- Range ----------------------------------*/
 	// Reset inRange variables

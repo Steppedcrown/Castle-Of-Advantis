@@ -28,5 +28,3 @@ playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_spearbearer_head)
 playerHead.defaultSpr = spr_spearbearer_head;
 playerHead.idleSpr = spr_spearbearer_head_idle;
 playerHead.maxAngle = 40;
-
-jumpMax = 2;

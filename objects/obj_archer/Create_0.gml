@@ -9,12 +9,6 @@ jumpSpr = spr_archer_jump;
 crouchSpr = spr_archer_crouch;
 attackSpr = spr_archer_attack;
 
-/*---------------------------------- Head ----------------------------------*/
-playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_archer_head);
-playerHead.defaultSpr = spr_archer_head;
-playerHead.idleSpr = spr_archer_head_idle;
-playerHead.maxAngle = 40;
-
 /*---------------------------------- Attacking ----------------------------------*/
 attackFramesCount = 15;
 attackCooldownCount = 20;
@@ -25,4 +19,12 @@ chargeable = true;
 chargeSprFrames = 3;
 attackChargeCount = 240;
 
-jumpMax = 2;
+/*---------------------------------- Supering ----------------------------------*/
+superFramesCount = 30;
+superCooldownIncrement = 10;
+
+/*---------------------------------- Head ----------------------------------*/
+playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_archer_head);
+playerHead.defaultSpr = spr_archer_head;
+playerHead.idleSpr = spr_archer_head_idle;
+playerHead.maxAngle = 40;

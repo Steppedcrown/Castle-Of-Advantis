@@ -5,10 +5,21 @@ if !instance_exists(obj_pauser) {
 	// Set face
 	face = moveDirX;
 	
+	// Track ensnare duration
+	if ensnared {ensnaredTimer++;}
+	// Unensnare when duration is over
+	if ensnared && ensnaredTimer >= ensnaredDuration*60 {
+		ensnared = false;
+		ensnaredTimer = 0;
+	}
+	
 	// Set xspd and move
 	xspd = moveDirX * moveSpd;
-	if !place_meeting(x+xspd, y, obj_wall) && place_meeting(x+xspd, y+1, obj_wall) {x += xspd;}
-	else {swapDir = true;}
+	if !place_meeting(x+xspd, y, obj_wall) && 
+	place_meeting(x+xspd, y+1, obj_wall) && 
+	!ensnared {x += xspd;}
+	// If there is a wall and grub not ensnared, swap directions
+	else if !ensnared {swapDir = true;}
 	
 	// Drop to ground
 	if !place_meeting(x, y+grav, obj_wall) {y += grav;}

@@ -162,8 +162,10 @@ if !instance_exists(obj_pauser) {
 				jumpSpr = spr_knight_jump_no_sword;
 				break;
 			case obj_archer:
+				superSpr = spr_archer_ultimate;
 				break;
 			case obj_mage:
+				superSpr = spr_mage_ultimate;
 				break;
 			case obj_rogue:
 				// Change opacity
@@ -200,8 +202,24 @@ if !instance_exists(obj_pauser) {
 				}
 				break;
 			case obj_archer:
+				// Stop super animation
+				if superFramesTimer == superFramesCount {
+					superSpr = noone;
+					instance_create_depth(x, y - sprite_height/2, depth+1, obj_archer_ult);
+					// Stop supering
+					supering = false;
+					superFramesTimer = 0;
+				}
 				break;
 			case obj_mage:
+				// Stop super animation
+				if superFramesTimer == superFramesCount {
+					superSpr = noone;
+					instance_create_depth(x, y - sprite_height/2, depth+1, obj_mage_fireball);
+					// Stop supering
+					supering = false;
+					superFramesTimer = 0;
+				}
 				break;
 			case obj_rogue:
 				// Once super duration is over

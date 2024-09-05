@@ -1,4 +1,12 @@
 if !instance_exists(obj_pauser) {
+	// Track ensnare duration
+	if ensnared {ensnaredTimer++;}
+	// Unensnare when duration is over
+	if ensnared && ensnaredTimer >= ensnaredDuration*60 {
+		ensnared = false;
+		ensnaredTimer = 0;
+	}
+	
 	// DEATH
 	if hp <= 0 {global.player_score += pointValue*10; instance_destroy();}
 	

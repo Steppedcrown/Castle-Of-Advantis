@@ -11,6 +11,7 @@ outgoing = true;
 // Set proj stats
 projSpd = 3;
 projDamage = 3;
+minSpd = 3;
 
 /* Gravity
 affectedByGrav = true;

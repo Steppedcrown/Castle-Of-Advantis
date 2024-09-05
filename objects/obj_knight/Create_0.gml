@@ -13,6 +13,10 @@ attackFramesCount = 15;
 attackCooldownCount = 30;
 attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 2;
+// Damage
+canPenetrate = true;
+canDamage = true;
+damage = 2;
 
 /*---------------------------------- Supering ----------------------------------*/
 superFramesCount = 20;

@@ -1,9 +1,6 @@
 // Inherit the parent event
 event_inherited();
 
-// Set variables
-damage = 2.5;
-
 // Lock spear to 4 directions
 // Right/Left
 if angle <= 45 && angle >= -45 {angle = 0; global.player.attackMoveSpd = 2;}

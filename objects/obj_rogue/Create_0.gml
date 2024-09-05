@@ -11,9 +11,13 @@ attackSpr = spr_rogue_attack;
 
 /*---------------------------------- Attacking ----------------------------------*/
 attackFramesCount = 15;
-attackCooldownCount = 30;
+attackCooldownCount = 15;
 attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 2;
+// Damage
+canPenetrate = true;
+canDamage = true;
+damage = 1;
 
 /*---------------------------------- Supering ----------------------------------*/
 superFramesCount = 180;

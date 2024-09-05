@@ -3,9 +3,9 @@ enemiesHitCurr = ds_list_create();
 enemiesHitPrev = ds_list_create();
 
 // Damage
-canPenetrate = true;
-canDamage = true;
-damage = 0;
+canPenetrate = global.player.canPenetrate;
+canDamage = global.player.canDamage;
+damage = global.player.damage;
 
 // Set angle
 var _x = mouse_x - x;

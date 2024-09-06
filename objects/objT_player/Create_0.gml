@@ -100,7 +100,7 @@ chargedCount = 0;
 // Gravity
 // Basic proj
 affectedByGrav = false;
-grav = 0;
+gravProj = 0;
 // Super proj
 affectedByGravSuper = false;
 gravSuper = 0;

@@ -19,7 +19,7 @@ projSpd = 3;
 projDamage = 1;
 // Gravity
 affectedByGrav = true;
-grav = 0.03;
+gravProj = 0.03;
 // Attack charge stats
 chargeable = true;
 chargeSprFrames = 3;

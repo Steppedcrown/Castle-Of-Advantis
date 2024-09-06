@@ -19,7 +19,6 @@ projSpd = 4;
 projDamage = 1;
 // Gravity
 affectedByGrav = false;
-grav = 0.03;
 
 /*---------------------------------- Supering ----------------------------------*/
 superFramesCount = 20;

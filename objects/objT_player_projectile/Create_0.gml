@@ -10,7 +10,7 @@ chargedCount = global.player.attackChargeTimer / 60;
 // Gravity
 // Basic proj
 affectedByGrav = global.player.affectedByGrav;
-grav = global.player.grav;
+gravProj = global.player.gravProj;
 //maxY = 0;
 // Super proj
 affectedByGravSuper = global.player.affectedByGrav;

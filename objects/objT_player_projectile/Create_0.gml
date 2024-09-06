@@ -11,10 +11,6 @@ chargedCount = global.player.attackChargeTimer / 60;
 // Basic proj
 affectedByGrav = global.player.affectedByGrav;
 gravProj = global.player.gravProj;
-//maxY = 0;
-// Super proj
-affectedByGravSuper = global.player.affectedByGrav;
-gravSuper = global.player.grav;
 
 // Calculate absolute distances
 xdist = abs(x - mouse_x);

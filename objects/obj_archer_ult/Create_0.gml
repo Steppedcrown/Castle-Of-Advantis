@@ -5,3 +5,6 @@ event_inherited();
 ensnaredDuration = global.player.ensnaredDuration;
 projSpd = global.player.projSpdSuper;
 projDamage = global.player.projDamageSuper;
+
+affectedByGrav = global.player.affectedByGravSuper;
+gravProj = global.player.gravSuper;

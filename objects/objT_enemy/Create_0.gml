@@ -5,10 +5,8 @@ face = 1;
 moveSpd = 1;
 xspd = 0;
 yspd = 0;
-paddingX = 100;
-paddingY = 100;
 
-/*---------------------------------- HP ----------------------------------*/
+/*---------------------------------- HP Bar ----------------------------------*/
 maxHp = 5;
 hp = maxHp;
 hpX = 0;
@@ -28,6 +26,7 @@ attackSpr = noone;
 pointValue = 0;
 
 /*---------------------------------- States ----------------------------------*/
+// Ensnare
 ensnared = false;
 ensnaredDuration = 0;
 ensnaredTimer = 0;

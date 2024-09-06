@@ -13,10 +13,16 @@ attackFramesCount = 15;
 attackCooldownCount = 30;
 attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 2;
+// Damage
+canPenetrate = true;
+damage = 2;
 
 /*---------------------------------- Supering ----------------------------------*/
 superFramesCount = 20;
 superCooldownIncrement = 10;
+// Set proj stats
+projSpd = 3;
+projDamage = 3;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_knight_head);

@@ -7,10 +7,7 @@ enemiesHitPrev = ds_list_create();
 
 // Travelling stats
 outgoing = true;
-
-// Set proj stats
-projSpd = 3;
-projDamage = 3;
+minSpd = 3;
 
 /* Gravity
 affectedByGrav = true;

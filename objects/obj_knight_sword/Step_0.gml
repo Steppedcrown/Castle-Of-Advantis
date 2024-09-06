@@ -18,6 +18,9 @@ if affectedByGrav {
 	else {yspd -= grav;}
 }
 
+// Store prev moveDirX
+var _prevMoveDirX = moveDirX;
+
 // Move on outgoing path
 if outgoing {
 	x += xspd * moveDirX;
@@ -43,10 +46,21 @@ else {
 	else if global.player.y < y {moveDirY = -1;}
 	else {moveDirY = 0;}
 	
+	// Set to min spds
+	if abs(x - global.player.x) <= 1 {yspd = minSpd;}
+	if abs(y - global.player.y) <= 1 {xspd = minSpd;}
+	
 	// Move
 	x += xspd * moveDirX;
 	y += yspd * moveDirY;
 }
+
+// Set proj image direction
+if moveDirX != _prevMoveDirX &&
+abs(x - global.player.x) <= 5 {
+	moveDirX = _prevMoveDirX;	
+}
+image_xscale = moveDirX;
 	
 // Get all enemies hit
 var _len = instance_place_list(x, y, objT_enemy, enemiesHitCurr, false);
@@ -75,8 +89,8 @@ if outgoing &&
 
 // Destroy projectile
 if !outgoing &&
-abs(x - global.player.x) <= 10 &&
-abs(y - global.player.y) <= 10 {
+abs(x - global.player.x) <= 25 &&
+abs(y - global.player.y) <= 25 {
 	global.player.canAttack = true;
 	global.player.hasSword = true;
 	instance_destroy();

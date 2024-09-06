@@ -14,9 +14,12 @@ attackSideSpr = spr_spearbearer_attack_leftright;
 
 /*---------------------------------- Attacking ----------------------------------*/
 attackFramesCount = 15;
-attackCooldownCount = 30;
+attackCooldownCount = 45;
 attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 2;
+// Damage
+canPenetrate = true;
+damage = 3;
 
 /*---------------------------------- Supering ----------------------------------*/
 superFramesCount = 20;

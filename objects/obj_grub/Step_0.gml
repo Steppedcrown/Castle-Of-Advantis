@@ -5,14 +5,6 @@ if !instance_exists(obj_pauser) {
 	// Set face
 	face = moveDirX;
 	
-	// Track ensnare duration
-	if ensnared {ensnaredTimer++;}
-	// Unensnare when duration is over
-	if ensnared && ensnaredTimer >= ensnaredDuration*60 {
-		ensnared = false;
-		ensnaredTimer = 0;
-	}
-	
 	// Set xspd and move
 	xspd = moveDirX * moveSpd;
 	if !place_meeting(x+xspd, y, obj_wall) && 

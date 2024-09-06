@@ -1,11 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-// Proj stats
-projSpd = 4;
-projDamage = 2;
-ensnaredDuration = 3;
-
-// Gravity
-affectedByGrav = true;
-grav = 0.015;
+// Set stats
+ensnaredDuration = global.player.ensnaredDuration;
+projSpd = global.player.projSpdSuper;
+projDamage = global.player.projDamageSuper;

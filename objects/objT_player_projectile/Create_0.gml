@@ -1,15 +1,20 @@
 // Proj stats
-projSpd = 1;
-projDamage = 1;
+// Basic
+projSpd = global.player.projSpd;
+projDamage = global.player.projDamage;
 
 // Bow charge
 chargeable = global.player.chargeable;
 chargedCount = global.player.attackChargeTimer / 60;
 
 // Gravity
-affectedByGrav = false;
-grav = 0;
-maxY = 0;
+// Basic proj
+affectedByGrav = global.player.affectedByGrav;
+grav = global.player.grav;
+//maxY = 0;
+// Super proj
+affectedByGravSuper = global.player.affectedByGrav;
+gravSuper = global.player.grav;
 
 // Calculate absolute distances
 xdist = abs(x - mouse_x);

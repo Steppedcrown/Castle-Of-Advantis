@@ -14,10 +14,19 @@ attackFramesCount = 15;
 attackCooldownCount = 30;
 attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 0;
+// Set proj stats
+projSpd = 4;
+projDamage = 1;
+// Gravity
+affectedByGrav = false;
+grav = 0.03;
 
 /*---------------------------------- Supering ----------------------------------*/
 superFramesCount = 20;
 superCooldownIncrement = 10;
+// Super Stats
+projSpdSuper = 4;
+projDamageSuper = 5;
 
 /*---------------------------------- Head ----------------------------------*/
 playerHead = instance_create_depth(x, y, PLAYER_DEPTH - 1, obj_mage_head);

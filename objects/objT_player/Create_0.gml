@@ -81,11 +81,29 @@ attackFramesTimer = 0;
 // Spam prevention
 attackCooldownCount = 0;
 attackCooldownTimer = 0;
+// Damage
+canPenetrate = true;
+canDamage = true;
+damage = 1;
 // Charged attacks
 chargeable = false;
 chargeSprFrames = 0;
 attackChargeCount = 0;
 attackChargeTimer = 0;
+/*---------------------------------- Projectiles ----------------------------------*/
+// Basic
+projSpd = 0;
+projDamage = 0;
+// Bow charge
+chargeable = false;
+chargedCount = 0;
+// Gravity
+// Basic proj
+affectedByGrav = false;
+grav = 0;
+// Super proj
+affectedByGravSuper = false;
+gravSuper = 0;
 
 /*---------------------------------- Supering ----------------------------------*/
 // Animation tracker
@@ -94,6 +112,9 @@ superFramesTimer = 0;
 // Cooldown
 superCooldownIncrement = 1;
 superReady = true;
+// Super Stats
+projSpdSuper = 0;
+projDamageSuper = 0;
 // Spearbearer Only
 shieldDuration = 0;
 

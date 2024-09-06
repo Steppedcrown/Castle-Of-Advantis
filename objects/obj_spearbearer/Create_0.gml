@@ -19,7 +19,6 @@ attackCooldownTimer = attackCooldownCount;
 attackMoveSpd = 2;
 // Damage
 canPenetrate = true;
-canDamage = true;
 damage = 3;
 
 /*---------------------------------- Supering ----------------------------------*/

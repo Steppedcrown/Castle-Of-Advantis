@@ -39,6 +39,8 @@
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Bosses","folderPath":"folders/Sprites/Bosses.yy","name":"Bosses","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Spider Boss","folderPath":"folders/Sprites/Bosses/Spider Boss.yy","name":"Spider Boss","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Character Selector","folderPath":"folders/Sprites/Character Selector.yy","name":"Character Selector","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Sprites/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Medium Enemies","folderPath":"folders/Sprites/Enemies/Medium Enemies.yy","name":"Medium Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -92,7 +94,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.0.169",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"BoxBattle",
   "resources":[
@@ -322,6 +324,10 @@
     {"id":{"name":"spr_spearbearer_ultimate_attack_button","path":"sprites/spr_spearbearer_ultimate_attack_button/spr_spearbearer_ultimate_attack_button.yy",},},
     {"id":{"name":"spr_spearbearer_ultimate","path":"sprites/spr_spearbearer_ultimate/spr_spearbearer_ultimate.yy",},},
     {"id":{"name":"spr_spearbearer_walk","path":"sprites/spr_spearbearer_walk/spr_spearbearer_walk.yy",},},
+    {"id":{"name":"spr_spider_boss_idle","path":"sprites/spr_spider_boss_idle/spr_spider_boss_idle.yy",},},
+    {"id":{"name":"spr_spider_boss_sleeping","path":"sprites/spr_spider_boss_sleeping/spr_spider_boss_sleeping.yy",},},
+    {"id":{"name":"spr_spider_boss_wake_up","path":"sprites/spr_spider_boss_wake_up/spr_spider_boss_wake_up.yy",},},
+    {"id":{"name":"spr_spider_boss_walk","path":"sprites/spr_spider_boss_walk/spr_spider_boss_walk.yy",},},
     {"id":{"name":"spr_spider_hold","path":"sprites/spr_spider_hold/spr_spider_hold.yy",},},
     {"id":{"name":"spr_spider_idle","path":"sprites/spr_spider_idle/spr_spider_idle.yy",},},
     {"id":{"name":"spr_spider_jump","path":"sprites/spr_spider_jump/spr_spider_jump.yy",},},

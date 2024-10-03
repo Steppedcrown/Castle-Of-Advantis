@@ -2,28 +2,25 @@
 event_inherited();
 
 /*---------------------------------- Movement ----------------------------------*/
-moveDirX = 0;
-moveDirY = 0;
-face = 1;
 moveSpd = 1.25;
-xspd = 0;
-yspd = 0;
-
-/*---------------------------------- Combat ----------------------------------*/
-maxHp = 8;
-hp = maxHp;
-
-detectionRange = 150;
-attackCooldown = 120;
-attackCooldownTimer = 0;
-
-attackRange = 30;
 attackMoveSpd = 3;
 
 attackDirX = 0;
 attackDistX = 0;
 attackDistTotal = 100;
 
+/*---------------------------------- Combat ----------------------------------*/
+// Hp
+maxHp = 8;
+hp = maxHp;
+
+// Attacking
+detectionRange = 150;
+attackCooldown = 120;
+attackCooldownTimer = 0;
+attackRange = 30;
+
+// Damaging
 canDamage = true;
 damage = 3;
 

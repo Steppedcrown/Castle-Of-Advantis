@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Grub",
-    "path":"folders/Objects/Enemies/Grub.yy",
+    "path":"folders/Objects/Enemies/Small Enemies/Grub.yy",
   },
   "parentObjectId":{
     "name":"objT_enemy",

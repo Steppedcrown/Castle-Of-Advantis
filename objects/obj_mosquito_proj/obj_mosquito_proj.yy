@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Mosquito",
-    "path":"folders/Objects/Enemies/Mosquito.yy",
+    "path":"folders/Objects/Enemies/Small Enemies/Mosquito.yy",
   },
   "parentObjectId":{
     "name":"objT_enemy_projectile",

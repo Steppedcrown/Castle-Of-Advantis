@@ -27,7 +27,7 @@
   "origin":0,
   "parent":{
     "name":"Old Dude",
-    "path":"folders/Sprites/Player Sprites/Knight/Old Dude.yy",
+    "path":"folders/Sprites/Player Sprites/Old Dude.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

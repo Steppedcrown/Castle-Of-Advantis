@@ -30,3 +30,7 @@ pointValue = 0;
 ensnared = false;
 ensnaredDuration = 0;
 ensnaredTimer = 0;
+// Activity
+active = false;
+activeCount = 0;
+activeTimer = 0;

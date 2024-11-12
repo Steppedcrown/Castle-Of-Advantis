@@ -12,3 +12,7 @@ homing = false;
 
 // Score
 pointValue = maxHp;
+
+// Sprites
+idleSpr = spr_mosquito_idle;
+attackSpr = spr_mosquito_attack;

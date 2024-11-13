@@ -1,7 +1,5 @@
 /*---------------------------------- Movement ----------------------------------*/
 projSpd = 0;
-maxMoveSpd = 0;
-moveSpdMargin = 0;
 // X
 moveSpdX = 0;
 moveDirX = 0;

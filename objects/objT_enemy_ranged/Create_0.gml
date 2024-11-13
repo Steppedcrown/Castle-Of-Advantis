@@ -19,8 +19,6 @@ attackTimer = attackSpd;
 projectile = objT_enemy_projectile;
 damage = 1;
 projSpd = 3;
-maxMoveSpd = 3;
-moveSpdMargin = 0;
 // Homing
 homing = true;
 tempHoming = true;

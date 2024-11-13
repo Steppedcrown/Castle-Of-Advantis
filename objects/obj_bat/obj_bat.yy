@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_mosquito",
+  "%Name":"obj_bat",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_mosquito",
+  "name":"obj_bat",
   "overriddenProperties":[],
   "parent":{
-    "name":"Mosquito",
-    "path":"folders/Objects/Enemies/Small Enemies/Mosquito.yy",
+    "name":"Bat",
+    "path":"folders/Objects/Enemies/Small Enemies/Bat.yy",
   },
   "parentObjectId":{
     "name":"objT_enemy",
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mosquito_idle",
-    "path":"sprites/spr_mosquito_idle/spr_mosquito_idle.yy",
+    "name":"spr_bat_sleeping",
+    "path":"sprites/spr_bat_sleeping/spr_bat_sleeping.yy",
   },
   "spriteMaskId":null,
   "visible":true,

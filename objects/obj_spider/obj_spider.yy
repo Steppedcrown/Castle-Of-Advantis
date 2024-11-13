@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_mosquito",
+  "%Name":"obj_spider",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_mosquito",
+  "name":"obj_spider",
   "overriddenProperties":[],
   "parent":{
-    "name":"Mosquito",
-    "path":"folders/Objects/Enemies/Small Enemies/Mosquito.yy",
+    "name":"Spider",
+    "path":"folders/Objects/Enemies/Small Enemies/Spider.yy",
   },
   "parentObjectId":{
     "name":"objT_enemy",
@@ -34,10 +34,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_mosquito_idle",
-    "path":"sprites/spr_mosquito_idle/spr_mosquito_idle.yy",
+  "spriteId":null,
+  "spriteMaskId":{
+    "name":"spr_spider_idle",
+    "path":"sprites/spr_spider_idle/spr_spider_idle.yy",
   },
-  "spriteMaskId":null,
   "visible":true,
 }

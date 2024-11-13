@@ -2,8 +2,10 @@
   "FolderOrderSettings":[
     {"name":"Objects","order":4,"path":"folders/Objects.yy",},
     {"name":"Enemies","order":7,"path":"folders/Objects/Enemies.yy",},
-    {"name":"Grub","order":2,"path":"folders/Objects/Enemies/Grub.yy",},
-    {"name":"Mosquito","order":1,"path":"folders/Objects/Enemies/Mosquito.yy",},
+    {"name":"Small Enemies","order":4,"path":"folders/Objects/Enemies/Small Enemies.yy",},
+    {"name":"Grub","order":2,"path":"folders/Objects/Enemies/Small Enemies/Grub.yy",},
+    {"name":"Mosquito","order":1,"path":"folders/Objects/Enemies/Small Enemies/Mosquito.yy",},
+    {"name":"Spider","order":3,"path":"folders/Objects/Enemies/Small Enemies/Spider.yy",},
     {"name":"Blocks","order":3,"path":"folders/Objects/Environment Objects/Blocks.yy",},
     {"name":"Edges","order":1,"path":"folders/Objects/Environment Objects/Edges.yy",},
     {"name":"Misc","order":4,"path":"folders/Objects/Environment Objects/Misc.yy",},

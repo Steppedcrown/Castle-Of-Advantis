@@ -7,6 +7,12 @@ if !instance_exists(obj_pauser) {
 		ensnaredTimer = 0;
 	}
 	
+	// Reset activity
+	if active {
+		activeCount++;
+		if activeCount >= activeFrames {active = false;}
+	}
+	
 	// DEATH
 	if hp <= 0 {global.player_score += pointValue*10; instance_destroy();}
 	

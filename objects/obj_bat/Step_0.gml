@@ -21,10 +21,11 @@ if !instance_exists(obj_pauser) {
 			// Or set moveDirs towards player
 			else {
 				// Set moveDirX
-				if global.player.x < x {moveDirX = -1;}
-				else {moveDirX = 1;}
+				if global.player.x < x - xPad {moveDirX = -1;}
+				else if global.player.x > x + xPad {moveDirX = 1;}
+				else {moveDirX = 0;}
 				// Set moveDirY
-				if global.player.y < y {moveDirY = -1;}
+				if global.player.y - yPad < y {moveDirY = -1;}
 				else {moveDirY = 1;}
 			}
 		}

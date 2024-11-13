@@ -29,7 +29,6 @@ projSpd = 3;
 pointValue = maxHp;
 
 // Sprites
-activeSpr = noone;
 idleSpr = spr_mosquito_idle;
 attackSpr = spr_mosquito_attack;
 attackFrames = 30;

@@ -31,6 +31,7 @@ ensnared = false;
 ensnaredDuration = 0;
 ensnaredTimer = 0;
 // Activity
+activeSpr = noone;
 active = false;
 activeCount = 0;
 activeFrames = 0;

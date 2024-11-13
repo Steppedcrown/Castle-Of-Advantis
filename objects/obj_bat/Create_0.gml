@@ -15,9 +15,9 @@ maxHp = 8;
 hp = maxHp;
 
 // Attacking
-detectionRange = 150;
+detectionRange = 100;
 attackCooldown = 120;
-attackCooldownTimer = 0;
+attackCooldownTimer = attackCooldown;
 attackRange = 30;
 
 // Damaging
@@ -36,12 +36,12 @@ wakeUpSpr = spr_bat_waking_up;
 // Sleep/Wake
 sleeping = true;
 waking = false;
-wakingCount = 30;
+wakingFrames = 30;
 wakingTimer = 0;
 // Attack
-canAttack = true;
+canAttack = false;
 startingAttack = false;
-startingCount = 30;
+startingFrames = 30;
 startingTimer = 0;
 attacking = false;
 

@@ -57,6 +57,13 @@ function setActive (_activeSpr, _activeFrames) {
 	activeFrames = _activeFrames;
 }
 
+function setInactive() {
+	active = false;
+	activeSpr = noone;
+	activeCount = 0;
+	activeFrames = 0;
+}
+
 function createProj (projectile, rangeX, rangeY, damage, projSpd) {
 	var _proj = instance_create_depth(x, y - sprite_height/2, PLAYER_DEPTH-10, projectile);
 	// Determine x direction

@@ -35,14 +35,17 @@ if !instance_exists(obj_pauser) {
 			if place_meeting(x, y, global.player) && canDamage {global.player.hp -= damage; canDamage = false;}
 			// Dive towards player
 			if attackDist >= 0 {
-				attackDist += targetSpdY;
+				if diving {attackDist += abs(targetSpdY);}
+				else {attackDist -= abs(targetSpdY);}
 				x += targetSpdX;
 				y += targetSpdY;
 			}
 			// Stop diving
-			if attackDist >= attackDistTotal {targetSpdY *= -1;}
+			if attackDist >= attackDistTotal {targetSpdY *= -1; diving = false;}
 			// Once returned, stop the attack
-			if attackDist < 0 {setInactive(); attackDist = 0; canAttack = false;}
+			if attackDist < 0 {
+				setInactive(); attackDist = 0; canAttack = false;
+			}
 			
 			
 			//// Set attack dist
@@ -57,6 +60,7 @@ if !instance_exists(obj_pauser) {
 		if !active && canAttack {
 			setActive(attackSpr, 6969);
 			canDamage = true;
+			diving = true;
 			// Set moveSpd for x and y directions
 			targetSpdX = abs(x - targetX);
 			targetSpdY = abs(y - targetY);

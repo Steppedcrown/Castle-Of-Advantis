@@ -52,6 +52,7 @@ wakingFrames = 30;
 // Attack
 canAttack = false;
 startingFrames = 30;
+diving = false;
 
 /*---------------------------------- Scoring ----------------------------------*/
 pointValue = 20;

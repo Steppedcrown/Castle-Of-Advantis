@@ -2,12 +2,18 @@
 event_inherited();
 
 /*---------------------------------- Movement ----------------------------------*/
+// Move speeds
 moveSpd = 1;
 attackMoveSpd = 3;
 
+// Attack movement
 attackDirX = 0;
 attackDistX = 0;
 attackDistTotal = 100;
+
+// Padding
+xPad = 15;
+yPad = 15;
 
 /*---------------------------------- Combat ----------------------------------*/
 // Hp

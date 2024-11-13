@@ -12,10 +12,7 @@
     "name":"Mosquito",
     "path":"folders/Objects/Enemies/Small Enemies/Mosquito.yy",
   },
-  "parentObjectId":{
-    "name":"objT_enemy_projectile",
-    "path":"objects/objT_enemy_projectile/objT_enemy_projectile.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

@@ -6,9 +6,26 @@ maxHp = 10;
 hp = maxHp;
 damage = 2;
 
-// Set projectile
+/*---------------------------------- Ranged Movement ----------------------------------*/
+paddingX = 100;
+paddingY = 100;
+
+/*---------------------------------- Ranged Combat ----------------------------------*/
+// Range
+inRangeX = false;
+inRangeY = false;
+inRange = false;
+rangeX = paddingX * 2;
+rangeY = paddingY * 2;
+// Attack speed
+attackSpd = 90;
+attackTimer = attackSpd;
+// Projectile
 projectile = obj_mosquito_proj;
-homing = false;
+damage = 1;
+projSpd = 3;
+maxMoveSpd = 3;
+moveSpdMargin = 0;
 
 // Score
 pointValue = maxHp;

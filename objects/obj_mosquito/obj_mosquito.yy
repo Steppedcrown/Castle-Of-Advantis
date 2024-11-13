@@ -14,8 +14,8 @@
     "path":"folders/Objects/Enemies/Small Enemies/Mosquito.yy",
   },
   "parentObjectId":{
-    "name":"objT_enemy_ranged",
-    "path":"objects/objT_enemy_ranged/objT_enemy_ranged.yy",
+    "name":"objT_enemy",
+    "path":"objects/objT_enemy/objT_enemy.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -1,2 +1,45 @@
-// Inherit the parent event
-event_inherited();
+if !instance_exists(obj_pauser) {
+
+	// If on first frame
+	if startupFrame {
+		// Set initial move speeds
+		initMSX = moveSpdX; 
+		initMSY = moveSpdY;
+		// Scale up moveSpd values
+		moveSpdX *= projSpd;
+		moveSpdY *= projSpd;
+	
+		// 0 if is not a number
+		if is_nan(moveSpdX) {moveSpdX = 0;}
+		if is_nan(moveSpdY) {moveSpdY = 0;}
+	
+		// Will no longer be on first frame
+		startupFrame = false;
+	}
+
+	// Hit player and destroy proj
+	var _playerHit = instance_place(x, y, objT_player)
+	if !destroyed && _playerHit {
+		_playerHit.hp -= damage;
+		destroyed = true;
+	}
+	
+	// Hit enemies if reflected
+	var _enemyHit = instance_place(x, y, objT_enemy)
+	if !destroyed && friendlyFire && _enemyHit {
+		_enemyHit.hp -= damage;
+		destroyed = true;
+	}
+
+	// Move
+	x += moveDirX * moveSpdX;
+	y += moveDirY * moveSpdY;
+
+	// Destroy when off screen or when homing count is reached
+	if x < 0 || x > room_width 
+	|| y < 0 || y > room_height {
+		destroyed = true;
+	}
+
+	if destroyed {instance_destroy();}
+}

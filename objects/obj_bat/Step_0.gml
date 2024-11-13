@@ -11,24 +11,24 @@ if !instance_exists(obj_pauser) {
 	moveDirY = 0;
 	
 	// If player is within detection range
-	if !active && _xToPlayer <= detectionRange && _yToPlayer <= detectionRange {
-		// Either wake up
-		if sleeping {
-			setActive(wakeUpSpr, wakingFrames);
-			sleeping = false;
+	if _xToPlayer <= detectionRange && _yToPlayer <= detectionRange {
+		if !active {
+			// Either wake up
+			if sleeping {
+				setActive(wakeUpSpr, wakingFrames);
+				sleeping = false;
+			}
+			// Or set moveDirs towards player
+			else {
+				// Set moveDirX
+				if global.player.x < x {moveDirX = -1;}
+				else {moveDirX = 1;}
+				// Set moveDirY
+				if global.player.y < y {moveDirY = -1;}
+				else {moveDirY = 1;}
+			}
 		}
-		// Or set moveDirs towards player
-		else {
-			// Set moveDirX
-			if global.player.x < x {moveDirX = -1;}
-			else {moveDirX = 1;}
-			// Set moveDirY
-			if global.player.y < y {moveDirY = -1;}
-			else {moveDirY = 1;}
-		}
-	}
-	
-	if !sleeping {
+		
 		// Attack
 		if active && activeSpr == attackSpr {
 			if place_meeting(x, y, global.player) && canDamage {global.player.hp -= damage; canDamage = false;}	
@@ -53,7 +53,7 @@ if !instance_exists(obj_pauser) {
 		if !active && canAttack && (_xToPlayer <= attackRange || _yToPlayer <= attackRange) {
 			setActive(attackStartSpr, startingFrames);
 		}
-	}
+	}		
 
 	// Attacking cooldown
 	if !canAttack {
@@ -71,6 +71,6 @@ if !instance_exists(obj_pauser) {
 	
 	/*---------------------------------- Sprites ----------------------------------*/
 	if sleeping {sprite_index = sleepSpr;}
-	else if !active {sprite_index = idleSpr;}
+	else if !active || _xToPlayer > detectionRange || _yToPlayer > detectionRange {sprite_index = idleSpr;}
 	else {sprite_index = activeSpr;}
 }

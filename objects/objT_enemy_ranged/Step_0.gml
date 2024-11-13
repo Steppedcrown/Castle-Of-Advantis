@@ -53,7 +53,9 @@ if !instance_exists(obj_pauser) {
 			// Check for LOS
 			if collision_line(x, y - sprite_height/2, global.player.x, global.player.y - global.player.sprite_height/2, global.player, true, false) {
 				// FIRE IN THE HOLE
-				createProj(projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd, moveSpdMargin, homing, tempHoming, homingCount, homingLagCount);
+				createProj(projectile, rangeX, rangeY, damage, projSpd);
+				// Set homing stats
+				setHoming(homing, tempHoming, homingCount, homingLagCount);
 				// Reset timer
 				attackTimer = 0;
 			}

@@ -55,10 +55,7 @@ if !instance_exists(obj_pauser) {
 				// FIRE IN THE HOLE
 				createProj(projectile, rangeX, rangeY, damage, projSpd);
 				// Set active stats
-				active = true;
-				activeSpr = attackSpr;
-				activeCount = 0;
-				activeFrames = attackFrames;
+				setActive(attackSpr, attackFrames);
 				// Reset timer
 				attackTimer = 0;
 			}

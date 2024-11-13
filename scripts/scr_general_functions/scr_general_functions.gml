@@ -50,6 +50,13 @@ function checkForSemiSolidPlatform (_x, _y) {
 	return _semiSolidPlat;
 }
 
+function setActive (_activeSpr, _activeFrames) {
+	active = true;
+	activeSpr = _activeSpr;
+	activeCount = 0;
+	activeFrames = _activeFrames;
+}
+
 function createProj (projectile, rangeX, rangeY, damage, projSpd) {
 	var _proj = instance_create_depth(x, y - sprite_height/2, PLAYER_DEPTH-10, projectile);
 	// Determine x direction

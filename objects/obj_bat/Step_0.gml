@@ -49,14 +49,6 @@ if !instance_exists(obj_pauser) {
 				canAttack = false;
 				image_angle = 0;
 			}
-			
-			
-			//// Set attack dist
-			//_attackDistX = attackMoveSpd * attackDirX;
-			//attackDistX += abs(_attackDistX);
-			//// Move for attack or end attack
-			//if attackDistX < attackDistTotal {x += _attackDistX;}
-			//else {setInactive(); attackDistX = 0; canAttack = false;}
 		}
 
 		// Initialize attack

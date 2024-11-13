@@ -41,10 +41,13 @@ if !instance_exists(obj_pauser) {
 				y += targetSpdY;
 			}
 			// Stop diving
-			if attackDist >= attackDistTotal {targetSpdY *= -1; diving = false;}
+			if attackDist >= attackDistTotal {targetSpdY *= -1; diving = false; image_angle *= -1;}
 			// Once returned, stop the attack
 			if attackDist < 0 {
-				setInactive(); attackDist = 0; canAttack = false;
+				setInactive(); 
+				attackDist = 0; 
+				canAttack = false;
+				image_angle = 0;
 			}
 			
 			
@@ -62,11 +65,19 @@ if !instance_exists(obj_pauser) {
 			canDamage = true;
 			diving = true;
 			// Set moveSpd for x and y directions
-			targetSpdX = abs(x - targetX);
-			targetSpdY = abs(y - targetY);
+			targetSpdX = abs(x - global.player.x);
+			targetSpdY = abs(y - global.player.y);
 			var _dist = sqrt(sqr(targetSpdX) + sqr(targetSpdY));
 			targetSpdX = (targetSpdX / _dist) * attackMoveSpd;
 			targetSpdY = (targetSpdY / _dist) * attackMoveSpd;
+			// Set x and y for angle
+			var _x = global.player.x - x;
+			var _y = global.player.y - y;
+			// Set angle depending on direction
+			if x < global.player.x {
+				image_angle = arctan2(_y, _x) * -180 / pi;}
+			else {
+				image_angle = arctan2(-_y, -_x) * -180 / pi;}
 			// Set attackDirX
 			if global.player.x < x {attackDirX = -1;}
 			else {attackDirX = 1;}

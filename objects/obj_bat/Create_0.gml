@@ -2,12 +2,22 @@
 event_inherited();
 
 /*---------------------------------- Movement ----------------------------------*/
+// Move speeds
 moveSpd = 1;
 attackMoveSpd = 3;
 
+// Player targeting moveSpds
+targetSpdX = 0;
+targetSpdY = 0;
+
+// Attack movement
 attackDirX = 0;
-attackDistX = 0;
-attackDistTotal = 100;
+attackDist = 0;
+attackDistTotal = 50;
+
+// Padding
+xPad = 70;
+yPad = 50;
 
 /*---------------------------------- Combat ----------------------------------*/
 // Hp
@@ -18,7 +28,8 @@ hp = maxHp;
 detectionRange = 150;
 attackCooldown = 120;
 attackCooldownTimer = attackCooldown;
-attackRange = 30;
+attackRangeX = xPad;
+attackRangeY = 60;
 
 // Damaging
 canDamage = true;
@@ -38,6 +49,7 @@ wakingFrames = 30;
 // Attack
 canAttack = false;
 startingFrames = 30;
+diving = false;
 
 /*---------------------------------- Scoring ----------------------------------*/
 pointValue = 20;

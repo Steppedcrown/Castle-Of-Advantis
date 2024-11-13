@@ -39,6 +39,7 @@ if !superReady && !global.player.supering {
 		superCooldownTimer = 0;
 	}
 }
+
 // Set the frame
 superCooldownFrame = floor(superCooldownTimer / 60);
 // Allow for super activation

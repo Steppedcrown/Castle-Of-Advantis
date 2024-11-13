@@ -10,8 +10,8 @@ if !instance_exists(obj_pauser) {
 	moveDirX = 0;
 	moveDirY = 0;
 	
-	// If player is within detection range
-	if _xToPlayer <= detectionRange && _yToPlayer <= detectionRange {
+	// If player is within detection range or bat is awake
+	if (_xToPlayer <= detectionRange && _yToPlayer <= detectionRange) || !sleeping {
 		if !active {
 			// Either wake up
 			if sleeping {
@@ -21,36 +21,62 @@ if !instance_exists(obj_pauser) {
 			// Or set moveDirs towards player
 			else {
 				// Set moveDirX
-				if global.player.x < x {moveDirX = -1;}
-				else {moveDirX = 1;}
+				if global.player.x < x - xPad {moveDirX = -1;}
+				else if global.player.x > x + xPad {moveDirX = 1;}
+				else {moveDirX = 0;}
 				// Set moveDirY
-				if global.player.y < y {moveDirY = -1;}
+				if global.player.y - yPad < y {moveDirY = -1;}
 				else {moveDirY = 1;}
 			}
 		}
 		
 		// Attack
 		if active && activeSpr == attackSpr {
-			if place_meeting(x, y, global.player) && canDamage {global.player.hp -= damage; canDamage = false;}	
-			// Set attack dist
-			_attackDist = attackMoveSpd * attackDirX;
-			attackDistX += abs(_attackDist);
-			// Move for attack or end attack
-			if attackDistX < attackDistTotal {x += _attackDist;}
-			else {setInactive(); attackDistX = 0; canAttack = false;}
+			if place_meeting(x, y, global.player) && canDamage {global.player.hp -= damage; canDamage = false;}
+			// Dive towards player
+			if attackDist >= 0 {
+				if diving {attackDist += abs(targetSpdY);}
+				else {attackDist -= abs(targetSpdY);}
+				x += targetSpdX * attackDirX;
+				y += targetSpdY;
+			}
+			// Stop diving
+			if attackDist >= attackDistTotal {targetSpdY *= -1; diving = false; image_angle *= -1;}
+			// Once returned, stop the attack
+			if attackDist < 0 {
+				setInactive(); 
+				attackDist = 0; 
+				canAttack = false;
+				image_angle = 0;
+			}
 		}
 
 		// Initialize attack
 		if !active && canAttack {
-			setActive(attackSpr, 600);
+			setActive(attackSpr, 6969);
 			canDamage = true;
+			diving = true;
+			// Set moveSpd for x and y directions
+			targetSpdX = abs(x - global.player.x);
+			targetSpdY = abs(y - global.player.y);
+			var _dist = sqrt(sqr(targetSpdX) + sqr(targetSpdY));
+			targetSpdX = (targetSpdX / _dist) * attackMoveSpd;
+			targetSpdY = (targetSpdY / _dist) * attackMoveSpd;
+			// Set x and y for angle
+			var _x = global.player.x - x;
+			var _y = global.player.y - y;
+			// Set angle depending on direction
+			if x < global.player.x {
+				image_angle = arctan2(_y, _x) * -180 / pi;}
+			else {
+				image_angle = arctan2(-_y, -_x) * -180 / pi;}
 			// Set attackDirX
 			if global.player.x < x {attackDirX = -1;}
 			else {attackDirX = 1;}
 		}
 	
 		// Attack startup
-		if !active && canAttack && (_xToPlayer <= attackRange || _yToPlayer <= attackRange) {
+		if !active && canAttack && _xToPlayer <= attackRange && _yToPlayer <= attackRange {
 			setActive(attackStartSpr, startingFrames);
 		}
 	}		

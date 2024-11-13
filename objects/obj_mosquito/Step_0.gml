@@ -47,13 +47,18 @@ if !instance_exists(obj_pauser) {
 	// Increase the timer
 	attackTimer += 1;
 
-	if inRange {
+	if inRange && !active {
 		// Make sure enemy can attack
 		if attackTimer >= attackSpd {
 			// Check for LOS
 			if collision_line(x, y - sprite_height/2, global.player.x, global.player.y - global.player.sprite_height/2, global.player, true, false) {
 				// FIRE IN THE HOLE
 				createProj(projectile, rangeX, rangeY, damage, projSpd);
+				// Set active stats
+				active = true;
+				activeSpr = attackSpr;
+				activeCount = 0;
+				activeFrames = attackFrames;
 				// Reset timer
 				attackTimer = 0;
 			}
@@ -61,5 +66,7 @@ if !instance_exists(obj_pauser) {
 	}
 
 	// Sprite control
+	if !active {sprite_index = idleSpr;}
+	else {sprite_index = activeSpr;}
 	
 }

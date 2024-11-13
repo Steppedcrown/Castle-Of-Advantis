@@ -9,7 +9,6 @@ maxHp = 8
 hp = maxHp;
 
 /*---------------------------------- Sprites ----------------------------------*/
-defaultMaskSpr = spr_spider_idle;
 idleSpr = spr_spider_idle;
 walkSpr = spr_spider_walk;
 jumpSpr = spr_spider_jump;

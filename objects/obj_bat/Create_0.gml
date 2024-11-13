@@ -6,10 +6,18 @@ event_inherited();
 moveSpd = 1;
 attackMoveSpd = 3;
 
+// Target coords
+targetX = 0;
+targetY = 0;
+
+// Player targeting moveSpds
+targetSpdX = 0;
+targetSpdY = 0;
+
 // Attack movement
 attackDirX = 0;
-attackDistX = 0;
-attackDistTotal = 100;
+attackDist = 0;
+attackDistTotal = 50;
 
 // Padding
 xPad = 15;

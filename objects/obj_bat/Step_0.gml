@@ -37,7 +37,7 @@ if !instance_exists(obj_pauser) {
 			if attackDist >= 0 {
 				if diving {attackDist += abs(targetSpdY);}
 				else {attackDist -= abs(targetSpdY);}
-				x += targetSpdX;
+				x += targetSpdX * attackDirX;
 				y += targetSpdY;
 			}
 			// Stop diving
@@ -70,7 +70,6 @@ if !instance_exists(obj_pauser) {
 			// Set attackDirX
 			if global.player.x < x {attackDirX = -1;}
 			else {attackDirX = 1;}
-			attackMoveSpd = abs(attackMoveSpd) * attackDirX;
 		}
 	
 		// Attack startup

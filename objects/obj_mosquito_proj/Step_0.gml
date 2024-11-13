@@ -2,9 +2,6 @@ if !instance_exists(obj_pauser) {
 
 	// If on first frame
 	if startupFrame {
-		// Set initial move speeds
-		initMSX = moveSpdX; 
-		initMSY = moveSpdY;
 		// Scale up moveSpd values
 		moveSpdX *= projSpd;
 		moveSpdY *= projSpd;

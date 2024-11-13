@@ -24,8 +24,6 @@ attackTimer = attackSpd;
 projectile = obj_mosquito_proj;
 damage = 1;
 projSpd = 3;
-maxMoveSpd = 3;
-moveSpdMargin = 0;
 
 // Score
 pointValue = maxHp;

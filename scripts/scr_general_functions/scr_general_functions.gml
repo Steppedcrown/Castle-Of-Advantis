@@ -50,7 +50,7 @@ function checkForSemiSolidPlatform (_x, _y) {
 	return _semiSolidPlat;
 }
 
-function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd=noone, moveSpdMargin=noone) {
+function createProj (projectile, rangeX, rangeY, damage, projSpd) {
 	var _proj = instance_create_depth(x, y - sprite_height/2, PLAYER_DEPTH-10, projectile);
 	// Determine x direction
 	if x < global.player.x {_proj.moveDirX = 1;}
@@ -75,8 +75,6 @@ function createProj (projectile, rangeX, rangeY, damage, projSpd, maxMoveSpd=noo
 	// Set damage and proj speeds
 	_proj.damage = damage;
 	_proj.projSpd = projSpd;
-	_proj.maxMoveSpd = maxMoveSpd;
-	_proj.moveSpdMargin = moveSpdMargin;
 }
 
 function setHoming (homing, tempHoming, homingCount, homingLagCount){

@@ -16,7 +16,7 @@ attackDist = 0;
 attackDistTotal = 50;
 
 // Padding
-xPad = 75;
+xPad = 70;
 yPad = 50;
 
 /*---------------------------------- Combat ----------------------------------*/
@@ -28,7 +28,8 @@ hp = maxHp;
 detectionRange = 150;
 attackCooldown = 120;
 attackCooldownTimer = attackCooldown;
-attackRange = 60;
+attackRangeX = xPad;
+attackRangeY = 60;
 
 // Damaging
 canDamage = true;

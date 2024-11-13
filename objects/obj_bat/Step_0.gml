@@ -84,7 +84,7 @@ if !instance_exists(obj_pauser) {
 		}
 	
 		// Attack startup
-		if !active && canAttack && (_xToPlayer <= attackRange || _yToPlayer <= attackRange) {
+		if !active && canAttack && _xToPlayer <= attackRange && _yToPlayer <= attackRange {
 			setActive(attackStartSpr, startingFrames);
 		}
 	}		

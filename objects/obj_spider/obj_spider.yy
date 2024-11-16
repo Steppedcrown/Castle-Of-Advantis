@@ -34,7 +34,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_spider_idle",
+    "path":"sprites/spr_spider_idle/spr_spider_idle.yy",
+  },
   "spriteMaskId":{
     "name":"spr_spider_idle",
     "path":"sprites/spr_spider_idle/spr_spider_idle.yy",

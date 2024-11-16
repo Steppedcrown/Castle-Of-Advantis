@@ -4,10 +4,29 @@ event_inherited();
 /*---------------------------------- Movement ----------------------------------*/
 // Speeds
 moveSpd = 1;
+jumpSpd = 1.5;
+
+// Directions
+jumpDirX = 0;
+jumpDirY = 0;
+
+// Target coords
+targetX = 0;
+targetY = 0;
+midpoint = 0;
+// Total movement
+totalX = 0;
+totalY = 0;
 
 /*---------------------------------- Combat ----------------------------------*/
+// HP
 maxHp = 8
 hp = maxHp;
+
+// Damage
+jumpDamage = 5;
+projDamage = 3;
+canDamage = false;
 
 // Ranges
 detectionRange = 50;
@@ -31,9 +50,11 @@ shootSpr = spr_spider_web_attack;
 pointValue = 20;
 
 /*---------------------------------- Animation Frames ----------------------------------*/
-holdFrames = 30;
-shootFrames = 30;
+holdFrames = 90;
+shootFrames = 60;
 
 /*---------------------------------- States ----------------------------------*/
 canJump = false;
 canShoot = false;
+holding = false;
+jumping = false;

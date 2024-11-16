@@ -12,9 +12,6 @@ if !instance_exists(obj_pauser) {
 	if y + paddingY < global.player.y {moveDirY = 1;}
 	else if y - paddingY > global.player.y {moveDirY = -1;}
 	else {moveDirY = 0;}
-	
-	if global.player.x > x {face = -1;}
-	else if global.player.x < x {face = 1;}
 
 	// Set x and y spd
 	xspd = moveDirX * moveSpd;

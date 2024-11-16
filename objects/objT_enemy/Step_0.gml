@@ -23,4 +23,10 @@ if !instance_exists(obj_pauser) {
 	// Set hp ratio
 	hpRatio = hp / maxHp;
 	hpRatio *= hpScaleBar;
+	
+	// Set face if not on a predetermined path
+	if !predeterminedPath {
+		if global.player.x > x {face = -1;}
+		else if global.player.x < x {face = 1;}
+	}
 }

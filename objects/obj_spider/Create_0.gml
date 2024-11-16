@@ -9,13 +9,14 @@ projectile = obj_spider_proj;
 moveSpd = 1;
 jumpSpd = 1.25;
 projSpd = 2;
+grav = 1;
 
 // Directions
 jumpDirX = 0;
 jumpDirY = 0;
 
 // Padding
-xPad = 40;
+xPad = 120;
 
 // Target coords
 targetX = 0;
@@ -37,8 +38,8 @@ canDamage = false;
 
 // Ranges
 detectionRange = 50;
-jumpRange = 80;
-projRange = 100;
+jumpRange = 150;
+projRange = 300;
 
 // Cooldowns
 actionCooldown = 60;
@@ -67,4 +68,5 @@ shootFrames = 15;
 canJump = false;
 canShoot = false;
 canDoAction = false;
+jumping = false;
 shooting = false;

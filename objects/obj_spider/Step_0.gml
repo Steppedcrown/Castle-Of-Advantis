@@ -32,14 +32,20 @@ if !instance_exists(obj_pauser) {
 		if place_meeting(x, y, global.player) && canDamage {global.player.hp -= jumpDamage; canDamage = false;}
 		// Check if spider is past midpoint
 		if (jumpDirX > 0 && x >= midpoint) || (jumpDirX < 0 && x <= midpoint) {jumpDirY = 1;}
-		// Move for jump
+		// Set jumping movement variables
 		var _xspd = jumpSpd * jumpDirX;
 		var _yspd = sqr(jumpSpd) * jumpDirY;
-		x += jumpSpd * jumpDirX;
-		y += sqr(jumpSpd) * jumpDirY;
+		var _stopJumping = false;
+		// Jump or stop jump if blocked on X
+		if !place_meeting(x+_xspd, y, obj_wall) {x += _xspd;}
+		else {_stopJumping = true;}
+		// And on Y
+		if !place_meeting(x, y+_yspd, obj_wall) {y += _yspd;}
+		else {_stopJumping = true;}
 		// Determine whether or not to stop jumping
-		if (jumpDirX > 0 && x >= targetX) || (jumpDirX < 0 && x <= targetX) {
+		if _stopJumping { //|| (jumpDirX > 0 && x >= targetX) || (jumpDirX < 0 && x <= targetX)
 			// Reset variables
+			jumping = false;
 			canJump = false;
 			canDoAction = false;
 			setInactive();
@@ -49,6 +55,7 @@ if !instance_exists(obj_pauser) {
 		// Initialize jump
 		if activeSpr == holdSpr {
 			// Set variables
+			jumping = true;
 			jumpDirY = -1;
 			canDamage = true;
 			setActive(jumpSpr, 6969);
@@ -76,7 +83,7 @@ if !instance_exists(obj_pauser) {
 			canShoot = false;
 			canDoAction = false;
 			setInactive();
-			createProj(projectile, projRange, projRange, projDamage, projSpd);
+			createProj(projectile, projRange, projRange, projDamage, projSpd, y-5, x-(5*face));
 		}
 		// Check if player is in range and begin shoot animation
 		else if canDoAction && canShoot && _xToPlayer <= projRange && _yToPlayer <= projRange {
@@ -92,8 +99,14 @@ if !instance_exists(obj_pauser) {
 		else {moveDirX = 0;}
 		// Set x speed
 		xspd = moveSpd * moveDirX;
-		x += xspd;
+		if !place_meeting(x+xspd, y, obj_wall) {x += xspd};
 	}
+	
+	/*---------------------------------- Gravity ----------------------------------*/
+	if !jumping {
+		if !place_meeting(x, y + grav, obj_wall) {y += grav;}	
+	}
+	
 	/*---------------------------------- Sprite Control ----------------------------------*/
 	if !active {sprite_index = idleSpr;}
 	else {sprite_index = activeSpr;}

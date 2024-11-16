@@ -1,14 +1,21 @@
 // Inherit the parent event
 event_inherited();
 
+// Misc
+projectile = obj_spider_proj;
+
 /*---------------------------------- Movement ----------------------------------*/
 // Speeds
 moveSpd = 1;
 jumpSpd = 1.25;
+projSpd = 2;
 
 // Directions
 jumpDirX = 0;
 jumpDirY = 0;
+
+// Padding
+xPad = 40;
 
 // Target coords
 targetX = 0;
@@ -31,11 +38,14 @@ canDamage = false;
 // Ranges
 detectionRange = 50;
 jumpRange = 80;
+projRange = 100;
 
 // Cooldowns
+actionCooldown = 60;
+actionCooldownTimer = actionCooldown;
 jumpCooldown = 300;
 jumpCooldownTimer = jumpCooldown;
-shootCooldown = 180;
+shootCooldown = 120;
 shootCooldownTimer = shootCooldown;
 
 /*---------------------------------- Sprites ----------------------------------*/
@@ -51,10 +61,10 @@ pointValue = 20;
 
 /*---------------------------------- Animation Frames ----------------------------------*/
 holdFrames = 90;
-shootFrames = 60;
+shootFrames = 15;
 
 /*---------------------------------- States ----------------------------------*/
 canJump = false;
 canShoot = false;
-holding = false;
-jumping = false;
+canDoAction = false;
+shooting = false;

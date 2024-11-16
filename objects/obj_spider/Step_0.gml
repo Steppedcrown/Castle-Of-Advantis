@@ -11,6 +11,10 @@ if !instance_exists(obj_pauser) {
 		shootCooldownTimer++;
 		if shootCooldownTimer >= shootCooldown {canShoot = true; shootCooldownTimer = 0;}
 	}
+	if !canDoAction {
+		actionCooldownTimer++;
+		if actionCooldownTimer >= actionCooldown {canDoAction = true; actionCooldownTimer = 0;}
+	}	
 	
 	// Find absolute distance to player
 	var _xToPlayer = abs(global.player.x - x);
@@ -37,10 +41,11 @@ if !instance_exists(obj_pauser) {
 		if (jumpDirX > 0 && x >= targetX) || (jumpDirX < 0 && x <= targetX) {
 			// Reset variables
 			canJump = false;
+			canDoAction = false;
 			setInactive();
 		}
 	}
-	if !active {
+	if !active && !shooting {
 		// Initialize jump
 		if activeSpr == holdSpr {
 			// Set variables
@@ -58,15 +63,32 @@ if !instance_exists(obj_pauser) {
 			midpoint += x;
 		}
 		// Check if player is in jumping range and hold
-		else if canJump && _xToPlayer <= jumpRange && _yToPlayer <= jumpRange {
+		else if canDoAction && canJump && _xToPlayer <= jumpRange && _yToPlayer <= jumpRange {
 			setActive(holdSpr, holdFrames);
+		}
+	}
+	
+	/*---------------------------------- Shooting ----------------------------------*/
+	if !active {
+		// Fire proj
+		if activeSpr == shootSpr {
+			shooting = false;
+			canShoot = false;
+			canDoAction = false;
+			setInactive();
+			createProj(projectile, projRange, projRange, projDamage, projSpd);
+		}
+		// Check if player is in range and begin shoot animation
+		else if canDoAction && canShoot && _xToPlayer <= projRange && _yToPlayer <= projRange {
+			shooting = true;
+			setActive(shootSpr, shootFrames);
 		}
 	}
 	
 	/*---------------------------------- Movement ----------------------------------*/
 	if !active && detected {
-		if global.player.x < x {moveDirX = -1;}
-		else if global.player.x > x {moveDirX = 1;}
+		if global.player.x + xPad < x {moveDirX = -1;}
+		else if global.player.x - xPad > x {moveDirX = 1;}
 		else {moveDirX = 0;}
 		// Set x speed
 		xspd = moveSpd * moveDirX;

@@ -170,6 +170,7 @@
     {"id":{"name":"obj_spearbearer_head","path":"objects/obj_spearbearer_head/obj_spearbearer_head.yy",},},
     {"id":{"name":"obj_spearbearer_super","path":"objects/obj_spearbearer_super/obj_spearbearer_super.yy",},},
     {"id":{"name":"obj_spearbearer","path":"objects/obj_spearbearer/obj_spearbearer.yy",},},
+    {"id":{"name":"obj_spider_proj","path":"objects/obj_spider_proj/obj_spider_proj.yy",},},
     {"id":{"name":"obj_spider","path":"objects/obj_spider/obj_spider.yy",},},
     {"id":{"name":"obj_title_menu","path":"objects/obj_title_menu/obj_title_menu.yy",},},
     {"id":{"name":"obj_title","path":"objects/obj_title/obj_title.yy",},},

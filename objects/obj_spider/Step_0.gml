@@ -27,8 +27,10 @@ if !instance_exists(obj_pauser) {
 		// Damage player
 		if place_meeting(x, y, global.player) && canDamage {global.player.hp -= jumpDamage; canDamage = false;}
 		// Check if spider is past midpoint
-		if (jumpDirX > 0 && x >= midpoint) || (jumpDirX < 0 && x <= midpoint) {jumpDirY *= -1;}
+		if (jumpDirX > 0 && x >= midpoint) || (jumpDirX < 0 && x <= midpoint) {jumpDirY = 1;}
 		// Move for jump
+		var _xspd = jumpSpd * jumpDirX;
+		var _yspd = sqr(jumpSpd) * jumpDirY;
 		x += jumpSpd * jumpDirX;
 		y += sqr(jumpSpd) * jumpDirY;
 		// Determine whether or not to stop jumping
@@ -42,6 +44,7 @@ if !instance_exists(obj_pauser) {
 		// Initialize jump
 		if activeSpr == holdSpr {
 			// Set variables
+			jumpDirY = -1;
 			canDamage = true;
 			setActive(jumpSpr, 6969);
 			// Log player coords

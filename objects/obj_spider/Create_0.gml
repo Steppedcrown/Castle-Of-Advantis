@@ -4,7 +4,7 @@ event_inherited();
 /*---------------------------------- Movement ----------------------------------*/
 // Speeds
 moveSpd = 1;
-jumpSpd = 1.5;
+jumpSpd = 1.25;
 
 // Directions
 jumpDirX = 0;

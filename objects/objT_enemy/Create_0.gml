@@ -35,3 +35,5 @@ activeSpr = noone;
 active = false;
 activeCount = 0;
 activeFrames = 0;
+// Misc
+detected = false;

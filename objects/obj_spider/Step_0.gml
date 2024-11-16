@@ -12,24 +12,27 @@ if !instance_exists(obj_pauser) {
 		if shootCooldownTimer >= shootCooldown {canShoot = true; shootCooldownTimer = 0;}
 	}
 	
+	// Find absolute distance to player
+	var _xToPlayer = abs(global.player.x - x);
+	var _yToPlayer = abs(global.player.y - y);
+	
+	// Check if player is detected
+	if !detected && _xToPlayer <= detectionRange && _yToPlayer <= detectionRange {
+		detected = true;
+	}	
+	
 	/*---------------------------------- Jumping ----------------------------------*/
 	// Check if player is in range
 	
 	// Move if not doing anything else
-	if !active {
+	if !active && detected {
 		/*---------------------------------- Face Player ----------------------------------*/
 		if global.player.x < x {moveDirX = -1;}
 		else if global.player.x > x {moveDirX = 1;}
 		else {moveDirX = 0;}
-		// Set moveDirY
-		if global.player.y < y {moveDirY = -1;}
-		else if global.player.y > y {moveDirY = 1;}
-		else {moveDirY = 0;}
-		// Set x and y speeds
+		// Set x speed
 		xspd = moveSpd * moveDirX;
-		yspd = moveSpd * moveDirY;
 		x += xspd;
-		y += yspd;
 	}
 	/*---------------------------------- Sprite Control ----------------------------------*/
 	if !active {sprite_index = idleSpr;}

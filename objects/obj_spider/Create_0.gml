@@ -10,6 +10,7 @@ maxHp = 8
 hp = maxHp;
 
 // Ranges
+detectionRange = 50;
 jumpRange = 80;
 
 // Cooldowns

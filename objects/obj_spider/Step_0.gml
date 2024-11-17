@@ -102,11 +102,10 @@ if !instance_exists(obj_pauser) {
 		// Slopes
 		if place_meeting(x+xspd, y, obj_wall) {
 			var _total = 0;
-			while !place_meeting(x, y-3, obj_wall) && _total < xspd {x += 1; _total += 1;}
+			while !place_meeting(x+moveDirX, y-3, obj_wall) && _total < abs(xspd) {x += moveDirX; _total += 1;}
 			y -= 3;
 		}
 		else {x += xspd}
-		//if !place_meeting(x+xspd, y, obj_wall) {x += xspd};
 	}
 	
 	/*---------------------------------- Gravity ----------------------------------*/

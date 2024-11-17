@@ -10,8 +10,20 @@ if !instance_exists(obj_pauser) {
 	if !place_meeting(x+xspd, y, obj_wall) && 
 	place_meeting(x+xspd, y+1, obj_wall) && 
 	!ensnared {x += xspd;}
-	// If there is a wall and grub not ensnared, swap directions
-	else if !ensnared {swapDir = true;}
+	
+	// Slopes
+	if place_meeting(x+xspd, y, obj_wall) {
+		var _total = 0;
+		var _moved = false;
+		while !place_meeting(x+moveDirX, y-3, obj_wall) && _total < abs(xspd) {
+			if place_meeting(x+moveDirX, y+1, obj_wall) {x += moveDirX; _total += 1; _moved = true;}
+		}
+		if _moved {y -= 3;}
+		else if !ensnared {swapDir = true;}
+	}
+	else if !place_meeting(x+xspd, y, obj_wall) && place_meeting(x+xspd, y+5, obj_wall) && !ensnared {
+		x += xspd;
+	}
 	
 	// Drop to ground
 	if !place_meeting(x, y+grav, obj_wall) {y += grav;}

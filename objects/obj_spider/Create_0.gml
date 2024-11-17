@@ -37,7 +37,7 @@ projDamage = 3;
 canDamage = false;
 
 // Ranges
-detectionRange = 50;
+detectionRange = 100;
 jumpRange = 150;
 projRange = 300;
 

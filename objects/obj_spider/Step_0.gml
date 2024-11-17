@@ -70,7 +70,7 @@ if !instance_exists(obj_pauser) {
 			midpoint += x;
 		}
 		// Check if player is in jumping range and hold
-		else if canDoAction && canJump && _xToPlayer <= jumpRange && _yToPlayer <= jumpRange {
+		else if detected && canDoAction && canJump && _xToPlayer <= jumpRange && _yToPlayer <= jumpRange {
 			setActive(holdSpr, holdFrames);
 		}
 	}
@@ -86,7 +86,7 @@ if !instance_exists(obj_pauser) {
 			createProj(projectile, projRange, projRange, projDamage, projSpd, y-5, x-(5*face));
 		}
 		// Check if player is in range and begin shoot animation
-		else if canDoAction && canShoot && _xToPlayer <= projRange && _yToPlayer <= projRange {
+		else if detected && canDoAction && canShoot && _xToPlayer <= projRange && _yToPlayer <= projRange {
 			shooting = true;
 			setActive(shootSpr, shootFrames);
 		}

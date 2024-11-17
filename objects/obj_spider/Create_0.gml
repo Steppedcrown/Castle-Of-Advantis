@@ -39,7 +39,7 @@ canDamage = false;
 // Ranges
 detectionRange = 100;
 jumpRange = 150;
-projRange = 300;
+projRange = 200;
 
 // Cooldowns
 actionCooldown = 60;

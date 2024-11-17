@@ -82,6 +82,7 @@
     {"name":"obj_archer_arrow","order":2,"path":"objects/obj_archer_arrow/obj_archer_arrow.yy",},
     {"name":"obj_archer_head","order":1,"path":"objects/obj_archer_head/obj_archer_head.yy",},
     {"name":"obj_archer_ult","order":3,"path":"objects/obj_archer_ult/obj_archer_ult.yy",},
+    {"name":"obj_archer_vine_zone","order":4,"path":"objects/obj_archer_vine_zone/obj_archer_vine_zone.yy",},
     {"name":"obj_background","order":6,"path":"objects/obj_background/obj_background.yy",},
     {"name":"obj_bg_fire","order":7,"path":"objects/obj_bg_fire/obj_bg_fire.yy",},
     {"name":"obj_bottom_right_corner","order":1,"path":"objects/obj_bottom_right_corner/obj_bottom_right_corner.yy",},

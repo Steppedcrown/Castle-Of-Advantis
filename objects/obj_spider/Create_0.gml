@@ -7,7 +7,7 @@ projectile = obj_spider_proj;
 /*---------------------------------- Movement ----------------------------------*/
 // Speeds
 moveSpd = 1;
-jumpSpd = 1.25;
+jumpSpd = 1.5;
 projSpd = 2;
 grav = 2;
 

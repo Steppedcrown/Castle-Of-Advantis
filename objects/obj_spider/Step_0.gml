@@ -34,7 +34,7 @@ if !instance_exists(obj_pauser) {
 		if (jumpDirX > 0 && x >= midpoint) || (jumpDirX < 0 && x <= midpoint) {jumpDirY = 1;}
 		// Set jumping movement variables
 		var _xspd = jumpSpd * jumpDirX;
-		var _yspd = sqr(_xspd) * jumpDirY;
+		var _yspd = sqr(_xspd) * jumpDirY / 1.5;
 		var _stopJumping = false;
 		// Jump or stop jump if blocked on X
 		if !place_meeting(x+_xspd, y, obj_wall) {x += _xspd;}

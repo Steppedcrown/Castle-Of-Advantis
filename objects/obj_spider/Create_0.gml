@@ -7,7 +7,7 @@ projectile = obj_spider_proj;
 /*---------------------------------- Movement ----------------------------------*/
 // Speeds
 moveSpd = 1;
-jumpSpd = 1.25;
+jumpSpd = 1.5;
 projSpd = 2;
 grav = 2;
 
@@ -37,9 +37,9 @@ projDamage = 3;
 canDamage = false;
 
 // Ranges
-detectionRange = 50;
+detectionRange = 100;
 jumpRange = 150;
-projRange = 300;
+projRange = 200;
 
 // Cooldowns
 actionCooldown = 60;

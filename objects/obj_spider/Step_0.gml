@@ -34,7 +34,7 @@ if !instance_exists(obj_pauser) {
 		if (jumpDirX > 0 && x >= midpoint) || (jumpDirX < 0 && x <= midpoint) {jumpDirY = 1;}
 		// Set jumping movement variables
 		var _xspd = jumpSpd * jumpDirX;
-		var _yspd = sqr(jumpSpd) * jumpDirY;
+		var _yspd = sqr(_xspd) * jumpDirY / 1.5;
 		var _stopJumping = false;
 		// Jump or stop jump if blocked on X
 		if !place_meeting(x+_xspd, y, obj_wall) {x += _xspd;}
@@ -70,7 +70,7 @@ if !instance_exists(obj_pauser) {
 			midpoint += x;
 		}
 		// Check if player is in jumping range and hold
-		else if canDoAction && canJump && _xToPlayer <= jumpRange && _yToPlayer <= jumpRange {
+		else if detected && canDoAction && canJump && _xToPlayer <= jumpRange && _yToPlayer <= jumpRange {
 			setActive(holdSpr, holdFrames);
 		}
 	}
@@ -86,7 +86,7 @@ if !instance_exists(obj_pauser) {
 			createProj(projectile, projRange, projRange, projDamage, projSpd, y-5, x-(5*face));
 		}
 		// Check if player is in range and begin shoot animation
-		else if canDoAction && canShoot && _xToPlayer <= projRange && _yToPlayer <= projRange {
+		else if detected && canDoAction && canShoot && _xToPlayer <= projRange && _yToPlayer <= projRange {
 			shooting = true;
 			setActive(shootSpr, shootFrames);
 		}
@@ -99,7 +99,13 @@ if !instance_exists(obj_pauser) {
 		else {moveDirX = 0;}
 		// Set x speed
 		xspd = moveSpd * moveDirX;
-		if !place_meeting(x+xspd, y, obj_wall) {x += xspd};
+		// Slopes
+		if place_meeting(x+xspd, y, obj_wall) {
+			var _total = 0;
+			while !place_meeting(x+moveDirX, y-3, obj_wall) && _total < abs(xspd) {x += moveDirX; _total += 1;}
+			y -= 3;
+		}
+		else {x += xspd}
 	}
 	
 	/*---------------------------------- Gravity ----------------------------------*/

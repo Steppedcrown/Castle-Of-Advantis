@@ -29,6 +29,7 @@ if _enemyHit {
 	_enemyHit.ensnared = true;
 	_enemyHit.ensnaredDuration = ensnaredDuration;
 	destroyed = true;
+	instance_create_depth(x, y, depth, obj_archer_vine_zone);
 }
 // Destroy when out of room or hitting a wall
 else if x < 0 || x > room_width 
@@ -36,6 +37,7 @@ else if x < 0 || x > room_width
 || place_meeting(x, y, obj_wall) 
 {
 	destroyed = true;
+	instance_create_depth(x, y, depth, obj_archer_vine_zone);
 }
 
 // Destroy projectile

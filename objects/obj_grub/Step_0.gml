@@ -12,7 +12,7 @@ if !instance_exists(obj_pauser) {
 	!ensnared {x += xspd;}
 	
 	// Slopes
-	if place_meeting(x+xspd, y, obj_wall) {
+	if place_meeting(x+xspd, y, obj_wall) && !ensnared {
 		var _total = 0;
 		var _moved = false;
 		while !place_meeting(x+moveDirX, y-3, obj_wall) && _total < abs(xspd) {
@@ -27,7 +27,7 @@ if !instance_exists(obj_pauser) {
 	else {swapDir = true;}
 	
 	// Drop to ground
-	if !place_meeting(x, y+grav, obj_wall) {y += grav;}
+	if !place_meeting(x, y+grav, obj_wall) && !ensnared {y += grav;}
 	
 	// Swap direction if dist has been moved
 	if !infMovement {currMovement += abs(xspd);}

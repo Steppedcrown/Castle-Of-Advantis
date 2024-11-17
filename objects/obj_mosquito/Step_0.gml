@@ -3,22 +3,22 @@ event_inherited();
 
 if !instance_exists(obj_pauser) {
 	/*---------------------------------- Movement ----------------------------------*/
-	// Face player X
-	if x + paddingX < global.player.x {moveDirX = 1;}
-	else if x - paddingX > global.player.x {moveDirX = -1;}
-	else {moveDirX = 0;}
-
-	// Face player Y
-	if y + paddingY < global.player.y {moveDirY = 1;}
-	else if y - paddingY > global.player.y {moveDirY = -1;}
-	else {moveDirY = 0;}
-
-	// Set x and y spd
-	xspd = moveDirX * moveSpd;
-	yspd = moveDirY * moveSpd;
-
-	// Move
 	if !ensnared {
+		// Face player X
+		if x + paddingX < global.player.x {moveDirX = 1;}
+		else if x - paddingX > global.player.x {moveDirX = -1;}
+		else {moveDirX = 0;}
+
+		// Face player Y
+		if y + paddingY < global.player.y {moveDirY = 1;}
+		else if y - paddingY > global.player.y {moveDirY = -1;}
+		else {moveDirY = 0;}
+
+		// Set x and y spd
+		xspd = moveDirX * moveSpd;
+		yspd = moveDirY * moveSpd;
+
+		// Move
 		x += xspd;
 		y += yspd;
 	}

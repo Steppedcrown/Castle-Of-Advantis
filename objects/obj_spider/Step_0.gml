@@ -26,55 +26,56 @@ if !instance_exists(obj_pauser) {
 	}	
 	
 	/*---------------------------------- Jumping ----------------------------------*/
-	// Jump
-	if activeSpr == jumpSpr {
-		// Damage player
-		if place_meeting(x, y, global.player) && canDamage {global.player.hp -= jumpDamage; canDamage = false;}
-		// Check if spider is past midpoint
-		if (jumpDirX > 0 && x >= midpoint) || (jumpDirX < 0 && x <= midpoint) {jumpDirY = 1;}
-		// Set jumping movement variables
-		var _xspd = jumpSpd * jumpDirX;
-		var _yspd = sqr(_xspd) * jumpDirY / 1.5;
-		var _stopJumping = false;
-		// Jump or stop jump if blocked on X
-		if !place_meeting(x+_xspd, y, obj_wall) {x += _xspd;}
-		else {_stopJumping = true;}
-		// And on Y
-		if !place_meeting(x, y+_yspd, obj_wall) {y += _yspd;}
-		else {_stopJumping = true;}
-		// Determine whether or not to stop jumping
-		if _stopJumping { //|| (jumpDirX > 0 && x >= targetX) || (jumpDirX < 0 && x <= targetX)
-			// Reset variables
-			jumping = false;
-			canJump = false;
-			canDoAction = false;
-			setInactive();
+	if !ensnared {
+		// Jump
+		if activeSpr == jumpSpr {
+			// Damage player
+			if place_meeting(x, y, global.player) && canDamage {global.player.hp -= jumpDamage; canDamage = false;}
+			// Check if spider is past midpoint
+			if (jumpDirX > 0 && x >= midpoint) || (jumpDirX < 0 && x <= midpoint) {jumpDirY = 1;}
+			// Set jumping movement variables
+			var _xspd = jumpSpd * jumpDirX;
+			var _yspd = sqr(_xspd) * jumpDirY / 1.5;
+			var _stopJumping = false;
+			// Jump or stop jump if blocked on X
+			if !place_meeting(x+_xspd, y, obj_wall) {x += _xspd;}
+			else {_stopJumping = true;}
+			// And on Y
+			if !place_meeting(x, y+_yspd, obj_wall) {y += _yspd;}
+			else {_stopJumping = true;}
+			// Determine whether or not to stop jumping
+			if _stopJumping { //|| (jumpDirX > 0 && x >= targetX) || (jumpDirX < 0 && x <= targetX)
+				// Reset variables
+				jumping = false;
+				canJump = false;
+				canDoAction = false;
+				setInactive();
+			}
+		}
+		if !active && !shooting {
+			// Initialize jump
+			if activeSpr == holdSpr {
+				// Set variables
+				jumping = true;
+				jumpDirY = -1;
+				canDamage = true;
+				setActive(jumpSpr, 6969);
+				// Log player coords
+				targetX	= global.player.x;
+				targetY = global.player.y;
+				// Determine jump direction
+				midpoint = (targetX - x) / 2;
+				if midpoint > 0 {jumpDirX = 1;}
+				else {jumpDirX = -1;}
+				// Determine midpoint
+				midpoint += x;
+			}
+			// Check if player is in jumping range and hold
+			else if detected && canDoAction && canJump && _xToPlayer <= jumpRange && _yToPlayer <= jumpRange {
+				setActive(holdSpr, holdFrames);
+			}
 		}
 	}
-	if !active && !shooting {
-		// Initialize jump
-		if activeSpr == holdSpr {
-			// Set variables
-			jumping = true;
-			jumpDirY = -1;
-			canDamage = true;
-			setActive(jumpSpr, 6969);
-			// Log player coords
-			targetX	= global.player.x;
-			targetY = global.player.y;
-			// Determine jump direction
-			midpoint = (targetX - x) / 2;
-			if midpoint > 0 {jumpDirX = 1;}
-			else {jumpDirX = -1;}
-			// Determine midpoint
-			midpoint += x;
-		}
-		// Check if player is in jumping range and hold
-		else if detected && canDoAction && canJump && _xToPlayer <= jumpRange && _yToPlayer <= jumpRange {
-			setActive(holdSpr, holdFrames);
-		}
-	}
-	
 	/*---------------------------------- Shooting ----------------------------------*/
 	if !active {
 		// Fire proj
@@ -93,7 +94,7 @@ if !instance_exists(obj_pauser) {
 	}
 	
 	/*---------------------------------- Movement ----------------------------------*/
-	if !active && detected {
+	if !active && detected && !ensnared {
 		if global.player.x + xPad < x {moveDirX = -1;}
 		else if global.player.x - xPad > x {moveDirX = 1;}
 		else {moveDirX = 0;}
@@ -109,7 +110,7 @@ if !instance_exists(obj_pauser) {
 	}
 	
 	/*---------------------------------- Gravity ----------------------------------*/
-	if !jumping {
+	if !jumping && !ensnared {
 		if !place_meeting(x, y + grav, obj_wall) {y += grav;}	
 	}
 	

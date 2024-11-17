@@ -21,6 +21,15 @@ dist = sqrt(sqr(xdist) + sqr(ydist));
 xdist /= dist;
 ydist /= dist;
 
+/*
+// Set x and y for angle
+var _x = mouse_x - x;
+var _y = mouse_y - y;
+// Set angle depending on direction
+if x < mouse_x {image_angle = arctan2(_y, _x) * -180 / pi;}
+else {image_angle = arctan2(-_y, -_x) * -180 / pi;}
+*/
+
 // X Direction
 moveDirX = global.player.face;
 

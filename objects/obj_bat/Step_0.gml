@@ -71,10 +71,8 @@ if !instance_exists(obj_pauser) {
 				var _x = global.player.x - x;
 				var _y = global.player.y - y;
 				// Set angle depending on direction
-				if x < global.player.x {
-					image_angle = arctan2(_y, _x) * -180 / pi;}
-				else {
-					image_angle = arctan2(-_y, -_x) * -180 / pi;}
+				if x < global.player.x {image_angle = arctan2(_y, _x) * -180 / pi;}
+				else {image_angle = arctan2(-_y, -_x) * -180 / pi;}
 				// Set attackDirX
 				if global.player.x < x {attackDirX = -1;}
 				else {attackDirX = 1;}

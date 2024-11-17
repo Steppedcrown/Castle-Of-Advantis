@@ -43,7 +43,7 @@ if !instance_exists(obj_pauser) {
 				if diving {attackDist += abs(targetSpdY);}
 				else {attackDist -= abs(targetSpdY);}
 				x += targetSpdX * attackDirX;
-				y += targetSpdY;
+				y += targetSpdY / 1.1;
 			}
 			// Stop diving
 			if attackDist >= attackDistTotal {targetSpdY *= -1; diving = false; image_angle *= -1;}

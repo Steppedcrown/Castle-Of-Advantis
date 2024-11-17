@@ -24,6 +24,7 @@ if !instance_exists(obj_pauser) {
 	else if !place_meeting(x+xspd, y, obj_wall) && place_meeting(x+xspd, y+5, obj_wall) && !ensnared {
 		x += xspd;
 	}
+	else {swapDir = true;}
 	
 	// Drop to ground
 	if !place_meeting(x, y+grav, obj_wall) {y += grav;}

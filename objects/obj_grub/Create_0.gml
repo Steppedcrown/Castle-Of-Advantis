@@ -1,6 +1,9 @@
 // Inherit the parent event
 event_inherited();
 
+// Misc
+predeterminedPath = true;
+
 /*---------------------------------- Movement ----------------------------------*/
 moveSpd = 0.4;
 grav = 1;

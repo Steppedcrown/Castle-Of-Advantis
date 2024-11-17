@@ -10,6 +10,11 @@ if !instance_exists(obj_pauser) {
 	moveDirX = 0;
 	moveDirY = 0;
 	
+	// Check if player is detected
+	if !detected && _xToPlayer <= detectionRange && _yToPlayer <= detectionRange {
+		detected = true;
+	}	
+	
 	// If player is within detection range or bat is awake
 	if (_xToPlayer <= detectionRange && _yToPlayer <= detectionRange) || !sleeping {
 		if !active {

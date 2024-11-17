@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_mosquito_proj",
+  "%Name":"obj_spider_proj",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_mosquito_proj",
+  "name":"obj_spider_proj",
   "overriddenProperties":[],
   "parent":{
-    "name":"Mosquito",
-    "path":"folders/Objects/Enemies/Small Enemies/Mosquito.yy",
+    "name":"Spider",
+    "path":"folders/Objects/Enemies/Small Enemies/Spider.yy",
   },
   "parentObjectId":{
     "name":"objT_enemy_projectile",
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mosquito_bullet",
-    "path":"sprites/spr_mosquito_bullet/spr_mosquito_bullet.yy",
+    "name":"spr_spider_projectile",
+    "path":"sprites/spr_spider_projectile/spr_spider_projectile.yy",
   },
   "spriteMaskId":null,
   "visible":true,

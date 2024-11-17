@@ -64,8 +64,8 @@ function setInactive() {
 	activeFrames = 0;
 }
 
-function createProj (projectile, rangeX, rangeY, damage, projSpd) {
-	var _proj = instance_create_depth(x, y - sprite_height/2, PLAYER_DEPTH-10, projectile);
+function createProj (projectile, rangeX, rangeY, damage, projSpd, _y=y, _x=x) {
+	var _proj = instance_create_depth(_x, _y - sprite_height/2, PLAYER_DEPTH-10, projectile);
 	// Determine x direction
 	if x < global.player.x {_proj.moveDirX = 1;}
 	else if x > global.player.x {_proj.moveDirX = -1;}

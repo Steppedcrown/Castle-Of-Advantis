@@ -13,7 +13,7 @@ if !instance_exists(obj_pauser) {
 		
 		// Set moveSpd for x and y directions
 		var _xToPlayer = abs(x - global.player.x);
-		var _yToPlayer = abs(y - global.player.y);
+		var _yToPlayer = abs(y - global.player.y + targetOffset);
 		var _dist = sqrt(sqr(_xToPlayer) + sqr(_yToPlayer));
 		moveSpdX = _xToPlayer / _dist;
 		moveSpdY = _yToPlayer / _dist;

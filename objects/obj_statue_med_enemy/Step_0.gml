@@ -3,7 +3,7 @@ event_inherited();
 
 if !instance_exists(obj_pauser) {
 	// Get abs distance to player
-	var _xToPlayer = abs(x - global.player.x);
+	var _xToPlayer = x + (global.player.x * -face);
 	var _yToPlayer = abs(y - global.player.y);
 	
 	// Attack cooldown
@@ -13,7 +13,7 @@ if !instance_exists(obj_pauser) {
 	}
 	
 	// Check if player is in range
-	if _xToPlayer <= rangeX && _yToPlayer <= rangeY && canShoot {
+	if _xToPlayer <= rangeX && _xToPlayer >= 0 && _yToPlayer <= rangeY && canShoot {
 		// Set x/y offset
 		var _x = x - (16 * face);
 		var _y = y + 10;

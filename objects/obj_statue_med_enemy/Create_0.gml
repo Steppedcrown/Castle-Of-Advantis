@@ -15,4 +15,10 @@ rangeY = 100;
 damage = 50;
 
 /*---------------------------------- States ----------------------------------*/
+predeterminedPath = true;
 canShoot = false;
+
+/*---------------------------------- Spirtes ----------------------------------*/
+idleSpr = spr_statue_real;
+shootSpr = spr_statue_real_attack;
+shootFrames = 30;

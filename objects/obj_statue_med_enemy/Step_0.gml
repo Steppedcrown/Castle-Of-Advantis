@@ -14,10 +14,19 @@ if !instance_exists(obj_pauser) {
 	
 	// Check if player is in range
 	if _xToPlayer <= rangeX && _yToPlayer <= rangeY && canShoot {
+		// Set x/y offset
+		var _x = x - (16 * face);
+		var _y = y + 10;
 		// Create proj
-		createProj(projectile, rangeX, rangeY, damage, projSpd);
+		createProj(projectile, rangeX, rangeY, damage, projSpd, _y, _x);
+		// Set active
+		setActive(shootSpr, shootFrames);
 		// Reset status
 		attackTimer = 0;
 		canShoot = false;
 	}
+	
+	/*---------------------------------- Spirte Control ----------------------------------*/
+	if !active {sprite_index = idleSpr;}
+	else {sprite_index = shootSpr;}
 }

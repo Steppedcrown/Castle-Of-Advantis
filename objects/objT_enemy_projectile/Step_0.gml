@@ -1,7 +1,23 @@
 if !instance_exists(obj_pauser) {
 
 	// If on first frame
-	if startupFrame {
+	if homing || startupFrame {
+		// Determine x direction
+		if x < global.player.x {moveDirX = 1;}
+		else if x > global.player.x {moveDirX = -1;}
+		else {moveDirX = 0;}
+		// Determine y direction
+		if y < global.player.y {moveDirY = 1;}
+		else if y > global.player.y {moveDirY = -1;}
+		else {moveDirY = 0;}
+		
+		// Set moveSpd for x and y directions
+		var _xToPlayer = abs(x - global.player.x);
+		var _yToPlayer = abs(y - global.player.y);
+		var _dist = sqrt(sqr(_xToPlayer) + sqr(_yToPlayer));
+		moveSpdX = _xToPlayer / _dist;
+		moveSpdY = _yToPlayer / _dist;
+		
 		// Scale up moveSpd values
 		moveSpdX *= projSpd;
 		moveSpdY *= projSpd;

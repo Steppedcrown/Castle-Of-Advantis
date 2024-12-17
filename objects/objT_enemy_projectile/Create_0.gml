@@ -18,6 +18,8 @@ damage = 0;
 friendlyFire = false;
 targetOffset = 10;
 homing = false;
+projDuration = noone;
+projTimer = 0;
 
 /*---------------------------------- Misc ----------------------------------*/
 startupFrame = true;

@@ -1,4 +1,10 @@
 if !instance_exists(obj_pauser) {
+	
+	// Track homing duration
+	if projDuration {
+		projTimer++;
+		if projTimer >= projDuration {destroyed = true}
+	}
 
 	// If on first frame
 	if homing || startupFrame {
@@ -47,9 +53,11 @@ if !instance_exists(obj_pauser) {
 		destroyed = true;
 	}
 
-	// Move
-	x += moveDirX * moveSpdX;
-	y += moveDirY * moveSpdY;
+	// Move if not destroyed
+	if !destroyed {
+		x += moveDirX * moveSpdX;
+		y += moveDirY * moveSpdY;
+	}
 
 	// Destroy when off screen or when homing count is reached
 	if x < 0 || x > room_width 

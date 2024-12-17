@@ -12,7 +12,7 @@ attackTimer = attackSpd;
 rangeX = 100;
 rangeY = 100;
 // Dmg
-damage = 50;
+damage = 5;
 
 /*---------------------------------- States ----------------------------------*/
 predeterminedPath = true;

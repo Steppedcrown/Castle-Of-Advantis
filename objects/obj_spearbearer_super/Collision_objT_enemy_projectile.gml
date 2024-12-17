@@ -14,3 +14,5 @@ if (other.y <= bbox_top && other.y >= bbox_bottom) &&
 // Enable friendly fire
 other.friendlyFire = true;
 other.damage *= 1.5;
+// Disable homing
+other.homing = false;

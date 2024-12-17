@@ -66,37 +66,15 @@ function setInactive() {
 
 function createProj (projectile, rangeX, rangeY, damage, projSpd, _y=y, _x=x) {
 	var _proj = instance_create_depth(_x, _y - sprite_height/2, PLAYER_DEPTH-10, projectile);
-	// Determine x direction
-	if x < global.player.x {_proj.moveDirX = 1;}
-	else if x > global.player.x {_proj.moveDirX = -1;}
-	else {_proj.moveDirX = 0;}
-	// Determine y direction
-	if y < global.player.y {_proj.moveDirY = 1;}
-	else if y > global.player.y {_proj.moveDirY = -1;}
-	else {_proj.moveDirY = 0;}
 	// Store initial x and y coords
 	_proj.initX = x;
 	_proj.initY = y;
-	// Set moveSpd for x and y directions
-	var _xToPlayer = abs(x - global.player.x);
-	var _yToPlayer = abs(y - global.player.y);
-	var _dist = sqrt(sqr(_xToPlayer) + sqr(_yToPlayer));
-	_proj.moveSpdX = _xToPlayer / _dist;
-	_proj.moveSpdY = _yToPlayer / _dist;
 	// Pass on range of enemy
 	_proj.rangeX = rangeX;
 	_proj.rangeY = rangeY;
 	// Set damage and proj speeds
 	_proj.damage = damage;
 	_proj.projSpd = projSpd;
-}
-
-function setHoming (homing, tempHoming, homingCount, homingLagCount){
-	// Homing settings
-	_proj.homing = homing;
-	_proj.tempHoming = tempHoming;
-	_proj.homingCount = homingCount;
-	_proj.homingLagCount = homingLagCount;
 }
 
 function playTransition (_transition=obj_transition, _rm=rm_title_screen, _x=-999, _y=-999, _spd = -1) {

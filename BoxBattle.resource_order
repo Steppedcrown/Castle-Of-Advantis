@@ -2,6 +2,8 @@
   "FolderOrderSettings":[
     {"name":"Objects","order":4,"path":"folders/Objects.yy",},
     {"name":"Enemies","order":7,"path":"folders/Objects/Enemies.yy",},
+    {"name":"Meduim Enemies","order":5,"path":"folders/Objects/Enemies/Meduim Enemies.yy",},
+    {"name":"Statue","order":1,"path":"folders/Objects/Enemies/Meduim Enemies/Statue.yy",},
     {"name":"Small Enemies","order":4,"path":"folders/Objects/Enemies/Small Enemies.yy",},
     {"name":"Grub","order":2,"path":"folders/Objects/Enemies/Small Enemies/Grub.yy",},
     {"name":"Mosquito","order":1,"path":"folders/Objects/Enemies/Small Enemies/Mosquito.yy",},
@@ -132,6 +134,7 @@
     {"name":"obj_spearbearer_head","order":1,"path":"objects/obj_spearbearer_head/obj_spearbearer_head.yy",},
     {"name":"obj_spearbearer_super","order":3,"path":"objects/obj_spearbearer_super/obj_spearbearer_super.yy",},
     {"name":"obj_spider_proj","order":1,"path":"objects/obj_spider_proj/obj_spider_proj.yy",},
+    {"name":"obj_statue_proj","order":1,"path":"objects/obj_statue_proj/obj_statue_proj.yy",},
     {"name":"obj_title_menu","order":13,"path":"objects/obj_title_menu/obj_title_menu.yy",},
     {"name":"obj_title","order":4,"path":"objects/obj_title/obj_title.yy",},
     {"name":"obj_top_left_corner","order":2,"path":"objects/obj_top_left_corner/obj_top_left_corner.yy",},

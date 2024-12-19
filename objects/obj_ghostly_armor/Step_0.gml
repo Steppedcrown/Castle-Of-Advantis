@@ -8,6 +8,14 @@ if !instance_exists(obj_pauser) {
 		attackCooldownTimer++;
 		if attackCooldownTimer >= attackCooldown {canAttack = true; attackCooldownTimer = 0;}
 	}
+	if !canShoot {
+		shootCooldownTimer++;
+		if shootCooldownTimer >= shootCooldown {canShoot = true; shootCooldownTimer = 0;}
+	}
+	if !canAction {
+		actionCooldownTimer++;
+		if actionCooldownTimer >= actionCooldown {canAction = true; actionCooldownTimer = 0;}
+	}
 	
 	// Find absolute distance to player
 	var _xToPlayer = abs(global.player.x - x);
@@ -24,24 +32,38 @@ if !instance_exists(obj_pauser) {
 		setActive(wakingSpr, wakingFrames);
 	}
 	
-	/*---------------------------------- Attacking ----------------------------------*/
+	/*---------------------------------- Melee ----------------------------------*/
 	// Reverse face
 	face *= -1;
-	if canAttack && !ensnared && !active && detected && _xToPlayer <= attackRangeX && _yToPlayer <= attackRangeY {
+	if canAttack && canAction && !headless && !ensnared && !active && detected && _xToPlayer <= meleeRangeX && _yToPlayer <= meleeRangeY {
 		// Set attacking vars
 		setActive(attackSpr, attackFrames);
 		canAttack = false;
 		// Set attacking obj
 		var _attack = instance_create_depth(x, y - sprite_height/2, depth, attackObj);
 		with (_attack) {
-			damage = other.damage;
+			damage = other.meleeDamage;
 			parent = other;
 			image_xscale = other.face;
 		}
 	}
 	
+	/*---------------------------------- Shooting ----------------------------------*/
+	if !active && !ensnared && detected {
+		// Fire in the hole
+		if activeSpr = headAttackSpr {
+			var _head = createProj(proj, shootRangeX, shootRangeY, headDamage, projSpd);
+			_head.parent = self;
+		}
+		// Initialize shot
+		else if canShoot && canAction && _xToPlayer <= shootRangeX && _yToPlayer <= shootRangeY {
+			setActive(headAttackSpr, shootingFrames);
+			headless = true;
+		}
+	}
+	
 	/*---------------------------------- Movement ----------------------------------*/
-	if !active && detected && !ensnared && _xToPlayer > attackRangeX {
+	if !active && detected && !ensnared && _xToPlayer > meleeRangeX {
 		if global.player.x + xPad < x {moveDirX = -1;}
 		else if global.player.x - xPad > x {moveDirX = 1;}
 		else {moveDirX = 0;}

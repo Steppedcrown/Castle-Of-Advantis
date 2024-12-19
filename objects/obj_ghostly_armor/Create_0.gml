@@ -18,12 +18,12 @@ projSpd = 2;
 meleeRangeX = 10;
 meleeRangeY = 30;
 // Shooting ranges
-shootRangeX = 100;
-shootRangeY = 20;
+shootRangeX = 300;
+shootRangeY = 100;
 // Cooldowns
 attackCooldown = 60;
 attackCooldownTimer = attackCooldown;
-shootCooldown = 30;
+shootCooldown = 90;
 shootCooldownTimer = shootCooldown;
 actionCooldown = 30;
 actionCooldownTimer = actionCooldown;
@@ -37,6 +37,7 @@ headless = false;
 
 /*---------------------------------- Sprites ----------------------------------*/
 idleSpr = spr_ghostly_armor_idle;
+idleHeadless = spr_ghostly_armor_no_head_idle;
 sleepSpr = spr_ghostly_armor_unactivated;
 wakingSpr = spr_ghostly_armor_activation;
 walkSpr = spr_ghostly_armor_walk;
@@ -45,4 +46,4 @@ headAttackSpr = spr_ghostly_armor_head_attack;
 // Animation frames
 attackFrames = 18;
 wakingFrames = 60;
-shootingFrames = 30;
+shootingFrames = 35;

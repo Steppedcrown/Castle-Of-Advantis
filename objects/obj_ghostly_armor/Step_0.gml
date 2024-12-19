@@ -52,11 +52,12 @@ if !instance_exists(obj_pauser) {
 	if !active && !ensnared && detected {
 		// Fire in the hole
 		if activeSpr = headAttackSpr {
+			setActive(idleHeadless, -1);
 			var _head = createProj(proj, shootRangeX, shootRangeY, headDamage, projSpd);
 			_head.parent = self;
 		}
 		// Initialize shot
-		else if canShoot && canAction && _xToPlayer <= shootRangeX && _yToPlayer <= shootRangeY {
+		else if canShoot && canAction && !headless && _xToPlayer <= shootRangeX && _yToPlayer <= shootRangeY {
 			setActive(headAttackSpr, shootingFrames);
 			headless = true;
 		}

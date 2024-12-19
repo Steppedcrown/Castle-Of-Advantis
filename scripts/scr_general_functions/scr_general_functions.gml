@@ -50,11 +50,11 @@ function checkForSemiSolidPlatform (_x, _y) {
 	return _semiSolidPlat;
 }
 
-function setActive (_activeSpr, _activeFrames) {
-	active = true;
-	activeSpr = _activeSpr;
-	activeCount = 0;
-	activeFrames = _activeFrames;
+function setActive (_activeSpr, _activeFrames, _obj=self) {
+	_obj.active = true;
+	_obj.activeSpr = _activeSpr;
+	_obj.activeCount = 0;
+	_obj.activeFrames = _activeFrames;
 }
 
 function setInactive(_obj=self) {

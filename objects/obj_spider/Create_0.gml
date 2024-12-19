@@ -9,7 +9,6 @@ projectile = obj_spider_proj;
 moveSpd = 1;
 jumpSpd = 1.5;
 projSpd = 2;
-grav = 2;
 
 // Directions
 jumpDirX = 0;

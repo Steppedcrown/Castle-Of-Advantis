@@ -2,3 +2,4 @@
 event_inherited();
 
 parent = noone;
+face = 1;

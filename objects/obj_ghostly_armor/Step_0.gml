@@ -26,6 +26,10 @@ if !instance_exists(obj_pauser) {
 		detected = true;
 	}
 	
+	// Check if player is in close range
+	if _xToPlayer <= closeRangeX && _yToPlayer <= closeRangeY {closeRange = true;}
+	else {closeRange = false;}
+	
 	/*---------------------------------- Activating ----------------------------------*/
 	if sleeping && detected {
 		sleeping = false;
@@ -55,16 +59,17 @@ if !instance_exists(obj_pauser) {
 			setActive(idleHeadless, -1);
 			var _head = createProj(proj, shootRangeX, shootRangeY, headDamage, projSpd);
 			_head.parent = self;
+			_head.image_xscale = face;
 		}
 		// Initialize shot
-		else if canShoot && canAction && !headless && _xToPlayer <= shootRangeX && _yToPlayer <= shootRangeY {
+		else if canShoot && canAction && !headless && !closeRange && _xToPlayer <= shootRangeX && _yToPlayer <= shootRangeY {
 			setActive(headAttackSpr, shootingFrames);
 			headless = true;
 		}
 	}
 	
 	/*---------------------------------- Movement ----------------------------------*/
-	if !active && detected && !ensnared && _xToPlayer > meleeRangeX {
+	if !active && detected && !ensnared && _xToPlayer > xPad {
 		if global.player.x + xPad < x {moveDirX = -1;}
 		else if global.player.x - xPad > x {moveDirX = 1;}
 		else {moveDirX = 0;}

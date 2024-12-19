@@ -13,13 +13,15 @@ attackObj = obj_ghostly_attack;
 // Proj
 proj = obj_ghostly_head;
 headDamage = 50;
-projSpd = 2;
+projSpd = 0.5;
 // Melee ranges
-meleeRangeX = 10;
-meleeRangeY = 30;
+meleeRangeX = 30;
+meleeRangeY = meleeRangeX;
+closeRangeX = 50;
+closeRangeY = closeRangeX;
 // Shooting ranges
 shootRangeX = 300;
-shootRangeY = 100;
+shootRangeY = shootRangeX;
 // Cooldowns
 attackCooldown = 60;
 attackCooldownTimer = attackCooldown;
@@ -34,6 +36,7 @@ canShoot = false;
 canAction = false;
 sleeping = true;
 headless = false;
+closeRange = false;
 
 /*---------------------------------- Sprites ----------------------------------*/
 idleSpr = spr_ghostly_armor_idle;

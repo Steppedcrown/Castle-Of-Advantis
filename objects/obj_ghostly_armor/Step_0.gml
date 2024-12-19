@@ -18,6 +18,12 @@ if !instance_exists(obj_pauser) {
 		detected = true;
 	}
 	
+	/*---------------------------------- Activating ----------------------------------*/
+	if sleeping && detected {
+		sleeping = false;
+		setActive(wakingSpr, wakingFrames);
+	}
+	
 	/*---------------------------------- Attacking ----------------------------------*/
 	// Reverse face
 	face *= -1;
@@ -57,6 +63,7 @@ if !instance_exists(obj_pauser) {
 	}
 	
 	/*---------------------------------- Sprite Control ----------------------------------*/
-	if !active {sprite_index = idleSpr;}
+	if sleeping {sprite_index = sleepSpr;}
+	else if !active {sprite_index = idleSpr;}
 	else {sprite_index = activeSpr;}
 }

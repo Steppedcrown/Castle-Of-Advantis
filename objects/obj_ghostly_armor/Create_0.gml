@@ -13,7 +13,7 @@ attackObj = obj_ghostly_attack;
 // Proj
 proj = obj_ghostly_head;
 headDamage = 50;
-projSpd = 0.5;
+projSpd = 2;
 // Melee ranges
 meleeRangeX = 30;
 meleeRangeY = meleeRangeX;
@@ -25,7 +25,7 @@ shootRangeY = shootRangeX;
 // Cooldowns
 attackCooldown = 60;
 attackCooldownTimer = attackCooldown;
-shootCooldown = 90;
+shootCooldown = 60;
 shootCooldownTimer = shootCooldown;
 actionCooldown = 30;
 actionCooldownTimer = actionCooldown;

@@ -8,7 +8,7 @@ if !instance_exists(obj_pauser) {
 		attackCooldownTimer++;
 		if attackCooldownTimer >= attackCooldown {canAttack = true; attackCooldownTimer = 0;}
 	}
-	if !canShoot {
+	if !canShoot && !headless {
 		shootCooldownTimer++;
 		if shootCooldownTimer >= shootCooldown {canShoot = true; shootCooldownTimer = 0;}
 	}
@@ -43,6 +43,7 @@ if !instance_exists(obj_pauser) {
 		// Set attacking vars
 		setActive(attackSpr, attackFrames);
 		canAttack = false;
+		canAction = false;
 		// Set attacking obj
 		var _attack = instance_create_depth(x, y - sprite_height/2, depth, attackObj);
 		with (_attack) {
@@ -65,6 +66,8 @@ if !instance_exists(obj_pauser) {
 		else if canShoot && canAction && !headless && !closeRange && _xToPlayer <= shootRangeX && _yToPlayer <= shootRangeY {
 			setActive(headAttackSpr, shootingFrames);
 			headless = true;
+			canShoot = false;
+			canAction = false;
 		}
 	}
 	

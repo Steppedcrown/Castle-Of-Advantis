@@ -24,3 +24,5 @@ projTimer = 0;
 /*---------------------------------- Misc ----------------------------------*/
 startupFrame = true;
 destroyed = false;
+affectedByGrav = false;
+grav = 0.02;

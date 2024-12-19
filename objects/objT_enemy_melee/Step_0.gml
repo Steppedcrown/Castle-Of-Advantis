@@ -13,3 +13,5 @@ if canDamage {
 // Set coords
 x = parent.x;
 y = parent.y - parent.sprite_height/2;
+// Set xscale
+image_xscale = parent.face;

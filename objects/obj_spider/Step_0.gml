@@ -107,6 +107,7 @@ if !instance_exists(obj_pauser) {
 			y -= 3;
 		}
 		else {x += xspd}
+		setActive(walkSpr, 1);
 	}
 	
 	/*---------------------------------- Gravity ----------------------------------*/

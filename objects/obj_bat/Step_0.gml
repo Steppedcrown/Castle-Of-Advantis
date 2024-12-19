@@ -58,7 +58,7 @@ if !instance_exists(obj_pauser) {
 
 			// Initialize attack
 			if !active && canAttack {
-				setActive(attackSpr, 6969);
+				setActive(attackSpr, -1);
 				canDamage = true;
 				diving = true;
 				// Set moveSpd for x and y directions

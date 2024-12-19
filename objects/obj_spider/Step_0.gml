@@ -59,7 +59,7 @@ if !instance_exists(obj_pauser) {
 				jumping = true;
 				jumpDirY = -1;
 				canDamage = true;
-				setActive(jumpSpr, 6969);
+				setActive(jumpSpr, -1);
 				// Log player coords
 				targetX	= global.player.x;
 				targetY = global.player.y;

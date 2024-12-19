@@ -8,7 +8,7 @@ if !instance_exists(obj_pauser) {
 	}
 	
 	// Reset activity
-	if active {
+	if active && activeFrames != -1 {
 		activeCount++;
 		if activeCount >= activeFrames {active = false;}
 	}

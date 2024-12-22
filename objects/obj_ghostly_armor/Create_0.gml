@@ -10,6 +10,8 @@ xPad = 10;
 /*---------------------------------- Attacking ----------------------------------*/
 meleeDamage = 50;
 attackObj = obj_ghostly_attack;
+attackOffsetX = 7;
+attackOffsetY = 10;
 // Proj
 proj = obj_ghostly_head;
 headDamage = 50;

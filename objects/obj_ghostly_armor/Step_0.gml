@@ -45,10 +45,13 @@ if !instance_exists(obj_pauser) {
 		canAttack = false;
 		canAction = false;
 		// Set attacking obj
-		var _attack = instance_create_depth(x, y - sprite_height/2, depth, attackObj);
+		var _offset = attackOffsetX * face;
+		var _attack = instance_create_depth(x + _offset, y - sprite_height/2 - attackOffsetY, depth, attackObj);
 		with (_attack) {
 			damage = other.meleeDamage;
 			parent = other;
+			offsetX = other.face * other.attackOffsetX;
+			offsetY = other.attackOffsetY;
 			image_xscale = other.face;
 		}
 	}

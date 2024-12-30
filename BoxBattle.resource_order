@@ -99,6 +99,7 @@
     {"name":"obj_character_selector","order":12,"path":"objects/obj_character_selector/obj_character_selector.yy",},
     {"name":"obj_clouds_1","order":1,"path":"objects/obj_clouds_1/obj_clouds_1.yy",},
     {"name":"obj_clouds_2","order":2,"path":"objects/obj_clouds_2/obj_clouds_2.yy",},
+    {"name":"obj_dirt","order":2,"path":"objects/obj_dirt/obj_dirt.yy",},
     {"name":"obj_floor","order":3,"path":"objects/obj_floor/obj_floor.yy",},
     {"name":"obj_gate_closed","order":2,"path":"objects/obj_gate_closed/obj_gate_closed.yy",},
     {"name":"obj_gate_symbol_off_left","order":11,"path":"objects/obj_gate_symbol_off_left/obj_gate_symbol_off_left.yy",},

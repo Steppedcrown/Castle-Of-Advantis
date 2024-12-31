@@ -45,7 +45,7 @@
   "origin":0,
   "parent":{
     "name":"Corners",
-    "path":"folders/Sprites/Environment Sprites/Corners.yy",
+    "path":"folders/Sprites/Environment Sprites/Blocks/Castle/Corners.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

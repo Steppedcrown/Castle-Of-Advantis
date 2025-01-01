@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Misc",
-    "path":"folders/Sprites/Environment Sprites/Misc.yy",
+    "name":"Castle",
+    "path":"folders/Sprites/Environment Sprites/Blocks/Castle.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

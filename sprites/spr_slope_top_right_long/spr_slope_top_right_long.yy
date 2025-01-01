@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Slopes",
-    "path":"folders/Sprites/Environment Sprites/Slopes.yy",
+    "name":"Castle Slopes",
+    "path":"folders/Sprites/Environment Sprites/Slopes/Castle Slopes.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

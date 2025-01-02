@@ -5,3 +5,7 @@ event_inherited();
 parent = noone;
 face = 1;
 affectedByGrav = true;
+
+// Return settings
+parentHeight = 10;
+returning = false;

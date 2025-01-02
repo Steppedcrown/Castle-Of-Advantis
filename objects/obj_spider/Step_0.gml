@@ -90,8 +90,8 @@ if !instance_exists(obj_pauser) {
 	
 	/*---------------------------------- Movement ----------------------------------*/
 	if !active && detected && !ensnared {
-		if x < global.player.x - xPad {moveDirX = 1;}
-		else if x > global.player.x + xPad {moveDirX = -1;}
+		if x < global.player.x {moveDirX = 1;}
+		else if x > global.player.x {moveDirX = -1;}
 		else {moveDirX = 0;}
 		// Set x speed
 		xspd = moveSpd * moveDirX;

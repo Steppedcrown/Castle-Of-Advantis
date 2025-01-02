@@ -1,4 +1,4 @@
-// Create list to store hit enemies
+ // Create list to store hit enemies
 enemiesHitCurr = ds_list_create();
 enemiesHitPrev = ds_list_create();
 

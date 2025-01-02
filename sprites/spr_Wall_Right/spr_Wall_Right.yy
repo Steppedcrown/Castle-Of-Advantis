@@ -44,8 +44,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Edges",
-    "path":"folders/Sprites/Environment Sprites/Edges.yy",
+    "name":"Castle",
+    "path":"folders/Sprites/Environment Sprites/Blocks/Castle.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

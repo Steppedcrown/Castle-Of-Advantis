@@ -47,11 +47,12 @@ if !instance_exists(obj_pauser) {
 		// Slopes
 		if place_meeting(x+xspd, y, obj_wall) {
 			var _total = 0;
-			while !place_meeting(x+moveDirX, y-3, obj_wall) && _total < abs(xspd) {x += moveDirX; _total += 1;}
-			y -= 3;
+			while !place_meeting(x+moveDirX, y-abs(xspd), obj_wall) && _total < abs(xspd) {x += moveDirX; _total += 1;}
+			if _total != 0 {y -= abs(xspd);}
+			else {xspd = 0;}
 		}
 		else {x += xspd}
-		setActive(walkSpr, 1);
+		if xspd != 0 {setActive(walkSpr, 1);}
 	}
 	
 	/*---------------------------------- Gravity ----------------------------------*/

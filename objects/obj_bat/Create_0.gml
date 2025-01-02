@@ -28,8 +28,8 @@ hp = maxHp;
 detectionRange = 150;
 attackCooldown = 120;
 attackCooldownTimer = attackCooldown;
-attackRangeX = xPad;
-attackRangeY = 90;
+attackRangeX = xPad + 10;
+attackRangeY = yPad + 15;
 
 // Damaging
 canDamage = true;
@@ -48,7 +48,7 @@ sleeping = true;
 wakingFrames = 30;
 // Attack
 canAttack = false;
-startingFrames = 30;
+startingFrames = 10;
 diving = false;
 
 /*---------------------------------- Scoring ----------------------------------*/

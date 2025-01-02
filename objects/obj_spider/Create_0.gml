@@ -26,6 +26,10 @@ totalX = 0;
 totalY = 0;
 
 /*---------------------------------- Combat ----------------------------------*/
+// Misc
+attackNum = -1;
+setAttackNum = true;
+
 // HP
 maxHp = 8
 hp = maxHp;
@@ -41,12 +45,8 @@ jumpRange = 150;
 projRange = 200;
 
 // Cooldowns
-actionCooldown = 60;
+actionCooldown = 75;
 actionCooldownTimer = actionCooldown;
-jumpCooldown = 300;
-jumpCooldownTimer = jumpCooldown;
-shootCooldown = 120;
-shootCooldownTimer = shootCooldown;
 
 /*---------------------------------- Sprites ----------------------------------*/
 idleSpr = spr_spider_idle;
@@ -60,12 +60,10 @@ shootSpr = spr_spider_web_attack;
 pointValue = 20;
 
 /*---------------------------------- Animation Frames ----------------------------------*/
-holdFrames = 90;
+holdFrames = 1;
 shootFrames = 15;
 
 /*---------------------------------- States ----------------------------------*/
-canJump = false;
-canShoot = false;
 canDoAction = false;
 jumping = false;
 shooting = false;

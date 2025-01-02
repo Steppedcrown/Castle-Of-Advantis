@@ -8,7 +8,7 @@ if !instance_exists(obj_pauser) {
 		attackCooldownTimer++;
 		if attackCooldownTimer >= attackCooldown {canAttack = true; attackCooldownTimer = 0;}
 	}
-	if !canShoot {
+	if !canShoot && !headless {
 		shootCooldownTimer++;
 		if shootCooldownTimer >= shootCooldown {canShoot = true; shootCooldownTimer = 0;}
 	}
@@ -43,11 +43,15 @@ if !instance_exists(obj_pauser) {
 		// Set attacking vars
 		setActive(attackSpr, attackFrames);
 		canAttack = false;
+		canAction = false;
 		// Set attacking obj
-		var _attack = instance_create_depth(x, y - sprite_height/2, depth, attackObj);
+		var _offset = attackOffsetX * face;
+		var _attack = instance_create_depth(x + _offset, y - sprite_height/2 - attackOffsetY, depth, attackObj);
 		with (_attack) {
 			damage = other.meleeDamage;
 			parent = other;
+			offsetX = other.face * other.attackOffsetX;
+			offsetY = other.attackOffsetY;
 			image_xscale = other.face;
 		}
 	}
@@ -65,6 +69,8 @@ if !instance_exists(obj_pauser) {
 		else if canShoot && canAction && !headless && !closeRange && _xToPlayer <= shootRangeX && _yToPlayer <= shootRangeY {
 			setActive(headAttackSpr, shootingFrames);
 			headless = true;
+			canShoot = false;
+			canAction = false;
 		}
 	}
 	
@@ -78,11 +84,12 @@ if !instance_exists(obj_pauser) {
 		// Slopes
 		if place_meeting(x+xspd, y, obj_wall) {
 			var _total = 0;
-			while !place_meeting(x+moveDirX, y-3, obj_wall) && _total < abs(xspd) {x += moveDirX; _total += 1;}
-			y -= 3;
+			while !place_meeting(x+moveDirX, y-abs(xspd), obj_wall) && _total < abs(xspd) {x += moveDirX; _total += 1;}
+			if _total != 0 {y -= abs(xspd);}
+			else {xspd = 0;}
 		}
 		else {x += xspd}
-		setActive(walkSpr, 1);
+		if xspd != 0 {setActive(walkSpr, 1);}
 	}
 	
 	/*---------------------------------- Gravity ----------------------------------*/

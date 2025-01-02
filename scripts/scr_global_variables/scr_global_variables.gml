@@ -1,3 +1,6 @@
+// Dev settings
+global.debug = false;
+
 // Player variables
 global.player = noone;
 global.player_deaths = 0;

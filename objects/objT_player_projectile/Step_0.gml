@@ -13,7 +13,6 @@ if startUpFrame {
 
 // Account for gravity
 if affectedByGrav {
-	//if abs(yspd) < maxY {yspd -= grav;}
 	if moveDirY == 1 {yspd += gravProj;}
 	else {yspd -= gravProj;}
 }

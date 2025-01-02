@@ -55,6 +55,11 @@ if !instance_exists(obj_pauser) {
 
 	// Move if not destroyed
 	if !destroyed {
+		// Change yspd according to grav
+		if affectedByGrav {
+			if moveDirY == 1 {moveSpdY += grav;}
+			else {moveSpdY -= grav;}
+		}
 		x += moveDirX * moveSpdX;
 		y += moveDirY * moveSpdY;
 	}

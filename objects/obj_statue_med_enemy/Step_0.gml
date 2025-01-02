@@ -24,6 +24,7 @@ if !instance_exists(obj_pauser) {
 		// Reset status
 		attackTimer = 0;
 		canShoot = false;
+		awake = true;
 	}
 	
 	/*---------------------------------- Spirte Control ----------------------------------*/

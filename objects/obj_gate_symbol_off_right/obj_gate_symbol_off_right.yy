@@ -6,8 +6,8 @@
   "name":"obj_gate_symbol_off_right",
   "overriddenProperties":[],
   "parent":{
-    "name":"Corners",
-    "path":"folders/Objects/Environment Objects/Corners.yy",
+    "name":"Castle",
+    "path":"folders/Objects/Environment Objects/Blocks/Castle.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",

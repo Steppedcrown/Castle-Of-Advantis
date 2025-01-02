@@ -6,8 +6,8 @@
   "name":"obj_dirt",
   "overriddenProperties":[],
   "parent":{
-    "name":"Blocks",
-    "path":"folders/Objects/Environment Objects/Blocks.yy",
+    "name":"Outside",
+    "path":"folders/Objects/Environment Objects/Blocks/Outside.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",

@@ -6,8 +6,8 @@
   "name":"obj_wall_connecting_pattern",
   "overriddenProperties":[],
   "parent":{
-    "name":"Blocks",
-    "path":"folders/Objects/Environment Objects/Blocks.yy",
+    "name":"Castle",
+    "path":"folders/Objects/Environment Objects/Blocks/Castle.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",

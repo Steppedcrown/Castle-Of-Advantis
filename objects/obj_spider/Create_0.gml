@@ -15,7 +15,7 @@ jumpDirX = 0;
 jumpDirY = 0;
 
 // Padding
-xPad = 120;
+xPad = 80;
 
 // Target coords
 targetX = 0;
@@ -45,7 +45,7 @@ jumpRange = 150;
 projRange = 200;
 
 // Cooldowns
-actionCooldown = 75;
+actionCooldown = 60;
 actionCooldownTimer = actionCooldown;
 
 /*---------------------------------- Sprites ----------------------------------*/
@@ -60,7 +60,7 @@ shootSpr = spr_spider_web_attack;
 pointValue = 20;
 
 /*---------------------------------- Animation Frames ----------------------------------*/
-holdFrames = 1;
+holdFrames = 90;
 shootFrames = 15;
 
 /*---------------------------------- States ----------------------------------*/

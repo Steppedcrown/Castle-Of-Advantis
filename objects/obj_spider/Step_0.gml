@@ -64,7 +64,7 @@ if !instance_exists(obj_pauser) {
 			midpoint += x;
 		}
 		// Check if player is in jumping range and hold
-		else if !active && _xToPlayer <= jumpRange && _yToPlayer <= jumpRange {
+		else if !active && _xToPlayer <= jumpRange && _yToPlayer <= jumpRange && place_meeting(x, y+5, obj_wall) {
 			setActive(holdSpr, holdFrames);
 			jumping = true;
 		}
@@ -90,19 +90,21 @@ if !instance_exists(obj_pauser) {
 	
 	/*---------------------------------- Movement ----------------------------------*/
 	if !active && detected && !ensnared {
-		if global.player.x + xPad < x {moveDirX = -1;}
-		else if global.player.x > x {moveDirX = 1;}
-		//else {moveDirX = 0;}
+		if x < global.player.x - xPad {moveDirX = 1;}
+		else if x > global.player.x + xPad {moveDirX = -1;}
+		else {moveDirX = 0;}
 		// Set x speed
 		xspd = moveSpd * moveDirX;
-		// Slopes
-		if place_meeting(x+xspd, y, obj_wall) {
-			var _total = 0;
-			while !place_meeting(x+moveDirX, y-3, obj_wall) && _total < abs(xspd) {x += moveDirX; _total += 1;}
-			y -= 3;
+		if moveDirX != 0 {
+			// Slopes
+			if place_meeting(x+xspd, y, obj_wall) {
+				var _total = 0;
+				while !place_meeting(x+moveDirX, y-3, obj_wall) && _total < abs(xspd) {x += moveDirX; _total += 1;}
+				y -= 3;
+			}
+			else {x += xspd}
+			setActive(walkSpr, 1);
 		}
-		else {x += xspd}
-		setActive(walkSpr, 1);
 	}
 	
 	/*---------------------------------- Gravity ----------------------------------*/

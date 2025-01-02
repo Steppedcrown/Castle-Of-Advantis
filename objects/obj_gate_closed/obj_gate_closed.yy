@@ -6,8 +6,8 @@
   "name":"obj_gate_closed",
   "overriddenProperties":[],
   "parent":{
-    "name":"Misc",
-    "path":"folders/Objects/Environment Objects/Misc.yy",
+    "name":"Castle",
+    "path":"folders/Objects/Environment Objects/Blocks/Castle.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",

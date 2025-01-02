@@ -6,8 +6,8 @@
   "name":"obj_slope_top_left_long",
   "overriddenProperties":[],
   "parent":{
-    "name":"Slopes",
-    "path":"folders/Objects/Environment Objects/Slopes.yy",
+    "name":"Castle",
+    "path":"folders/Objects/Environment Objects/Slopes/Castle.yy",
   },
   "parentObjectId":{
     "name":"obj_slope_bottom_left_short",

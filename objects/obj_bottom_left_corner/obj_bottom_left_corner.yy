@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Corners",
-    "path":"folders/Objects/Environment Objects/Corners.yy",
+    "path":"folders/Objects/Environment Objects/Blocks/Castle/Corners.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",

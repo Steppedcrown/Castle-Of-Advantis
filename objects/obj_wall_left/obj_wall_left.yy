@@ -6,8 +6,8 @@
   "name":"obj_wall_left",
   "overriddenProperties":[],
   "parent":{
-    "name":"Edges",
-    "path":"folders/Objects/Environment Objects/Edges.yy",
+    "name":"Castle",
+    "path":"folders/Objects/Environment Objects/Blocks/Castle.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",

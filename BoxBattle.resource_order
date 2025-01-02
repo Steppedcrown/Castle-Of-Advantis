@@ -258,6 +258,7 @@
     {"name":"rm_title_screen","order":2,"path":"rooms/rm_title_screen/rm_title_screen.yy",},
     {"name":"scr_global_variables","order":1,"path":"scripts/scr_global_variables/scr_global_variables.yy",},
     {"name":"scr_macros","order":2,"path":"scripts/scr_macros/scr_macros.yy",},
+    {"name":"scr_random_settings","order":3,"path":"scripts/scr_random_settings/scr_random_settings.yy",},
     {"name":"spr_among_us","order":3,"path":"sprites/spr_among_us/spr_among_us.yy",},
     {"name":"spr_archer_attack","order":1,"path":"sprites/spr_archer_attack/spr_archer_attack.yy",},
     {"name":"spr_archer_ensnare_circle","order":4,"path":"sprites/spr_archer_ensnare_circle/spr_archer_ensnare_circle.yy",},

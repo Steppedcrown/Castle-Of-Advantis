@@ -17,6 +17,7 @@ damage = 5;
 /*---------------------------------- States ----------------------------------*/
 predeterminedPath = true;
 canShoot = false;
+awake = false;
 
 /*---------------------------------- Spirtes ----------------------------------*/
 idleSpr = spr_statue_real;

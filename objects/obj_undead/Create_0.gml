@@ -10,7 +10,9 @@ xPad = 10;
 /*---------------------------------- Attacking ----------------------------------*/
 damage = 50;
 attackObj = obj_undead_swing;
-attackRangeX = 10;
+attackOffsetX = 7;
+attackOffsetY = 10;
+attackRangeX = 50;
 attackRangeY = 10;
 // Animation frames
 attackFrames = 18;

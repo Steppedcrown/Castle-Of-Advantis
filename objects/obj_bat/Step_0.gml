@@ -79,17 +79,16 @@ if !instance_exists(obj_pauser) {
 			}
 	
 			// Attack startup
-			if !active && canAttack && _xToPlayer <= attackRange && _yToPlayer <= attackRange {
+			if !active && attackCooldownTimer >= attackCooldown && _xToPlayer <= attackRangeX && _yToPlayer <= attackRangeY {
 				setActive(attackStartSpr, startingFrames);
+				canAttack = true;
+				attackCooldownTimer = 0;
 			}
 		}
 	}		
 
 	// Attacking cooldown
-	if !canAttack {
-		attackCooldownTimer++;
-		if attackCooldownTimer >= attackCooldown {canAttack = true; attackCooldownTimer = 0;}
-	}
+	if !canAttack {attackCooldownTimer++;}
 	
 	// Set x and y speeds
 	xspd = moveSpd * moveDirX;

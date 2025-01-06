@@ -61,7 +61,7 @@ pointValue = 20;
 
 /*---------------------------------- Animation Frames ----------------------------------*/
 holdFrames = 90;
-shootFrames = 15;
+shootFrames = 30;
 
 /*---------------------------------- States ----------------------------------*/
 canDoAction = false;

@@ -119,7 +119,7 @@ projDamageSuper = 0;
 shieldDuration = 0;
 
 /*---------------------------------- Combat ----------------------------------*/
-maxHp = 500;
+maxHp = 100;
 hp = maxHp;
 // Crushing
 crushDeathFrames = 3;

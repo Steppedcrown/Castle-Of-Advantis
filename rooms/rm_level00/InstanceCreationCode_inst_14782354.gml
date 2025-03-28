@@ -1,5 +1,5 @@
 transition = obj_transition;
-targetRoom = rm_level01;
-targetX = 24;
-targetY = 350;
+targetRoom = rm_cave_01;
+targetX = 45;
+targetY = 330;
 imageSpd = -1;

@@ -3,7 +3,8 @@
 A fast-paced 2D combat-platformer built in GameMaker Studio 2. Choose your class, fight through rooms of enemies, and chase the highest score possible. 
 
 > **Project Status:** This game is currently in an incomplete demo/prototype state. Features, balancing, and assets are subject to change.
-> Play WIP Demo:  https://gx.games/games/mhvax2/castle-of-advantis/tracks/cd4cbaf6-0c71-45ce-a210-17c39f1a922b/
+>
+>  Play WIP Demo:  https://gx.games/games/mhvax2/castle-of-advantis/tracks/cd4cbaf6-0c71-45ce-a210-17c39f1a922b/
 
 ---
 
